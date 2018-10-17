@@ -1,5 +1,5 @@
 <template>
-  <div class="rs-mr-board" @click="click">
+  <div class="rs-mr-board">
     <rs-mr-card-mini-total-apis :init-x-pos="1" :init-y-pos="1" :init-api-cnt="apiCnt"/>
     <rs-mr-card-mini-total-availability :init-x-pos="2" :init-y-pos="1" :init-percent="98"/>
     <rs-mr-card-mini-avg-p95 :init-x-pos="3" :init-y-pos="1" :init-avg="avgTime" :init-p95="4.4"/>
@@ -32,8 +32,6 @@ export default {
     RsMrCardMiniResponseTime, RsMrCardMiniCheckPoint, RsMrCardMiniAvgP95, RsMrCardMiniTotalAvailability, RsMrCardMiniTotalApis, RsUtilText},
   methods: {
     click: function () {
-      //TODO 지워야할 것
-      document.location.href = 'http://localhost:8080/#/temp'
     }
   },
   created: function () {

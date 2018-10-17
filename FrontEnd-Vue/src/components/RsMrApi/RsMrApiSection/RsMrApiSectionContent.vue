@@ -5,6 +5,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: 'rs-mr-api-section-content',
   components: { },

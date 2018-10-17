@@ -9,6 +9,7 @@ import conf from './assets/js/conf'
 
 Vue.prototype.$http = axios
 Vue.prototype.$conf = conf
+
 // Vue.prototype.$router = router
 Vue.config.productionTip = false
 

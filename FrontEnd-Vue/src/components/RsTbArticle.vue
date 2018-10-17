@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   export default {
     name: 'rs-tb-article',
     mounted: function () {
@@ -138,12 +138,16 @@
       completeBlock: function (list) {
         let xmlString = ''
         for (let atom in list) {
-          if(atom==0){
+          if (atom == 0) {
             atom = list[atom]
             xmlString = atom
-          }else{
+          } else {
             atom = '<next>' + list[atom] + '</next>'
-            xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'
+            xmlString = xmlString.substr(0, xmlString.length - (8 + 7 * (atom - 1))) + atom
+            for (let i = 0; i < atom - 1; i++) {
+              xmlString += '</next>'
+            }
+            xmlString += '</block>'
           }
 
         }

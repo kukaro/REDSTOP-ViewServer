@@ -119,7 +119,8 @@
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro', {data: xml_text}).then((response) => {
             console.log(response)
           })
-          console.log(xml_text);
+          console.log('여기있어 ㅠㅠ');
+          // console.log(xml_text);
           $("#tutorial").hide();
         }
 

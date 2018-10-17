@@ -142,12 +142,7 @@
             atom = list[atom]
             xmlString = atom
           } else {
-            let txml = '<next>' + list[atom] + '</next>'
-            xmlString = xmlString.substr(0, xmlString.length - (8 + 7 * (atom - 1))) + txml
-            for (let i = 0; i < atom - 1; i++) {
-              xmlString += '</next>'
-            }
-            xmlString += '</block>'
+            xmlString = list[atom].substr(0, list[atom].length - 8) + '<next>' + xmlString + '</next></block>'
           }
 
         }

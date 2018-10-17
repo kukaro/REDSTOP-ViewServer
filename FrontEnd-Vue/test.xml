@@ -87,18 +87,18 @@
       <field name="Method">Get</field>
       <field name="URL">http://localhost:4000/signout</field>
     </block>
-  </next>
-  <next>
-    <block type="api" id="2">
-      <field name="Method">Put</field>
-      <field name="URL">http://localhost:4000/signout</field>
-    </block>
-  </next>
-  <next>
-    <block type="api" id="3">
-      <field name="Method">Delete</field>
-      <field name="URL">http://localhost:4000/signout</field>
-    </block>
+    <next>
+      <block type="api" id="2">
+        <field name="Method">Put</field>
+        <field name="URL">http://localhost:4000/signout</field>
+      </block>
+      <next>
+        <block type="api" id="3">
+          <field name="Method">Delete</field>
+          <field name="URL">http://localhost:4000/signout</field>
+        </block>
+      </next>
+    </next>
   </next>
 </block>
 </xml>

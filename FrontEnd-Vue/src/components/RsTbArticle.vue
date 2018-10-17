@@ -139,7 +139,9 @@
           atom = '<next>' + atom + '</next>'
           xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'
         }
-        return '<xml>' + xmlString + '</xml>>'
+        xmlString = '<xml>' + xmlString + '</xml>'
+        console.log(xmlString)
+        return xmlString
       }
     }
   }

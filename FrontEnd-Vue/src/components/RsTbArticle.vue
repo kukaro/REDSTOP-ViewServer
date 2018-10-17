@@ -21,7 +21,7 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   export default {
     name: 'rs-tb-article',
     mounted: function () {
@@ -32,7 +32,7 @@
         init: function () {
           this.appendDummyInput()
             .appendField("API")
-            .appendField(new Blockly.FieldDropdown([["Post", "Post"], ["Get", "Get"], ["Delete", "Delete"], ["Put", "Put"]]), "Method")
+            .appendField(new Blockly.FieldDropdown([["POST", "POST"], ["GET", "GET"], ["DELETE", "DELETE"], ["PUT", "PUT"]]), "Method")
             .appendField(new Blockly.FieldTextInput("URL"), "URL");
           this.setPreviousStatement(true, null);
           this.setNextStatement(true, null);
@@ -112,16 +112,22 @@
           .get(this.$conf.apiServer+'/api/v1/urls/kukaro')
           .then(response => {
             console.log('axios호출이당')
-            console.log(response)
+            let blockList = response.data
+            let xmlList = []
+            for(let atom in blockList){
+              xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(),blockList[atom].url))
+            }
+            var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
+            Blockly.Xml.domToWorkspace(xml, demoWorkspace);
           });
         console.log('여기 블럭이에요')
-        let blockList = []
-        blockList.push(this.makeApiBlock('Post', 'http://localhost:4000/signin'))
-        blockList.push(this.makeApiBlock('Get', 'http://localhost:4000/signout'))
-        blockList.push(this.makeApiBlock('Put', 'http://localhost:4000/signout'))
-        blockList.push(this.makeApiBlock('Delete', 'http://localhost:4000/signout'))
-        var xml = Blockly.Xml.textToDom(this.completeBlock(blockList))
-        Blockly.Xml.domToWorkspace(xml, demoWorkspace);
+
+        // blockList.push(this.makeApiBlock('Post', 'http://localhost:4000/signin'))
+        // blockList.push(this.makeApiBlock('Get', 'http://localhost:4000/signout'))
+        // blockList.push(this.makeApiBlock('Put', 'http://localhost:4000/signout'))
+        // blockList.push(this.makeApiBlock('Delete', 'http://localhost:4000/signout'))
+        // var xml = Blockly.Xml.textToDom(this.completeBlock(blockList))
+        // Blockly.Xml.domToWorkspace(xml, demoWorkspace);
       }
     },
     computed: {

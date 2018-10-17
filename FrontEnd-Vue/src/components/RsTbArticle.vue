@@ -104,7 +104,6 @@
         return '<block type="api" id="' + (this.blockIdCounter++) + '"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
       },
       completeBlock: function (list) {
-        navTree = navTree[0];
         let xmlString = ''
         for (let atom in list) {
           if (atom == 0) {
@@ -118,6 +117,7 @@
         xmlString = this.makeGroupBlock('Default Test Group', xmlString)
         xmlString = '<xml>' + xmlString + '</xml>'
         console.log(xmlString)
+        navTree = navTree[0]
         return xmlString
       },
       onFirstComment: function (event) {

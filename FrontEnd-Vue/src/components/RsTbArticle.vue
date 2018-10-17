@@ -109,7 +109,7 @@
         demoWorkspace.addChangeListener(onFirstComment);
       } else {
         console.log('여기 블럭이에요')
-        var xml = Blockly.Xml.textToDom('<block type="api"><field name="Method">Post</field><field name="URL">http://localhost:4000/signin</field></block>')
+        var xml = Blockly.Xml.textToDom('<xml><block type="api"><field name="Method">Post</field><field name="URL">http://localhost:4000/signin</field></block></xml>')
         Blockly.Xml.domToWorkspace(xml, demoWorkspace);
       }
     },

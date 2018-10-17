@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   export default {
     name: 'rs-tb-article',
     mounted: function () {
@@ -104,7 +104,14 @@
 
             }
           } else {
-
+            var xml = Blockly.Xml.textToDom('<block type="api">' +
+              '                            <field name="Method">Post\n' +
+              '                            </field>\n' +
+              '                            <field\n' +
+              '                              name="URL">http://localhost:4000/signin\n' +
+              '                            </field>\n' +
+              '                          </block>')
+            Blockly.Xml.domToWorkspace(xml, demoWorkspace);
           }
         }
 

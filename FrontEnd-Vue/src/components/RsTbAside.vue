@@ -49,7 +49,7 @@ export default {
     background-color: white;
     position: absolute;
     padding-top: 60px;
-    margin-left: 10%;
+    margin-left: 60%;
     padding-left: 30px;
     padding-right: 30px;
     width: 40%;

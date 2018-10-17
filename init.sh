@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 cd BackEnd-Express
-npm install
+sudo npm install
 cd ..
 cd FrontEnd-Vue
-npm install
-npm run build
-rm -rf ../BackEnd-Express/static
-mv dist/static ../BackEnd-Express/public
-mv dist/index.html dist/index.ejs
-mv dist/index.ejs ../BackEnd-Express/views
+sudo npm install
+sudo npm run build
+sudo rm -rf ../BackEnd-Express/static
+sudo mv dist/static ../BackEnd-Express/public
+sudo mv dist/index.html dist/index.ejs
+sudo mv dist/index.ejs ../BackEnd-Express/views

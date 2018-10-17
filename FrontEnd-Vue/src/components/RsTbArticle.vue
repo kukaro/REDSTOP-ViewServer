@@ -70,6 +70,7 @@
             this.tutorialAvail = 'hidden'
 
             this.demoWorkspace.addChangeListener(this.onFirstComment)
+            console.log(navTree)
           })
       }
     },

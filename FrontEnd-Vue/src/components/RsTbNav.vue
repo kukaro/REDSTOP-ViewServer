@@ -8,6 +8,8 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-dupe-keys */
+
 import RsTbNavHeader from './RsTbNav/RsTbNavHeader'
 import RsTbNavBody from './RsTbNav/RsTbNavBody'
 export default {
@@ -19,6 +21,28 @@ export default {
         width: screen.width * 0.2 + 'px'
       }
     }
+  },
+  data () {
+    return {
+      windowWidth: window.innerWidth
+    }
+  },
+  methods: {
+    handleWindowResize (event) {
+      this.windowWidth = event.currentTarget.innerWidth
+      this.navStyle()
+    },
+    navStyle () {
+      return {
+        width: screen.width * 0.2 + 'px'
+      }
+    }
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.handleWindowResize)
+  },
+  mounted () {
+    window.addEventListener('resize', this.handleWindowResize)
   }
 }
 </script>

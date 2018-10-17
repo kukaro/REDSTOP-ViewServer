@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {},
     // Various Dev Server settings
-    host: 'ec2-54-180-80-191.ap-northeast-2.compute.amazonaws.comg', // can be overwritten by process.env.HOST
+    host: 'ec2-54-180-80-191.ap-northeast-2.compute.amazonaws.com', // can be overwritten by process.env.HOST
     port: 3000, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

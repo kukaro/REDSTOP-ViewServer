@@ -109,9 +109,10 @@
         demoWorkspace.addChangeListener(onFirstComment);
       } else {
         console.log('여기 블럭이에요')
-        var xml = Blockly.Xml.textToDom('<xml><block type="api"><field name="Method">Post</field><field name="URL">http://localhost:4000/signin</field></block></xml>')
-        Blockly.Xml.domToWorkspace(xml, demoWorkspace);
-        var xml = Blockly.Xml.textToDom('<xml><block type="api"><field name="Method">Post</field><field name="URL">http://localhost:4000/signin</field></block></xml>')
+        let blockList = []
+        blockList.push(this.makeApiBlock('Post', 'http://localhost:4000/signin'))
+        blockList.push(this.makeApiBlock('Get', 'http://localhost:4000/signout'))
+        var xml = Blockly.Xml.textToDom(this.completeBlock(blockList))
         Blockly.Xml.domToWorkspace(xml, demoWorkspace);
       }
     },
@@ -121,6 +122,24 @@
           width: screen.width * 0.8 + 'px',
           left: screen.width * 0.2 + 'px'
         }
+      }
+    },
+    data: function () {
+      return {
+        blockIdCounter: 0,
+      }
+    },
+    methods: {
+      makeApiBlock: function (method, url) {
+        return '<block type="api" id="' + (this.blockIdCounter++) + '"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
+      },
+      completeBlock: function (list) {
+        let xmlString = ''
+        for (let atom in list) {
+          atom = '<next>' + atom + '</next>'
+          xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'
+        }
+        return '<xml>' + xmlString + '</xml>>'
       }
     }
   }

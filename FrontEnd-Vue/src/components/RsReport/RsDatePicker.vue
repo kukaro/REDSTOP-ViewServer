@@ -55,7 +55,7 @@ export default {
     padding-top: 15px;
     text-align: center;
     background-color: #ffffff;
-    z-index: 100;
+    z-index: 1;
   }
   span {
     color: #000000;

@@ -14,6 +14,8 @@ import RsTbAsideGblockTable from './RsTbAsideGblock/RsTbAsideGblockTable'
 export default {
   name: 'rs-tb-aside-gblock',
   components: {RsTbAsideGblockTable},
+  created: function () {
+  },
   data: function () {
     return {
     }

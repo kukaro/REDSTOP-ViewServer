@@ -22,6 +22,7 @@
 </template>
 <script>
   /* eslint-disable */
+  var navTree = []
   export default {
     name: 'rs-tb-article',
     mounted: function () {
@@ -59,15 +60,17 @@
             // console.log('axios호출이당')
             let blockList = response.data
             let xmlList = []
+
             for (let atom in blockList) {
+              navTree.push({name: blockList[atom].url, type: 'a', method: blockList[atom].method.toUpperCase()})
               xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
             }
             var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
             Blockly.Xml.domToWorkspace(xml, this.demoWorkspace);
             this.tutorialAvail = 'hidden'
 
-            this.demoWorkspace.addChangeListener(this.onFirstComment);
-          });
+            this.demoWorkspace.addChangeListener(this.onFirstComment)
+          })
       }
     },
     computed: {
@@ -87,16 +90,19 @@
     },
     methods: {
       makeCaseBlock: function (caseName, xmlString) {
+        navTree = [{name: caseName, type: 'c', children: navTree}]
         return '<block type="case"><field name="TestCase">' + caseName + '</field><statement name="NAME">' + xmlString + '</statement></block>'
 
       },
       makeGroupBlock: function (groupName, xmlString) {
+        navTree = [{name: groupName, type: 'g', children: navTree}]
         return '<block type="group"><field name="GroupName">' + groupName + '</field><statement name="NAME">' + xmlString + '</statement></block>'
       },
       makeApiBlock: function (method, url) {
         return '<block type="api" id="' + (this.blockIdCounter++) + '"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
       },
       completeBlock: function (list) {
+        navTree = navTree[0];
         let xmlString = ''
         for (let atom in list) {
           if (atom == 0) {

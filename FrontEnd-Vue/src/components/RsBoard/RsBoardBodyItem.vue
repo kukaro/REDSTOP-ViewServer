@@ -70,13 +70,13 @@ export default {
 .item-table {
   width: 100%;
   height: 100%;
-  color: red;
 }
 .table-top-left {
   border-bottom: 2px solid #DFEEF5;
   border-right: 2px solid #DFEEF5;
 }
 table {
+  position: relative;
   table-layout: fixed;
 }
 td {

@@ -141,7 +141,7 @@ export default {
       // 받은 값 출력을 해보자
 
       this.$http
-        .post('http://localhost:3000/api/apitest',json)
+        .post('http://52.79.221.114:3000/api/v1/apitest',json)
         .then(response => {
           // console.log(response)
           this.responseBodyData = response.data.result.data;

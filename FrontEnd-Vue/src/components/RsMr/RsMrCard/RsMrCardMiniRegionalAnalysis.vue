@@ -16,6 +16,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import RsUtilText from '../../RsUtil/RsUtilText'
 
 export default {

@@ -51,12 +51,12 @@ export default {
               method: 'post'
             },
             {
-              name: 'Verify Email',
+              name: 'VerifyEmail',
               type: 'a',
               method: 'get'
             },
             {
-              name: 'Sign in',
+              name: 'Signin',
               type: 'a',
               method: 'post'
             }

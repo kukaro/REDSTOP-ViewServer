@@ -28,7 +28,7 @@ export default {
   props: ['initWidth', 'initHeight', 'initXPos', 'initYPos', 'initBackgroundColor'],
   name: 'rs-mr-card-mini-response-time',
   created: function () {
-    this.$http.get('http://localhost:3000/api/response-time').then((response) => {
+    this.$http.get('http://52.79.221.114:3000/api/response-time').then((response) => {
       this.responseTimeList = response.data.data
       var count = 0
       for (var index = 0; index < this.xLabel.length - 1; index++) {

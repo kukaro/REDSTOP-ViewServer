@@ -47,14 +47,13 @@ select {
   border-radius: 20px;
   -webkit-appearance: none;
   -moz-appearance: none;
-
+  margin-top: 20px;
   width: 200px;
   height: 32px;
   background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 90% 50%;
   background-size: 20px;
   background-color: #ffffff;
   border: solid 1px #c7c7c7;
-
   font-family: TitilliumWeb;
   font-size: 14px;
 }

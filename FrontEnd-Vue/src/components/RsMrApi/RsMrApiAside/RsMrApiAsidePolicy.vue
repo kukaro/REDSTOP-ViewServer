@@ -39,13 +39,14 @@ export default {
 .rs-mr-api-aside-policy {
   width: 100%;
   height: 10%;
-  margin-bottom: 10px;
+  margin-top: 40px;
   padding-left: 10px;
 }
 select {
   /*padding-left: 100px;*/
-  width: 90%;
+  width: 100%;
   height: 46px;
+  margin-top: 12px;
   border-radius: 20px;
   font-size: 14px;
   background-color: #ffffff;

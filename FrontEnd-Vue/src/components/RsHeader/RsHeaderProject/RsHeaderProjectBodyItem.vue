@@ -41,6 +41,9 @@ export default {
       if (this.itemName === 'Monitoring') {
         $('#submenu').show()
       }
+      if (this.itemName === 'Report' || this.itemName === 'Scheduler' || this.itemName === 'Scenario') {
+        $('#submenu').hide()
+      }
     },
     mouseLeave: function (e) {
       this.isOver = false

@@ -27,7 +27,7 @@ export default {
   name: 'rs-mr-api-aside-heatmap',
   components: { RsMrCardMiniResponseTime, RsMrCardMiniResponseTimeItem, RsMrCardMiniResponseTimeHeatMap, RsMrCardMiniResponseTimeXLabelItem, RsMrCardMiniResponseTimeYLabelItem },
   created: function () {
-    this.$http.get('http://localhost:3000/api/response-time').then((response) => {
+    this.$http.get(this.$conf.apiServer + '/api/response-time').then((response) => {
       this.responseTimeList = response.data.data
       var count = 0
       for (var index = 0; index < this.xLabel.length - 1; index++) {

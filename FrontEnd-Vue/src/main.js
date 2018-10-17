@@ -5,8 +5,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import conf from './assets/js/conf'
 
 Vue.prototype.$http = axios
+Vue.prototype.$conf = conf
 // Vue.prototype.$router = router
 Vue.config.productionTip = false
 

@@ -39,14 +39,14 @@ export default {
   created: function () {
     // 여기 project id 넘겨주는걸로 바꿔야 함!! 지금은 그냥 1로 넣어놨음
     this.$http
-      .get('http://localhost:3000/api/v1/totalapis/1')
+      .get(this.$conf.apiServer+'/api/v1/totalapis/1')
       .then(response => {
         this.apiCnt = response.data.count;
         console.log('count : ' + response.data.count)
       });
 
     this.$http
-      .get('http://localhost:3000/api/v1/avgtime/1')
+      .get(this.$conf.apiServer+'/api/v1/avgtime/1')
       .then(response => {
         this.avgTime = response.data.avgtime;
         console.log('avgtime : ' + response.data.avgtime)
@@ -55,7 +55,7 @@ export default {
     var temp = [];
     var inst = this
     this.$http
-      .get('http://localhost:3000/api/v1/latency/1')
+      .get(this.$conf.apiServer+'/api/v1/latency/1')
       .then(response => {
         console.log(response.data)
         for(var i=0;i<response.data.length;i++) {
@@ -79,7 +79,7 @@ export default {
 
     var temp2 = [];
     this.$http
-      .get('http://localhost:3000/api/v1/error/1')
+      .get(this.$conf.apiServer+'/api/v1/error/1')
       .then(response => {
         console.log(response.data);
         for(var i=0;i<response.data.length;i++) {

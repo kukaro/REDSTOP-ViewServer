@@ -17,7 +17,7 @@ export default {
   name: 'rs-mr-monitoring',
   components: {RsHeaderProject, RsCalendar, RsMonitoringItem},
   created () {
-    this.$http.get('http://localhost:3000/api/apiList')
+    this.$http.get(this.$conf.apiServer + '3000/api/apiList')
       .then((response) => {
         this.apiList = response.data
       })

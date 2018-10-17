@@ -12,11 +12,12 @@
 
 <script>
 import RsHeaderProjectBodyItem from './RsHeaderProjectBodyItem'
+
 export default {
   name: 'rs-header-poject-body',
   components: {RsHeaderProjectBodyItem},
   created: function () {
-    this.$http.get('http://localhost:3000/api/header').then((response) => {
+    this.$http.get(this.$conf.apiServer + '/api/header').then((response) => {
       this.itemList = response.data
     })
   },

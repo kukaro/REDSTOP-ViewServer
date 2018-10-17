@@ -104,6 +104,7 @@
 
             }
           } else {
+            console.log('여기 블럭이에요')
             var xml = Blockly.Xml.textToDom('<block type="api"><field name="Method">Post</field><field name="URL">http://localhost:4000/signin</field></block>')
             Blockly.Xml.domToWorkspace(xml, demoWorkspace);
           }

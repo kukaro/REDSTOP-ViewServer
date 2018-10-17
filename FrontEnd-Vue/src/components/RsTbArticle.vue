@@ -140,7 +140,7 @@
           } else if (blockType === 'API') {
             // API는 감싸고 있는 그룹과 Test Case가 있는지 확인
             blockType = 'a'
-            blockValue = this.demoWorkspace.getBlockById(event.blockId).getFieldValue('URL').replace('http://localhost:4000/', '')
+            blockValue = encodeURI(this.demoWorkspace.getBlockById(event.blockId).getFieldValue('URL'))
             blockParentValue = this.demoWorkspace.getBlockById(event.blockId).getParent().getParent().getFieldValue('GroupName')
             var blockParentValueTC = this.demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('TestCase')
             location.href = '#/test-block/g' + blockParentValue + '-' + 'c' + blockParentValueTC + '-' + blockType + blockValue

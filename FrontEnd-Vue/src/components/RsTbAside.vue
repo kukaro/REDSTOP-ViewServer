@@ -48,7 +48,7 @@ export default {
     height: 100%;
     margin-right: 40px;
     float: right;
-    z-index: 1;
+    z-index: 10;
     overflow: scroll;
   }
 </style>

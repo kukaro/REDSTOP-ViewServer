@@ -83,6 +83,7 @@ export default {
 p{
   /*width: 405px;*/
   /*height: 23px;*/
+  margin-top: 20px;
   font-size: 15px;
   font-weight: bold;
   color: #000000;
@@ -101,7 +102,8 @@ p{
   margin-left: 4px;
   margin-right: 10px;
   float: left;
-  position: relative
+  position: relative;
+  margin-top: 12px;
 }
 img{
   position: absolute;

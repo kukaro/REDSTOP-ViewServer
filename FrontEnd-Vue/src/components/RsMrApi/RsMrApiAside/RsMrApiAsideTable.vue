@@ -100,6 +100,7 @@ export default {
   padding-top: 100px;
   padding-right: 5px;
   padding-left: 10px;
+  margin-top: 10px;
 }
 table{
   width: 100%;

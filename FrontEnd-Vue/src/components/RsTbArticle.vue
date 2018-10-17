@@ -1,5 +1,5 @@
 <template>
-  <div class="rs-tb-article">
+  <div class="rs-tb-article" :style="articleStyle">
     <div class="blockView">
       <div class="blockWrapper">
         <div id="tutorial">
@@ -110,8 +110,14 @@
 
         demoWorkspace.addChangeListener(onFirstComment);
       }
-
-
+    },
+    computed: {
+      articleStyle () {
+        return {
+          width: screen.width * 0.8 + 'px',
+          left: screen.width * 0.2 + 'px'
+        }
+      }
     }
   }
 </script>

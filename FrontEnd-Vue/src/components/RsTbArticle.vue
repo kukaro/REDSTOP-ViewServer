@@ -104,13 +104,7 @@
 
             }
           } else {
-            var xml = Blockly.Xml.textToDom('<block type="api">' +
-              '                            <field name="Method">Post\n' +
-              '                            </field>\n' +
-              '                            <field\n' +
-              '                              name="URL">http://localhost:4000/signin\n' +
-              '                            </field>\n' +
-              '                          </block>')
+            var xml = Blockly.Xml.textToDom('<block type="api"><field name="Method">Post</field><field name="URL">http://localhost:4000/signin</field></block>')
             Blockly.Xml.domToWorkspace(xml, demoWorkspace);
           }
         }

@@ -140,7 +140,7 @@
         for (let atom in list) {
           if(atom==0){
             atom = list[atom]
-            xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'
+            xmlString = atom
           }else{
             atom = '<next>' + list[atom] + '</next>'
             xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'

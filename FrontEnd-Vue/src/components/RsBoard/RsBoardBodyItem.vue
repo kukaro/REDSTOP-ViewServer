@@ -76,7 +76,6 @@ export default {
   border-right: 2px solid #DFEEF5;
 }
 table {
-  position: relative;
   table-layout: fixed;
 }
 td {

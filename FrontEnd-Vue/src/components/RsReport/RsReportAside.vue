@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 aside {
   position: absolute;
   padding-top: 100px;

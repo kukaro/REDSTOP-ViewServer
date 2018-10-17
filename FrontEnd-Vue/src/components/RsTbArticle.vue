@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   export default {
     name: 'rs-tb-article',
     mounted: function () {
@@ -86,12 +86,12 @@
       }
     },
     methods: {
-      makeCaseBlock: function(caseName,xmlString){
-        return '<block type="case"><field name="TestCase">'+caseName+'</field><statement name="NAME">'+xmlString+'</statement></block>'
+      makeCaseBlock: function (caseName, xmlString) {
+        return '<block type="case"><field name="TestCase">' + caseName + '</field><statement name="NAME">' + xmlString + '</statement></block>'
 
       },
-      makeGroupBlock: function(groupName,xmlString){
-        return '<block type="group"><field name="GroupName">'+groupName+'</field><statement name="NAME">'+xmlString+'</statement></block>'
+      makeGroupBlock: function (groupName, xmlString) {
+        return '<block type="group"><field name="GroupName">' + groupName + '</field><statement name="NAME">' + xmlString + '</statement></block>'
       },
       makeApiBlock: function (method, url) {
         return '<block type="api" id="' + (this.blockIdCounter++) + '"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
@@ -106,8 +106,8 @@
             xmlString = list[atom].substr(0, list[atom].length - 8) + '<next>' + xmlString + '</next></block>'
           }
         }
-        xmlString = this.makeCaseBlock('Default Test Case',xmlString)
-        xmlString = this.makeGroupBlock('Default Test Group',xmlString)
+        xmlString = this.makeCaseBlock('Default Test Case', xmlString)
+        xmlString = this.makeGroupBlock('Default Test Group', xmlString)
         xmlString = '<xml>' + xmlString + '</xml>'
         console.log(xmlString)
         return xmlString
@@ -116,6 +116,9 @@
         if (event.type === Blockly.Events.CHANGE || event.type === Blockly.Events.MOVE) {
           var xml = Blockly.Xml.workspaceToDom(this.demoWorkspace);
           var xml_text = Blockly.Xml.domToPrettyText(xml);
+          this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro', {data: xml_text}).then((response) => {
+            console.log(response)
+          })
           console.log(xml_text);
           $("#tutorial").hide();
         }

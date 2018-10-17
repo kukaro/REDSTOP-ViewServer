@@ -25,6 +25,7 @@ export default {
     initTitleName: function () {
       var temp = this.initTitleName.split('-')
       this.titleName = temp[temp.length - 1]
+      console.log('바뀌었슴돠')
     }
   },
   data: function () {

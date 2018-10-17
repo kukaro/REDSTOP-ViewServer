@@ -16,6 +16,8 @@ export default {
   props: ['url'],
   name: 'rs-tb-aside',
   created: function () {
+    console.log('debug 임돠')
+    console.log(this.url)
   },
   updated: function () {
   },
@@ -47,7 +49,7 @@ export default {
     background-color: white;
     position: absolute;
     padding-top: 60px;
-    margin-left: 60%;
+    margin-left: 10%;
     padding-left: 30px;
     padding-right: 30px;
     width: 40%;

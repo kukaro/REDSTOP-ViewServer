@@ -41,7 +41,6 @@ export default {
     background-color: white;
     position: absolute;
     padding-top: 60px;
-    margin-left: 20%;
     padding-left: 30px;
     padding-right: 30px;
     width: 40%;

@@ -1,0 +1,6 @@
+#nodejs project
+node_modules
+package-lock.json
+
+#idea
+.idea

@@ -2,7 +2,7 @@
   <div class="rs-tb-article" :style="articleStyle">
     <div class="blockView">
       <div class="blockWrapper">
-        <div id="tutorial">
+        <div id="tutorial" :style="{'visibility':tutorialAvail}">
           <img src="../assets/img/tutorial.png"><br><br>
           <p>왼쪽 블럭을 끌어다 놓으세요!</p>
         </div>
@@ -141,6 +141,7 @@
     data: function () {
       return {
         blockIdCounter: 0,
+        tutorialAvail: 'visible',
       }
     },
     methods: {

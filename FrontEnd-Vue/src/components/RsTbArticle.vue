@@ -21,7 +21,7 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   export default {
     name: 'rs-tb-article',
     mounted: function () {

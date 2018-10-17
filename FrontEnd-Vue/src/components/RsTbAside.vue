@@ -37,7 +37,7 @@ export default {
     asideStyle () {
       return {
         width: screen.width * 0.4 + 'px',
-        left: 0 + 'px'
+        left: screen.width * 0.5 + 'px'
       }
     }
   }

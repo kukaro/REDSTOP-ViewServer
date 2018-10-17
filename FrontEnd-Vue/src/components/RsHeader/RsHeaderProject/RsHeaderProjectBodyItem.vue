@@ -1,7 +1,7 @@
 <template>
   <div class="rs-header-project-body-item">
     <a :href="'#/'+itemKebabName" :class="{'active':isOver | isClick}" @mouseover="mouseOver" @mouseleave="mouseLeave">{{itemName}}
-      <div id="submenu" v-show="false">
+      <div id="submenu" v-show="false" :style="submenuStyle">
         <ul>
           <li><a href="#/monitoring/board">Board</a></li>
           <li><a href="#/monitoring/monitoring">Monitoring</a></li>
@@ -53,8 +53,16 @@ export default {
         }
       })
     }
+  },
+  computed: {
+    submenuStyle () {
+      return {
+        left: 410 + 'px'
+      }
+    }
   }
 }
+
 </script>
 
 <style scoped>

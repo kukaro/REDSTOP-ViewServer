@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.wrapper {
+  position: relative;
+}
+
+/* Header */
+header {
+  position: relative;
+  height: 60px;
+}
+
+.logoDiv {
+  position: absolute;
+  left: 0;
+  width: 20%;
+  height: 70px;
+  background-color: #445375;
+}
+
+.menuDiv {
+  position: absolute;
+  left: 20%;
+  width: 60%;
+  height: 70px;
+  background-color: #536285;
+}
+
+.userInfoDiv {
+  position: absolute;
+  left: 80%;
+  width: 20%;
+  height: 70px;
+  background-color: #536285;
+}
+
+.logoDiv > img {
+  width: 100%;
+  height: 70px;
+}
+
+.menu > li {
+  float: left;
+  width: 140px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 70px;
+  color: #8B95AC;
+  cursor: pointer;
+}
+
+.menu > li:first-child {
+  color: #fff;
+}

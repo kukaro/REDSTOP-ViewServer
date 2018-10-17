@@ -111,7 +111,7 @@
         this.$http
           .get(this.$conf.apiServer+'/api/v1/urls/kukaro')
           .then(response => {
-            console.log('axios호출이당')
+            // console.log('axios호출이당')
             let blockList = response.data
             let xmlList = []
             for(let atom in blockList){
@@ -119,8 +119,9 @@
             }
             var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
             Blockly.Xml.domToWorkspace(xml, demoWorkspace);
+            this.tutorialAvail = 'hidden'
           });
-        console.log('여기 블럭이에요')
+        // console.log('여기 블럭이에요')
 
         // blockList.push(this.makeApiBlock('Post', 'http://localhost:4000/signin'))
         // blockList.push(this.makeApiBlock('Get', 'http://localhost:4000/signout'))

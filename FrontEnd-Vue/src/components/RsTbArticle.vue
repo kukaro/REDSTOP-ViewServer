@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   export default {
     name: 'rs-tb-article',
     mounted: function () {
@@ -51,84 +51,23 @@
           demoWorkspace.clear();
           Blockly.Xml.domToWorkspace(xmlDom, demoWorkspace);
         }
-
-        function onFirstComment(event) {
-          if (event.type === Blockly.Events.CHANGE || event.type === Blockly.Events.MOVE) {
-            var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
-            var xml_text = Blockly.Xml.domToPrettyText(xml);
-            console.log(xml_text);
-            $("#tutorial").hide();
-          }
-
-          if (event.type === Blockly.Events.DELETE) {
-            var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
-            var xml_text = Blockly.Xml.domToPrettyText(xml);
-            if (xml_text === "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>") {
-              $("#tutorial").show();
-            }
-          }
-
-          // 클릭 이벤트
-          if (event.element === 'click') {
-            var blockType = demoWorkspace.getBlockById(event.blockId).getFieldValue()
-            var blockValue, blockParentValue
-
-            if (blockType === 'Group') {
-              blockType = 'g'
-              blockValue = demoWorkspace.getBlockById(event.blockId).getFieldValue('GroupName')
-
-              // 이동
-              location.href = '#/test-block/' + blockType + blockValue
-            } else if (blockType === 'Test Case') {
-              // Test Case 부터는 감싸고 있는 그룹이 있는지 확인
-              blockType = 'c'
-              blockValue = demoWorkspace.getBlockById(event.blockId).getFieldValue('TestCase')
-              blockParentValue = demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('GroupName')
-              location.href = '#/test-block/g' + blockParentValue + '-' + blockType + blockValue
-            } else if (blockType === 'API') {
-              // API는 감싸고 있는 그룹과 Test Case가 있는지 확인
-              blockType = 'a'
-              blockValue = demoWorkspace.getBlockById(event.blockId).getFieldValue('URL').replace('http://localhost:4000/', '')
-              blockParentValue = demoWorkspace.getBlockById(event.blockId).getParent().getParent().getFieldValue('GroupName')
-              var blockParentValueTC = demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('TestCase')
-              location.href = '#/test-block/g' + blockParentValue + '-' + 'c' + blockParentValueTC + '-' + blockType + blockValue
-            }
-
-            // 감싸고 있는 그룹 확인
-            function getCoverGroup() {
-
-            }
-
-            // 감싸고 있는 Test Case 확인
-            function getCoverTestCase() {
-
-            }
-          }
-        }
-
-        demoWorkspace.addChangeListener(onFirstComment);
+        demoWorkspace.addChangeListener(this.onFirstComment);
       } else {
         this.$http
-          .get(this.$conf.apiServer+'/api/v1/urls/kukaro')
+          .get(this.$conf.apiServer + '/api/v1/urls/kukaro')
           .then(response => {
             // console.log('axios호출이당')
             let blockList = response.data
             let xmlList = []
-            for(let atom in blockList){
-              xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(),blockList[atom].url))
+            for (let atom in blockList) {
+              xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
             }
             var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
             Blockly.Xml.domToWorkspace(xml, demoWorkspace);
             this.tutorialAvail = 'hidden'
-          });
-        // console.log('여기 블럭이에요')
 
-        // blockList.push(this.makeApiBlock('Post', 'http://localhost:4000/signin'))
-        // blockList.push(this.makeApiBlock('Get', 'http://localhost:4000/signout'))
-        // blockList.push(this.makeApiBlock('Put', 'http://localhost:4000/signout'))
-        // blockList.push(this.makeApiBlock('Delete', 'http://localhost:4000/signout'))
-        // var xml = Blockly.Xml.textToDom(this.completeBlock(blockList))
-        // Blockly.Xml.domToWorkspace(xml, demoWorkspace);
+            demoWorkspace.addChangeListener(this.onFirstComment);
+          });
       }
     },
     computed: {
@@ -163,6 +102,59 @@
         xmlString = '<xml>' + xmlString + '</xml>'
         console.log(xmlString)
         return xmlString
+      },
+      onFirstComment: function (event) {
+        if (event.type === Blockly.Events.CHANGE || event.type === Blockly.Events.MOVE) {
+          var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
+          var xml_text = Blockly.Xml.domToPrettyText(xml);
+          console.log(xml_text);
+          $("#tutorial").hide();
+        }
+
+        if (event.type === Blockly.Events.DELETE) {
+          var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
+          var xml_text = Blockly.Xml.domToPrettyText(xml);
+          if (xml_text === "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>") {
+            $("#tutorial").show();
+          }
+        }
+
+        // 클릭 이벤트
+        if (event.element === 'click') {
+          var blockType = demoWorkspace.getBlockById(event.blockId).getFieldValue()
+          var blockValue, blockParentValue
+
+          if (blockType === 'Group') {
+            blockType = 'g'
+            blockValue = demoWorkspace.getBlockById(event.blockId).getFieldValue('GroupName')
+
+            // 이동
+            location.href = '#/test-block/' + blockType + blockValue
+          } else if (blockType === 'Test Case') {
+            // Test Case 부터는 감싸고 있는 그룹이 있는지 확인
+            blockType = 'c'
+            blockValue = demoWorkspace.getBlockById(event.blockId).getFieldValue('TestCase')
+            blockParentValue = demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('GroupName')
+            location.href = '#/test-block/g' + blockParentValue + '-' + blockType + blockValue
+          } else if (blockType === 'API') {
+            // API는 감싸고 있는 그룹과 Test Case가 있는지 확인
+            blockType = 'a'
+            blockValue = demoWorkspace.getBlockById(event.blockId).getFieldValue('URL').replace('http://localhost:4000/', '')
+            blockParentValue = demoWorkspace.getBlockById(event.blockId).getParent().getParent().getFieldValue('GroupName')
+            var blockParentValueTC = demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('TestCase')
+            location.href = '#/test-block/g' + blockParentValue + '-' + 'c' + blockParentValueTC + '-' + blockType + blockValue
+          }
+
+          // 감싸고 있는 그룹 확인
+          function getCoverGroup() {
+
+          }
+
+          // 감싸고 있는 Test Case 확인
+          function getCoverTestCase() {
+
+          }
+        }
       }
     }
   }

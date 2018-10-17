@@ -86,6 +86,13 @@
       }
     },
     methods: {
+      makeCaseBlock: function(caseName,xmlString){
+        return '<block type="case"><field name="TestCase">'+caseName+'</field><statement name="NAME">'+xmlString+'</statement></block>'
+
+      },
+      makeGroupBlock: function(groupName,xmlString){
+        return '<block type="group"><field name="GroupName">'+groupName+'</field><statement name="NAME">'+xmlString+'</statement></block>'
+      },
       makeApiBlock: function (method, url) {
         return '<block type="api" id="' + (this.blockIdCounter++) + '"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
       },
@@ -98,8 +105,9 @@
           } else {
             xmlString = list[atom].substr(0, list[atom].length - 8) + '<next>' + xmlString + '</next></block>'
           }
-
         }
+        xmlString = this.makeCaseBlock('Default Test Case',xmlString)
+        xmlString = this.makeGroupBlock('Default Test Group',xmlString)
         xmlString = '<xml>' + xmlString + '</xml>'
         console.log(xmlString)
         return xmlString

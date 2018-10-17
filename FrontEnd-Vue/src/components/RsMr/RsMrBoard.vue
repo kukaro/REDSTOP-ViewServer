@@ -32,6 +32,7 @@ export default {
     RsMrCardMiniResponseTime, RsMrCardMiniCheckPoint, RsMrCardMiniAvgP95, RsMrCardMiniTotalAvailability, RsMrCardMiniTotalApis, RsUtilText},
   methods: {
     click: function () {
+      //
     }
   },
   created: function () {

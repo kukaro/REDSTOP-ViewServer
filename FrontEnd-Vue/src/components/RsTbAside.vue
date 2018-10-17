@@ -1,6 +1,6 @@
 <template>
   <div class="rs-tb-aside">
-    <aside :style="asideStyle">
+    <aside>
       <rs-tb-aside-title :initTitleName="url"></rs-tb-aside-title>
       <rs-tb-aside-contents :initTitleName="url"></rs-tb-aside-contents>
     </aside>

@@ -16,6 +16,8 @@ export default {
   props: ['url'],
   name: 'rs-tb-aside',
   created: function () {
+    console.log('debug 임돠')
+    console.log(this.url)
   },
   updated: function () {
   },

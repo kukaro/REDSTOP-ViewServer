@@ -136,8 +136,14 @@
       completeBlock: function (list) {
         let xmlString = ''
         for (let atom in list) {
-          atom = '<next>' + atom + '</next>'
-          xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'
+          if(atom==0){
+            atom = list[atom]
+            xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'
+          }else{
+            atom = '<next>' + list[atom] + '</next>'
+            xmlString = xmlString.substr(0, xmlString.length - 8) + atom + '</block>'
+          }
+
         }
         xmlString = '<xml>' + xmlString + '</xml>'
         console.log(xmlString)

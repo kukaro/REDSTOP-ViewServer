@@ -65,6 +65,7 @@
               navTree.push({name: blockList[atom].url, type: 'a', method: blockList[atom].method.toUpperCase()})
               xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
             }
+            console.log(navTree)
             var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
             Blockly.Xml.domToWorkspace(xml, this.demoWorkspace);
             this.tutorialAvail = 'hidden'

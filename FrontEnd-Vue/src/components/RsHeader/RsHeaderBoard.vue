@@ -1,5 +1,5 @@
 <template>
-  <div class="rs-header-board">
+  <div class="rs-header-board" :style="headerStyle">
     <header>
       <div class="logo-div">
         <a href="#/"><img src="../../assets/img/rs-full-logo.png" alt="logo"></a>
@@ -15,7 +15,14 @@ import RsHeaderBoardBody from './RsHeaderBoard/RsHeaderBoardBody'
 import RsHeaderBoardSetting from './RsHeaderBoard/RsHeaderBoardSetting'
 export default {
   name: 'rs-header-board',
-  components: {RsHeaderBoardSetting, RsHeaderBoardBody}
+  components: {RsHeaderBoardSetting, RsHeaderBoardBody},
+  computed: {
+    headerStyle () {
+      return {
+        width: screen.width + 'px'
+      }
+    }
+  }
 }
 </script>
 

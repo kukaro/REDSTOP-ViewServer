@@ -1,5 +1,5 @@
 <template>
-  <div class="rs-header-project">
+  <div class="rs-header-project" :style="headerStyle">
     <header>
       <div class="logo-div">
         <a href="#/"><img src="../../assets/img/rs-full-logo.png" alt="logo"></a>
@@ -13,7 +13,14 @@
 import RsHeaderProjectBody from './RsHeaderProject/RsHeaderProjectBody'
 export default {
   name: 'rs-header-project',
-  components: {RsHeaderProjectBody}
+  components: {RsHeaderProjectBody},
+  computed: {
+    headerStyle () {
+      return {
+        width: screen.width + 'px'
+      }
+    }
+  }
 }
 </script>
 

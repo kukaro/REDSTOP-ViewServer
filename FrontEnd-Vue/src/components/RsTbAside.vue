@@ -1,6 +1,6 @@
 <template>
   <div class="rs-tb-aside">
-    <aside>
+    <aside :style="asideStyle">
       <rs-tb-aside-title :initTitleName="url"></rs-tb-aside-title>
       <rs-tb-aside-contents :initTitleName="url"></rs-tb-aside-contents>
     </aside>
@@ -30,6 +30,14 @@ export default {
     // onClickChild (value) {
     //   this.apiTestResult = value
     // }
+  },
+  computed: {
+    asideStyle () {
+      return {
+        width: screen.width * 0.4 + 'px',
+        left: 0 + 'px'
+      }
+    }
   }
 }
 </script>

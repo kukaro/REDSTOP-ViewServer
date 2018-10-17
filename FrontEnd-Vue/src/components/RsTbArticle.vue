@@ -112,7 +112,7 @@
         let blockList = []
         blockList.push(this.makeApiBlock('Post', 'http://localhost:4000/signin'))
         blockList.push(this.makeApiBlock('Get', 'http://localhost:4000/signout'))
-        blockList.push(this.makeApiBlock('Pud', 'http://localhost:4000/signout'))
+        blockList.push(this.makeApiBlock('Put', 'http://localhost:4000/signout'))
         blockList.push(this.makeApiBlock('Delete', 'http://localhost:4000/signout'))
         var xml = Blockly.Xml.textToDom(this.completeBlock(blockList))
         Blockly.Xml.domToWorkspace(xml, demoWorkspace);

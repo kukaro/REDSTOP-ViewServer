@@ -43,7 +43,7 @@
       };
 
       //legacy code
-      if(false){
+      if (false) {
         // Blockly 데이터 불러오기
         var xmlDom = null;
         xmlDom = Blockly.Xml.textToDom("<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables><block type=\"group\" id=\"]#Iq-6SP8!%I?xbxU}Pv\" x=\"35\" y=\"32\"><field name=\"GroupName\">User Management</field><statement name=\"NAME\"><block type=\"group\" id=\"3%^sv|no+;5|Hwh}{jDn\"><field name=\"GroupName\">Sign</field><statement name=\"NAME\"><block type=\"case\" id=\"_}T$%pTE|t]jA4y`D[^`\"><field name=\"TestCase\">Sign Up</field><next><block type=\"case\" id=\"j2!AL!O74RLv.@H9v5R9\"><field name=\"TestCase\">Sign In</field><next><block type=\"case\" id=\"+)[TFnGX,9Fx{41aYxD,\"><field name=\"TestCase\">Sign Out</field><next><block type=\"case\" id=\"zl~(ClIC2;P@,N[sg:Xv\"><field name=\"TestCase\">Verify Email</field></block></next></block></next></block></next></block></statement><next><block type=\"group\" id=\"h4GjUC/yQ?|(~WR[y6pI\"><field name=\"GroupName\">Preferences</field><statement name=\"NAME\"><block type=\"case\" id=\"?B/J%Z(4253@J`X/q)}(\"><field name=\"TestCase\">Change User Info</field><statement name=\"NAME\"><block type=\"api\" id=\"T+qmKRS9=eKEyMkF;H`l\"><field name=\"Method\">Post</field><field name=\"URL\">http://localhost:4000/post</field><next><block type=\"api\" id=\"=18KCT2z#_R@{1]a-%jx\"><field name=\"Method\">Get</field><field name=\"URL\">http://localhost:4000/verifyemail</field><next><block type=\"api\" id=\"iZ6On~%r+@NK0~IU6(u^\"><field name=\"Method\">Post</field><field name=\"URL\">http://localhost:4000/signin</field></block></next></block></next></block></statement></block></statement></block></next></block></statement></block></xml>");
@@ -95,24 +95,24 @@
             }
 
             // 감싸고 있는 그룹 확인
-            function getCoverGroup () {
+            function getCoverGroup() {
 
             }
 
             // 감싸고 있는 Test Case 확인
-            function getCoverTestCase () {
+            function getCoverTestCase() {
 
             }
-          }
-        }else{
+          } else {
 
+          }
         }
 
         demoWorkspace.addChangeListener(onFirstComment);
       }
     },
     computed: {
-      articleStyle () {
+      articleStyle() {
         return {
           width: screen.width * 0.8 + 'px',
           left: screen.width * 0.2 + 'px'

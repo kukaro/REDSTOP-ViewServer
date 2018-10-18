@@ -9,7 +9,7 @@
         </select>
       </div>
       <div class="rs-map">
-        <div id="mapdiv" style="width: 100%; background-color:#fff; height: 90%;"></div>
+        <div id="mapdiv" @click="clickMap" style="width: 100%; background-color:#fff; height: 90%;"></div>
       </div>
     </div>
   </div>
@@ -23,6 +23,11 @@ export default {
   props: ['initWidth', 'initHeight', 'initXPos', 'initYPos', 'initBackgroundColor', 'initApiCnt'],
   name: 'rs-mr-card-mini-regional-analysis',
   created: function () {
+  },
+  methods: {
+    clickMap: function () {
+      alert('?')
+    }
   },
   mounted: function () {
     AmCharts.makeChart('mapdiv', {
@@ -109,8 +114,8 @@ export default {
 
       areasSettings: {
         autoZoom: true,
-        'selectedColor': '#B2EBF4',
         'color': '#5275E7',
+        'selectedColor': '#B2EBF4',
         'colorSolid': '#EF7D79'
       },
 
@@ -118,7 +123,13 @@ export default {
         right: 10,
         minValue: 'Good',
         maxValue: 'Bad'
-      }
+      },
+      "listeners": [{
+        "event": "clickMapObject",
+        "method": function(event) {
+          document.location.href = 'http://localhost:8080/#/temp'
+        }
+      }]
     })
   },
   components: {RsUtilText},

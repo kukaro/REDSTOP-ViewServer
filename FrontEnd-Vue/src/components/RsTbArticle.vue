@@ -21,7 +21,7 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   var navTree = []
   export default {
     name: 'rs-tb-article',

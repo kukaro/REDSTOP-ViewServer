@@ -12,24 +12,24 @@
 
     <span>From</span>
     <select id="from" name="from">
-      <option value="7">August 30</option>
-      <option value="6">August 31</option>
-      <option value="5">September 1</option>
-      <option value="4">September 2</option>
-      <option value="3">September 3</option>
-      <option value="2">September 4</option>
-      <option value="1">September 5</option>
+      <option value="7">october 12</option>
+      <option value="6">october 13</option>
+      <option value="5">october 14</option>
+      <option value="4">october 15</option>
+      <option value="3">october 16</option>
+      <option value="2">october 17</option>
+      <option value="1">october 18</option>
     </select>
 
     <span>To</span>
     <select id="to" name="to">
-      <option value="7">August 30</option>
-      <option value="6">August 31</option>
-      <option value="5">September 1</option>
-      <option value="4">September 2</option>
-      <option value="3">September 3</option>
-      <option value="2">September 4</option>
-      <option value="1">September 5</option>
+      <option value="7">october 18</option>
+      <option value="6">october 17</option>
+      <option value="5">october 16</option>
+      <option value="4">october 15</option>
+      <option value="3">october 14</option>
+      <option value="2">october 13</option>
+      <option value="1">october 12</option>
     </select>
   </div>
 </template>

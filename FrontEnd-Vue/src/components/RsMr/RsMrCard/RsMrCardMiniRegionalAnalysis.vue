@@ -126,7 +126,7 @@ export default {
       },
       "listeners": [{
         "event": "clickMapObject",
-        "method": function(event) {
+        "method": function() {
           document.location.href = 'http://localhost:8080/#/temp'
         }
       }]

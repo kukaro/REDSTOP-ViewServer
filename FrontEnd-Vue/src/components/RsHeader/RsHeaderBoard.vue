@@ -24,9 +24,6 @@ export default {
     }
   }
 }
-$(window).resize(function () {
-  $('.rs-header-board').css('width', screen.width + 'px')
-})
 </script>
 
 <style>

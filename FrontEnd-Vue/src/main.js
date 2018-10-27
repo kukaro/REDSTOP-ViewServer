@@ -6,6 +6,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import conf from './assets/js/conf'
+import store from './store'
 
 Vue.prototype.$http = axios
 Vue.prototype.$conf = conf
@@ -20,6 +21,7 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  store,
   template: '<App/>',
 })
 

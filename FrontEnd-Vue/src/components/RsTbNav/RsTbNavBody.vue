@@ -17,6 +17,8 @@ export default {
   created: function () {
     var store = this.$store
     var vm = this
+    console.log('야호')
+    console.log(this.$store)
     this.$http
       .get(this.$conf.apiServer + '/api/v1/treeinit')
       .then(function (response) {

@@ -3,18 +3,10 @@
     <nav :style="navStyle">
       <rs-tb-nav-header></rs-tb-nav-header>
       <rs-tb-nav-body></rs-tb-nav-body>
-      <button id="i-button" @click="showModal = true">Import APIs from Swagger</button>
-
-      <!--<button id="i-button" @click="showModal = true" v-on:click="moveToimport">Import APIs from Swagger</button>-->
-      <!--<button id="show-modal" @click="showModal = true">Show Modal</button>-->
-      <!-- use the modal component, pass in the prop -->
-      <rs-import-modal v-if="showModal" @close="showModal = false">
-        <!--
-          you can use custom content here to overwrite
-          default content
-        -->
-        <!--<h3 slot="header">custom header</h3>-->
-      </rs-import-modal>
+      <div style="text-align: center">
+        <button id="i-button" @click="showModal = true" style="text-align: center">Import APIs from Swagger</button>
+      </div>
+      <rs-import-modal v-if="showModal" @close="showModal = false"></rs-import-modal>
     </nav>
   </div>
 </template>
@@ -94,7 +86,5 @@ export default {
     font-family: TitilliumWeb;
     font-size: 14px;
     font-weight: bold;
-    margin: auto;
-    margin-left: 20px;
   }
 </style>

@@ -63,7 +63,13 @@
             let xmlList = []
 
             for (let atom in blockList) {
-              navTree.push({name: blockList[atom].url, type: 'a', method: blockList[atom].method.toUpperCase(), id: 'a' + atom, parent: 'c0'})
+              navTree.push({
+                name: blockList[atom].url,
+                type: 'a',
+                method: blockList[atom].method.toUpperCase(),
+                id: 'a' + atom,
+                parent: 'c0'
+              })
               xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
             }
             console.log(navTree)
@@ -73,6 +79,24 @@
 
             this.demoWorkspace.addChangeListener(this.onFirstComment)
             console.log(navTree)
+            this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
+            /*test*/
+            if (false) {
+              console.log('test입니다.')
+              /*case1*/
+              if (false) {
+                let test = this.demoWorkspace.getAllBlocks()
+                for (let atom of test) {
+                  console.log(atom.id)
+                  if (atom.parentBlock_ !== null) console.log(atom.parentBlock_.id)
+                }
+              }
+              /*case2*/
+              if (true) {
+                let test = this.demoWorkspace.topBlocks_
+                console.log(test[0])
+              }
+            }
           })
       }
     },
@@ -89,6 +113,7 @@
         blockIdCounter: 0,
         tutorialAvail: 'visible',
         demoWorkspace: null,
+        blockScenario: []
       }
     },
     methods: {
@@ -102,7 +127,8 @@
         return '<block type="group"><field name="GroupName">' + groupName + '</field><statement name="NAME">' + xmlString + '</statement></block>'
       },
       makeApiBlock: function (method, url) {
-        return '<block type="api" id="' + (this.blockIdCounter++) + '"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
+        // return '<block type="api" id="' + (this.blockIdCounter++) + '"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
+        return '<block type="api"><field name="Method">' + method + '</field><field name="URL">' + url + '</field></block>'
       },
       completeBlock: function (list) {
         let xmlString = ''
@@ -128,7 +154,9 @@
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro', {data: xml_text}).then((response) => {
             console.log(response)
           })
-          console.log('여기있어 ㅠㅠ');
+          console.log('여기있어 ㅠㅠ')
+          console.log(this.demoWorkspace.topBlocks_)
+          this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
           // console.log(xml_text);
           $("#tutorial").hide();
         }
@@ -177,6 +205,74 @@
 
           }
         }
+      },
+      makeBlockScenario: function (blocks) {
+        console.log('Enter Block')
+        console.log(blocks)
+        this.blockScenario = []
+        if (blocks.type === 'group' || blocks.type === 'case') {
+          this.blockScenario.push(this.makeFolder(blocks.type, blocks.inputList[0].fieldRow[1].text_, blocks.id, null))
+        } else {
+          this.blockScenario.push(this.makeApi(null, blocks.id, null, blocks.inputList[0].fieldRow[1].text_, blocks.inputList[0].fieldRow[2].text_))
+        }
+        if (blocks.childBlocks_) {
+          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length===2) {
+            this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
+            this.travelSiblingBlock(null, blocks.childBlocks_[1])
+          } else if(blocks.nextConnection.targetConnection && blocks.childBlocks_.length===1){
+            this.travelSiblingBlock(null, blocks.childBlocks_[0])
+          }else {
+            this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
+          }
+        }
+        console.log(this.blockScenario)
+      },
+      travelChildBlock: function (parentBlockId, blocks) {
+        if(!blocks){
+          return
+        }
+        if (blocks.type === 'group' || blocks.type === 'case') {
+          this.blockScenario.push(this.makeFolder(blocks.type, blocks.inputList[0].fieldRow[1].text_, blocks.id, parentBlockId))
+        } else {
+          this.blockScenario.push(this.makeApi(null, blocks.id, parentBlockId, blocks.inputList[0].fieldRow[1].text_, blocks.inputList[0].fieldRow[2].text_))
+        }
+        // console.log(blocks.childBlocks_)
+        // console.log(blocks.nextConnection.targetConnection)
+        if (blocks.childBlocks_) {
+          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length===2) {
+            this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
+            this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[1])
+          } else if(blocks.nextConnection.targetConnection && blocks.childBlocks_.length===1){
+            this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[0])
+          }else {
+            this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
+          }
+        }
+      },
+      travelSiblingBlock: function (parentBlockId, blocks) {
+        if (blocks.type === 'group' || blocks.type === 'case') {
+          this.blockScenario.push(this.makeFolder(blocks.type, blocks.inputList[0].fieldRow[1].text_, blocks.id, parentBlockId))
+        } else {
+          this.blockScenario.push(this.makeApi(null, blocks.id, parentBlockId, blocks.inputList[0].fieldRow[1].text_, blocks.inputList[0].fieldRow[2].text_))
+        }
+        // console.log(blocks.childBlocks_)
+        // console.log(blocks.nextConnection.targetConnection)
+        if (blocks.childBlocks_) {
+          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length===2) {
+            this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
+            this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[1])
+          } else if(blocks.nextConnection.targetConnection && blocks.childBlocks_.length===1){
+            this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[0])
+          }else {
+            this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
+          }
+        }
+      },
+      makeFolder: function (type, name, id, parentBlockId) {
+        return {type, name, id, parentBlockId}
+      },
+      makeApi: function (name, id, parentBlockId, method, url) {
+        return {type: 'api', id, parentBlockId, method, url}
       }
     }
   }

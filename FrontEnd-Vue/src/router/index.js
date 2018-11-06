@@ -8,7 +8,6 @@ import RsMrMonitoring from '@/components/RsMr/RsMrMonitoring'
 import RsMrBoard from '@/components/RsMr/RsMrBoard'
 import RsMrApi from '@/components/RsMrApi'
 import RsReport from '@/components/RsReport'
-import RsImportMain from '@/components/RsImport/RsImportMain'
 
 Vue.use(Router)
 
@@ -58,11 +57,6 @@ export default new Router({
       path: '/report',
       name: 'rs-report',
       component: RsReport
-    },
-    {
-      path: '/import',
-      name: 'rs-import-main',
-      component: RsImportMain
     }
   ]
 })

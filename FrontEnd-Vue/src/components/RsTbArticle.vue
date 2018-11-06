@@ -59,10 +59,11 @@
           .then(response => {
             // console.log('axios호출이당')
             let blockList = response.data
+            // console.log(response.data)
             let xmlList = []
 
             for (let atom in blockList) {
-              navTree.push({name: blockList[atom].url, type: 'a', method: blockList[atom].method.toUpperCase()})
+              navTree.push({name: blockList[atom].url, type: 'a', method: blockList[atom].method.toUpperCase(), id: 'a' + atom, parent: 'c0'})
               xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
             }
             console.log(navTree)
@@ -92,12 +93,12 @@
     },
     methods: {
       makeCaseBlock: function (caseName, xmlString) {
-        navTree = [{name: caseName, type: 'c', children: navTree}]
+        navTree = [{name: caseName, type: 'c', children: navTree, id: 'c0', parent: 'g0'}]
         return '<block type="case"><field name="TestCase">' + caseName + '</field><statement name="NAME">' + xmlString + '</statement></block>'
 
       },
       makeGroupBlock: function (groupName, xmlString) {
-        navTree = [{name: groupName, type: 'g', children: navTree}]
+        navTree = [{name: groupName, type: 'g', children: navTree, id: 'g0', parent: null}]
         return '<block type="group"><field name="GroupName">' + groupName + '</field><statement name="NAME">' + xmlString + '</statement></block>'
       },
       makeApiBlock: function (method, url) {

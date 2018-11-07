@@ -64,8 +64,8 @@
               this.$http
                 .put(this.$conf.apiServer + '/api/v1/project/kukaro/true')
                 .then(response => {
-                  console.log('project도달')
-                  console.log(response)
+                  // console.log('project도달')
+                  // console.log(response)
                 })
               this.loadUrls(owner);
             }

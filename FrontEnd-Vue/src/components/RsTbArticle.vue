@@ -22,7 +22,7 @@
 </template>
 <script>
 /* eslint-disable */
-  import Queue from 'queue'
+  import Queue from 'queuejs'
 
   var navTree = []
   export default {
@@ -262,16 +262,17 @@
               if (data[idx].parentBlockId === null) {
                 navTree.push(data[idx])
                 data[idx].children = []
-                q.push(data[idx])
+                q.enq(data[idx])
                 data.splice(idx, 1)
               }
             }
             for (let idx in data) {
-              let tmp = q.pop()
+              let tmp = q.peek()
+              q.deq()
               if (data[idx].parentBlockId === tmp.id) {
                 data[idx].children = []
                 tmp.children.push(data[idx])
-                q.push(data[idx])
+                q.enq(data[idx])
                 data.splice(idx, 1)
               }
             }

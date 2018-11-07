@@ -21,6 +21,7 @@
     "popper": "^1.0.1",
     "popper.js": "^1.14.4",
     "queue": "^4.5.0",
+    "queuejs": "^0.1.0",
     "v-calendar": "^0.9.7",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",

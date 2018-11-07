@@ -284,8 +284,13 @@
                 }
               }
             }
-            console.log(navTree)
+            // console.log(navTree)
+            this.renderBlock()
           })
+      },
+      renderBlock: function(){
+        console.log('renderBlock')
+        console.log(this.demoWorkspace)
       },
       loadUrls: function (owner) {
         this.$http

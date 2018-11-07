@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   var navTree = []
   export default {
     name: 'rs-tb-article',
@@ -57,51 +57,16 @@
         this.$http
           .get(this.$conf.apiServer + '/api/v1/project/kukaro')
           .then(response => {
-            console.log('project도달')
-            console.log(response.data[0])
-          })
-        this.$http
-          .get(this.$conf.apiServer + '/api/v1/urls/kukaro')
-          .then(response => {
-            // console.log('axios호출이당')
-            let blockList = response.data
-            // console.log(response.data)
-            let xmlList = []
+            let {owner, is_init} = response.data[0]
+            if(is_init){
 
-            for (let atom in blockList) {
-              navTree.push({
-                name: blockList[atom].url,
-                type: 'a',
-                method: blockList[atom].method.toUpperCase(),
-                id: 'a' + atom,
-                parent: 'c0'
-              })
-              xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
-            }
-            // console.log(navTree)
-            var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
-            Blockly.Xml.domToWorkspace(xml, this.demoWorkspace);
-            this.tutorialAvail = 'hidden'
-
-            this.demoWorkspace.addChangeListener(this.onFirstComment)
-            // console.log(navTree)
-            this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
-            /*test*/
-            if (false) {
-              console.log('test입니다.')
-              /*case1*/
-              if (false) {
-                let test = this.demoWorkspace.getAllBlocks()
-                for (let atom of test) {
-                  // console.log(atom.id)
-                  if (atom.parentBlock_ !== null) console.log(atom.parentBlock_.id)
-                }
-              }
-              /*case2*/
-              if (true) {
-                let test = this.demoWorkspace.topBlocks_
-                // console.log(test[0])
-              }
+            }else{
+              this.$http
+                .put(this.$conf.apiServer+'/api/v1/project/kukaro/true')
+                .then(response=>{
+                  console.log('project도달')
+                })
+              this.loadUrls(owner);
             }
           })
       }
@@ -280,6 +245,52 @@
       },
       makeApi: function (name, id, parentBlockId, method, url) {
         return {type: 'api', id, parentBlockId, method, url}
+      },
+      loadUrls: function (owner) {
+        this.$http
+          .get(this.$conf.apiServer + `/api/v1/urls/${owner}`)
+          .then(response => {
+            // console.log('axios호출이당')
+            let blockList = response.data
+            // console.log(response.data)
+            let xmlList = []
+
+            for (let atom in blockList) {
+              navTree.push({
+                name: blockList[atom].url,
+                type: 'a',
+                method: blockList[atom].method.toUpperCase(),
+                id: 'a' + atom,
+                parent: 'c0'
+              })
+              xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
+            }
+            // console.log(navTree)
+            var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
+            Blockly.Xml.domToWorkspace(xml, this.demoWorkspace);
+            this.tutorialAvail = 'hidden'
+
+            this.demoWorkspace.addChangeListener(this.onFirstComment)
+            // console.log(navTree)
+            this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
+            /*test*/
+            if (false) {
+              console.log('test입니다.')
+              /*case1*/
+              if (false) {
+                let test = this.demoWorkspace.getAllBlocks()
+                for (let atom of test) {
+                  // console.log(atom.id)
+                  if (atom.parentBlock_ !== null) console.log(atom.parentBlock_.id)
+                }
+              }
+              /*case2*/
+              if (true) {
+                let test = this.demoWorkspace.topBlocks_
+                // console.log(test[0])
+              }
+            }
+          })
       }
     }
   }

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 git add .
-if [ $1 == "" ];then
+if [ $1 ];then
     git commit -m "$1"
 else
     git commit -m "compact"

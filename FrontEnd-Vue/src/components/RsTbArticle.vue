@@ -289,7 +289,7 @@
           })
       },
       renderBlock: function(){
-        this.demoWorkspace.addTopBlock(new Blockly.Block(this.demoWorkspace))
+        this.demoWorkspace.addTopBlock(new Blockly.Block())
       },
       loadUrls: function (owner) {
         this.$http

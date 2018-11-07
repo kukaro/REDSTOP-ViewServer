@@ -258,11 +258,21 @@
             navTree = []
             console.log(data)
             let q = new Queue()
-            for(let idx in data){
-              if(data[idx].parentBlockId === null){
+            for (let idx in data) {
+              if (data[idx].parentBlockId === null) {
                 navTree.push(data[idx])
-                data.splice(idx,1)
-                q.enqueue(data[idx].id)
+                data[idx].children = []
+                q.enqueue(data[idx])
+                data.splice(idx, 1)
+              }
+            }
+            for (let idx in data) {
+              let tmp = q.dequeue()
+              if (data[idx].parentBlockId === tmp.id) {
+                data[idx].children = []
+                tmp.children.push(data[idx])
+                q.enqueue(data[idx])
+                data.splice(idx, 1)
               }
             }
             console.log(navTree)

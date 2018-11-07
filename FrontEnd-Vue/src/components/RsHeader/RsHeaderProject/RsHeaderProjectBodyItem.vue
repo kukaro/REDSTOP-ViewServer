@@ -5,6 +5,9 @@
         <ul>
           <li><a href="#/monitoring/board">Board</a></li>
           <li><a href="#/monitoring/monitoring">Monitoring</a></li>
+          <!--CSS 적용되어있어서 일단 안바꿈..-->
+          <!--<router-link to="/monitoring/board" tag="li">Board</router-link>-->
+          <!--<router-link to="/monitoring/monitoring" tag="li">Monitoring</router-link>-->
         </ul>
       </div>
     </a>

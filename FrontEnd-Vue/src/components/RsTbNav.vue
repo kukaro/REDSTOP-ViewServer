@@ -43,19 +43,6 @@ export default {
         width: screen.width * 0.2 + 'px'
       }
     }
-    // moveToimport: function () {
-    //   this.$router.push({path: 'import', component: RsImportMain})
-    //   // let inputStr = prompt('Swagger UI의 URL을 입력해주세요!')
-    //   //
-    //   // this.$http
-    //   //   // .put(this.$conf.apiServer + '/api/v1/import', {swaggerUTL: inputStr})
-    //   //   .put('http://52.79.221.114:3000/api/v1/import', {swaggerURL: inputStr})
-    //   //   .then(response => {
-    //   //     console.log('HEeeeeeeeee')
-    //   //     console.log(response.data)
-    //   //   })
-    //   // alert('API spec을 연동하였습니다.')
-    // }
   },
   beforeDestroy: function () {
     window.removeEventListener('resize', this.handleWindowResize)

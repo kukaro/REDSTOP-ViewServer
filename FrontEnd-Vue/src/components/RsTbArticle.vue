@@ -21,7 +21,7 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   var navTree = []
   export default {
     name: 'rs-tb-article',
@@ -58,12 +58,12 @@
           .get(this.$conf.apiServer + '/api/v1/project/kukaro')
           .then(response => {
             let {owner, is_init} = response.data[0]
-            if(is_init){
+            if (is_init) {
 
-            }else{
+            } else {
               this.$http
-                .put(this.$conf.apiServer+'/api/v1/project/kukaro/true')
-                .then(response=>{
+                .put(this.$conf.apiServer + '/api/v1/project/kukaro/true')
+                .then(response => {
                   console.log('project도달')
                   console.log(response)
                 })

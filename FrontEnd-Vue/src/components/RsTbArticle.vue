@@ -55,6 +55,11 @@
         this.demoWorkspace.addChangeListener(this.onFirstComment);
       } else {
         this.$http
+          .get(this.$conf.apiServer + '/api/v1/project/kukaro')
+          .then(response => {
+            console.log(response)
+          })
+        this.$http
           .get(this.$conf.apiServer + '/api/v1/urls/kukaro')
           .then(response => {
             // console.log('axios호출이당')
@@ -217,19 +222,19 @@
           this.blockScenario.push(this.makeApi(null, blocks.id, null, blocks.inputList[0].fieldRow[1].text_, blocks.inputList[0].fieldRow[2].text_))
         }
         if (blocks.childBlocks_) {
-          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length===2) {
+          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length === 2) {
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
             this.travelSiblingBlock(null, blocks.childBlocks_[1])
-          } else if(blocks.nextConnection.targetConnection && blocks.childBlocks_.length===1){
+          } else if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length === 1) {
             this.travelSiblingBlock(null, blocks.childBlocks_[0])
-          }else {
+          } else {
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }
         // console.log(this.blockScenario)
       },
       travelChildBlock: function (parentBlockId, blocks) {
-        if(!blocks){
+        if (!blocks) {
           return
         }
         if (blocks.type === 'group' || blocks.type === 'case') {
@@ -240,12 +245,12 @@
         // console.log(blocks.childBlocks_)
         // console.log(blocks.nextConnection.targetConnection)
         if (blocks.childBlocks_) {
-          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length===2) {
+          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length === 2) {
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
             this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[1])
-          } else if(blocks.nextConnection.targetConnection && blocks.childBlocks_.length===1){
+          } else if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length === 1) {
             this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[0])
-          }else {
+          } else {
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }
@@ -259,12 +264,12 @@
         // console.log(blocks.childBlocks_)
         // console.log(blocks.nextConnection.targetConnection)
         if (blocks.childBlocks_) {
-          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length===2) {
+          if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length === 2) {
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
             this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[1])
-          } else if(blocks.nextConnection.targetConnection && blocks.childBlocks_.length===1){
+          } else if (blocks.nextConnection.targetConnection && blocks.childBlocks_.length === 1) {
             this.travelSiblingBlock(parentBlockId, blocks.childBlocks_[0])
-          }else {
+          } else {
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }

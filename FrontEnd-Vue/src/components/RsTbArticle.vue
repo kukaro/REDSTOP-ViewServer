@@ -155,8 +155,8 @@
             console.log('test call back')
             console.log(response)
           })
-          console.log('여기있어 ㅠㅠ')
-          console.log(this.demoWorkspace.topBlocks_)
+          // console.log('여기있어 ㅠㅠ')
+          // console.log(this.demoWorkspace.topBlocks_)
           this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
           // console.log(xml_text);
           $("#tutorial").hide();

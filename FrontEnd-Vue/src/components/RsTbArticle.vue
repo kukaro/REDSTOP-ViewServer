@@ -262,7 +262,7 @@
               if(data[idx].parentBlockId === null){
                 navTree.push(data[idx])
                 data.splice(idx,1)
-                q.enqueue(data[idx].parentBlockId)
+                q.enqueue(data[idx].id)
               }
             }
             console.log(navTree)

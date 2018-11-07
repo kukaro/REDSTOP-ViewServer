@@ -254,7 +254,7 @@
             console.log('load blocks routine')
             let data = response.data
             console.log(data)
-            data = data.sort((a, b) => a. < b.id ? -1 : a.id > b.id ? 1 : 0)
+            data = data.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
             console.log(data)
           })
       },

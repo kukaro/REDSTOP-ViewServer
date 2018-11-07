@@ -263,24 +263,23 @@
                 navTree.push(data[idx])
                 data[idx].children = []
                 q.enq(data[idx])
-                console.log(q)
                 data.splice(idx, 1)
               }
             }
-            let tmp = q.peek()
-            q.deq()
-            for (let idx in data) {
-              if (data[idx].parentBlockId === tmp.id) {
-                data[idx].children = []
-                tmp.children.push(data[idx])
-                q.enq(data[idx])
-                console.log(q)
-                data.splice(idx, 1)
+            while(!q.isEmpty()){
+              let tmp = q.peek()
+              q.deq()
+              for (let idx in data) {
+                if (data[idx].parentBlockId === tmp.id) {
+                  data[idx].children = []
+                  tmp.children.push(data[idx])
+                  q.enq(data[idx])
+                  data.splice(idx, 1)
+                }
               }
             }
             console.log(navTree)
             console.log(data)
-            console.log(q)
           })
       },
       loadUrls: function (owner) {

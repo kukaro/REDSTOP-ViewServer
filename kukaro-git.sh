@@ -6,3 +6,4 @@ else
     git commit -m "compact"
 fi
 git push
+

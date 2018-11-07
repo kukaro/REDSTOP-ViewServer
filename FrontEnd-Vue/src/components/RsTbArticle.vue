@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   import Queue from 'queuejs'
 
   var navTree = []
@@ -258,7 +258,7 @@
             navTree = []
             console.log(data)
             let q = new Queue()
-            for (let idx in data) {
+            for (let idx = 0; idx < data.length; idx++) {
               if (data[idx].parentBlockId === null) {
                 navTree.push(data[idx])
                 data[idx].children = []
@@ -266,10 +266,10 @@
                 data.splice(idx, 1)
               }
             }
-            while(!q.isEmpty()){
+            while (!q.isEmpty()) {
               let tmp = q.peek()
               q.deq()
-              for (let idx in data) {
+              for (let idx = 0; idx < data.length; idx++) {
                 if (data[idx].parentBlockId === tmp.id) {
                   data[idx].children = []
                   tmp.children.push(data[idx])

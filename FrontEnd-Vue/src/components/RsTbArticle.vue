@@ -262,7 +262,8 @@
               if (data[idx].parentBlockId === null) {
                 navTree.push(data[idx])
                 data[idx].children = []
-                q.enq(data[idx])
+                let tmp = data[idx]
+                q.enq(tmp)
                 console.log(q)
                 // data.splice(idx, 1)
               }

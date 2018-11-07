@@ -267,7 +267,7 @@
               }
             }
             for (let idx in data) {
-              let tmp = q.dequeue()
+              let tmp = q.pop()
               if (data[idx].parentBlockId === tmp.id) {
                 data[idx].children = []
                 tmp.children.push(data[idx])

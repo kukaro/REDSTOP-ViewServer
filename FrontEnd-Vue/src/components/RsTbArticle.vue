@@ -263,7 +263,7 @@
                 navTree.push(data[idx])
                 data[idx].children = []
                 q.enq(data[idx])
-                data.splice(idx, 1)
+                // data.splice(idx, 1)
               }
             }
             for (let idx in data) {
@@ -273,7 +273,7 @@
                 data[idx].children = []
                 tmp.children.push(data[idx])
                 q.enq(data[idx])
-                data.splice(idx, 1)
+                // data.splice(idx, 1)
               }
             }
             console.log(navTree)

@@ -264,7 +264,7 @@
                 data[idx].children = []
                 q.enq(data[idx])
                 console.log(q)
-                // data.splice(idx, 1)
+                data.splice(idx, 1)
               }
             }
             let tmp = q.peek()
@@ -275,7 +275,7 @@
                 tmp.children.push(data[idx])
                 q.enq(data[idx])
                 console.log(q)
-                // data.splice(idx, 1)
+                data.splice(idx, 1)
               }
             }
             console.log(navTree)

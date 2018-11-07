@@ -273,6 +273,7 @@
                 data[idx].children = []
                 tmp.children.push(data[idx])
                 q.enq(data[idx])
+                console.log(q)
                 // data.splice(idx, 1)
               }
             }

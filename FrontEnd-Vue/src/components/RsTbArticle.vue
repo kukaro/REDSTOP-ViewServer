@@ -21,7 +21,7 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   import Queue from 'queuejs'
 
   var navTree = []
@@ -256,7 +256,7 @@
             console.log('load blocks routine')
             let data = response.data
             navTree = []
-            console.log(data)
+            // console.log(data)
             let q = new Queue()
             for (let idx = 0; idx < data.length; idx++) {
               if (data[idx].parentBlockId === null) {
@@ -289,7 +289,7 @@
           })
       },
       renderBlock: function(){
-        this.demoWorkspace.addTopBlock(new Blockly.Block())
+
       },
       loadUrls: function (owner) {
         this.$http

@@ -21,7 +21,9 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
+  import queue from 'queue'
+
   var navTree = []
   export default {
     name: 'rs-tb-article',
@@ -255,14 +257,17 @@
             let data = response.data
             navTree = []
             console.log(data)
+            let q = new Queue()
             for(let idx in data){
               if(data[idx].parentBlockId === null){
                 navTree.push(data[idx])
                 data.splice(idx,1)
+                q.enqueue(data[idx].parentBlockId)
               }
             }
             console.log(navTree)
             console.log(data)
+            console.log(q)
           })
       },
       loadUrls: function (owner) {

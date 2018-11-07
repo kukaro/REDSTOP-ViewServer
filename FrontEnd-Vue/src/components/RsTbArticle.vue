@@ -72,13 +72,13 @@
               })
               xmlList.push(this.makeApiBlock(blockList[atom].method.toUpperCase(), blockList[atom].url))
             }
-            console.log(navTree)
+            // console.log(navTree)
             var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
             Blockly.Xml.domToWorkspace(xml, this.demoWorkspace);
             this.tutorialAvail = 'hidden'
 
             this.demoWorkspace.addChangeListener(this.onFirstComment)
-            console.log(navTree)
+            // console.log(navTree)
             this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
             /*test*/
             if (false) {
@@ -87,14 +87,14 @@
               if (false) {
                 let test = this.demoWorkspace.getAllBlocks()
                 for (let atom of test) {
-                  console.log(atom.id)
+                  // console.log(atom.id)
                   if (atom.parentBlock_ !== null) console.log(atom.parentBlock_.id)
                 }
               }
               /*case2*/
               if (true) {
                 let test = this.demoWorkspace.topBlocks_
-                console.log(test[0])
+                // console.log(test[0])
               }
             }
           })
@@ -143,7 +143,7 @@
         xmlString = this.makeCaseBlock('Default Test Case', xmlString)
         xmlString = this.makeGroupBlock('Default Test Group', xmlString)
         xmlString = '<xml>' + xmlString + '</xml>'
-        console.log(xmlString)
+        // console.log(xmlString)
         navTree = navTree[0]
         return xmlString
       },
@@ -208,8 +208,8 @@
         }
       },
       makeBlockScenario: function (blocks) {
-        console.log('Enter Block')
-        console.log(blocks)
+        // console.log('Enter Block')
+        // console.log(blocks)
         this.blockScenario = []
         if (blocks.type === 'group' || blocks.type === 'case') {
           this.blockScenario.push(this.makeFolder(blocks.type, blocks.inputList[0].fieldRow[1].text_, blocks.id, null))
@@ -226,7 +226,7 @@
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }
-        console.log(this.blockScenario)
+        // console.log(this.blockScenario)
       },
       travelChildBlock: function (parentBlockId, blocks) {
         if(!blocks){

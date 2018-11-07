@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 git add .
-git commit -m "compact"
+if [ $1 ];then
+    git commit -m "$1"
+else
+    git commit -m "compact"
+fi
 git push

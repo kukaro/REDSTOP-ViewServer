@@ -263,6 +263,7 @@
                 navTree.push(data[idx])
                 data[idx].children = []
                 q.enq(data[idx])
+                console.log(q)
                 // data.splice(idx, 1)
               }
             }

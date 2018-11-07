@@ -264,6 +264,7 @@
                 data[idx].children = []
                 q.enq(data[idx])
                 data.splice(idx, 1)
+                idx--
               }
             }
             while (!q.isEmpty()) {
@@ -275,6 +276,7 @@
                   tmp.children.push(data[idx])
                   q.enq(data[idx])
                   data.splice(idx, 1)
+                  idx--
                   console.log('뀨뀨')
                 }
               }

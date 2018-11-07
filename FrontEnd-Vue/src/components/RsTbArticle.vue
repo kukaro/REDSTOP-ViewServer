@@ -252,7 +252,7 @@
           .get(this.$conf.apiServer + `/api/v1/send-scenario/${owner}/2/default`)
           .then(response => {
             console.log('load blocks routine')
-            console.log(response)
+            console.log(response.data)
           })
       },
       loadUrls: function (owner) {

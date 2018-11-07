@@ -57,9 +57,9 @@
         this.$http
           .get(this.$conf.apiServer + '/api/v1/urls/kukaro')
           .then(response => {
-            console.log('axios호출이당')
+            // console.log('axios호출이당')
             let blockList = response.data
-            console.log(response.data)
+            // console.log(response.data)
             let xmlList = []
 
             for (let atom in blockList) {

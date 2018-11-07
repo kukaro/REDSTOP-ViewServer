@@ -261,7 +261,9 @@
             for (let idx = 0; idx < data.length; idx++) {
               if (data[idx].parentBlockId === null) {
                 navTree.push(data[idx])
-                data[idx].children = []
+                if(data[idx].type!=='api'){
+                  data[idx].children = []
+                }
                 q.enq(data[idx])
                 data.splice(idx, 1)
                 idx--
@@ -272,17 +274,17 @@
               q.deq()
               for (let idx = 0; idx < data.length; idx++) {
                 if (data[idx].parentBlockId === tmp.id) {
-                  data[idx].children = []
+                  if(data[idx].type!=='api'){
+                    data[idx].children = []
+                  }
                   tmp.children.push(data[idx])
                   q.enq(data[idx])
                   data.splice(idx, 1)
                   idx--
-                  console.log('뀨뀨')
                 }
               }
             }
             console.log(navTree)
-            console.log(data)
           })
       },
       loadUrls: function (owner) {

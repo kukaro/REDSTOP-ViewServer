@@ -253,8 +253,15 @@
           .then(response => {
             console.log('load blocks routine')
             let data = response.data
+            navTree = []
             console.log(data)
-            data = data.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
+            for(let idx in data){
+              if(data[idx].parentBlockId === null){
+                navTree.push(data[idx])
+                data.splice(idx,1)
+              }
+            }
+            console.log(navTree)
             console.log(data)
           })
       },

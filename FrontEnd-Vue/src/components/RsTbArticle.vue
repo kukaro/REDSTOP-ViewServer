@@ -152,6 +152,7 @@
           var xml = Blockly.Xml.workspaceToDom(this.demoWorkspace);
           var xml_text = Blockly.Xml.domToPrettyText(xml);
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro/2/default', {data: xml_text}).then((response) => {
+            console.log('test call back')
             console.log(response)
           })
           console.log('여기있어 ㅠㅠ')

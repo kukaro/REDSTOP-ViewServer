@@ -262,7 +262,7 @@
               if (data[idx].parentBlockId === null) {
                 navTree.push(data[idx])
                 data[idx].children = []
-                q.enqueue(data[idx])
+                q.push(data[idx])
                 data.splice(idx, 1)
               }
             }
@@ -271,7 +271,7 @@
               if (data[idx].parentBlockId === tmp.id) {
                 data[idx].children = []
                 tmp.children.push(data[idx])
-                q.enqueue(data[idx])
+                q.push(data[idx])
                 data.splice(idx, 1)
               }
             }

@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   var navTree = []
   export default {
     name: 'rs-tb-article',
@@ -252,7 +252,12 @@
           .get(this.$conf.apiServer + `/api/v1/send-scenario/${owner}/2/default`)
           .then(response => {
             console.log('load blocks routine')
-            console.log(response.data)
+            let data = response.data
+            // navTree = []
+            // for(let atom of data){
+            //
+            // }
+            data.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
           })
       },
       loadUrls: function (owner) {

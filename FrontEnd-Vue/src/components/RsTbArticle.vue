@@ -275,6 +275,7 @@
                   tmp.children.push(data[idx])
                   q.enq(data[idx])
                   data.splice(idx, 1)
+                  console.log('뀨뀨')
                 }
               }
             }

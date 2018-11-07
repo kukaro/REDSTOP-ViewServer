@@ -22,7 +22,7 @@
 </template>
 <script>
 /* eslint-disable */
-  import queue from 'queue'
+  import Queue from 'queue'
 
   var navTree = []
   export default {

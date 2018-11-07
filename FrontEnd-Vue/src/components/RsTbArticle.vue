@@ -151,13 +151,13 @@
         if (event.type === Blockly.Events.CHANGE || event.type === Blockly.Events.MOVE) {
           var xml = Blockly.Xml.workspaceToDom(this.demoWorkspace);
           var xml_text = Blockly.Xml.domToPrettyText(xml);
+          this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro/2/default', {data: this.blockScenario}).then((response) => {
             console.log('test call back')
             console.log(response)
           })
           // console.log('여기있어 ㅠㅠ')
           // console.log(this.demoWorkspace.topBlocks_)
-          this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
           // console.log(xml_text);
           $("#tutorial").hide();
         }

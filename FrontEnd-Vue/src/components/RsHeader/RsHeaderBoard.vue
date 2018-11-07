@@ -2,7 +2,7 @@
   <div class="rs-header-board" :style="headerStyle">
     <header>
       <div class="logo-div">
-        <a href="#/"><img src="../../assets/img/rs-full-logo.png" alt="logo"></a>
+        <router-link to="/"><img src="../../assets/img/rs-full-logo.png" alt="logo"></router-link>
       </div>
       <rs-header-board-body></rs-header-board-body>
       <rs-header-board-setting></rs-header-board-setting>

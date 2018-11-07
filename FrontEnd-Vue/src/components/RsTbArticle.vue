@@ -58,7 +58,7 @@
           .get(this.$conf.apiServer + '/api/v1/project/kukaro')
           .then(response => {
             console.log('project도달')
-            console.log(response)
+            console.log(response.data[0])
           })
         this.$http
           .get(this.$conf.apiServer + '/api/v1/urls/kukaro')

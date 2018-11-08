@@ -224,7 +224,7 @@
           }
         }
         console.log('여기얌')
-        console.log(this.$store.commit('app/treeData', this.blockScenario))
+        console.log(this.$store.commit('app/treeData', navTree))
         console.log(this.$store.state.app)
         // console.log(this.blockScenario)
       },

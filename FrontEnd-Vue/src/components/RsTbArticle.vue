@@ -21,7 +21,7 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   import Queue from 'queuejs'
 
   var navTree = []

@@ -14,6 +14,10 @@ import RsTbNavBodyTree from './RsTbNavBodyTree'
 export default {
   name: 'rs-tb-nav-body',
   components: {RsTbNavBodyTree},
+  mounted: function () {
+    console.log('mounted')
+    console.log(this.treeData)
+  },
   created: function () {
     var store = this.$store
     var vm = this

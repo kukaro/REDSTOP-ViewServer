@@ -151,8 +151,12 @@
           if (xml_text === "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>") {
             $("#tutorial").show()
           }
-          console.log('delete test')
-          console.log(this.demoWorkspace.getAllBlocks())
+          if (this.demoWorkspace.getAllBlocks().length === 0) {
+            this.$http
+              .put(this.$conf.apiServer + '/api/v1/project/kukaro/false')
+              .then(response => {
+              })
+          }
         }
 
         // 클릭 이벤트
@@ -198,7 +202,7 @@
         this.blockScenario = []
         console.log('makeblockscenario')
         console.log(blocks)
-        if (!blocks){
+        if (!blocks) {
           return;
         }
         if (blocks.type === 'group' || blocks.type === 'case') {
@@ -306,8 +310,8 @@
       },
       renderBlock: function () {
         this.$http
-          .get(this.$conf.apiServer+`/api/v1/scenario/kukaro/default2`)
-          .then(response=>{
+          .get(this.$conf.apiServer + `/api/v1/scenario/kukaro/default2`)
+          .then(response => {
             console.log('good')
             let xml = response.data.xml
             let xmlDom = Blockly.Xml.textToDom(xml)

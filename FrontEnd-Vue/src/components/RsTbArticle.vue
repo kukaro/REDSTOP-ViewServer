@@ -142,15 +142,17 @@
           // console.log('여기있어 ㅠㅠ')
           // console.log(this.demoWorkspace.topBlocks_)
           // console.log(xml_text);
-          $("#tutorial").hide();
+          $("#tutorial").hide()
         }
 
         if (event.type === Blockly.Events.DELETE) {
-          var xml = Blockly.Xml.workspaceToDom(this.demoWorkspace);
-          var xml_text = Blockly.Xml.domToPrettyText(xml);
+          var xml = Blockly.Xml.workspaceToDom(this.demoWorkspace)
+          var xml_text = Blockly.Xml.domToPrettyText(xml)
           if (xml_text === "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>") {
-            $("#tutorial").show();
+            $("#tutorial").show()
           }
+          console.log('delete test')
+          console.log(this.demoWorkspace.getAllBlocks())
         }
 
         // 클릭 이벤트

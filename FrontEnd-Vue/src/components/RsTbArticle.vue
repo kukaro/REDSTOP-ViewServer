@@ -28,6 +28,8 @@
   export default {
     name: 'rs-tb-article',
     mounted: function () {
+      console.log('mounted')
+      console.log(this.$store.state.app)
       this.demoWorkspace = Blockly.inject('blocklyDiv',
         {toolbox: document.getElementById('toolbox')});
 
@@ -127,8 +129,8 @@
           let xml = Blockly.Xml.workspaceToDom(this.demoWorkspace);
           let xml_text = Blockly.Xml.domToPrettyText(xml);
           this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
-          console.log('움직인다고')
-          console.log(this.blockScenario)
+          // console.log('움직인다고')
+          // console.log(this.blockScenario)
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro/2/default', {data: this.blockScenario}).then((response) => {
             // console.log('test call back')
             // console.log(response)
@@ -203,8 +205,8 @@
         // console.log('Enter Block')
         // console.log(blocks)
         this.blockScenario = []
-        console.log('makeblockscenario')
-        console.log(blocks)
+        // console.log('makeblockscenario')
+        // console.log(blocks)
         if (!blocks) {
           return;
         }
@@ -276,7 +278,7 @@
         this.$http
           .get(this.$conf.apiServer + `/api/v1/send-scenario/${owner}/2/default`)
           .then(response => {
-            console.log('load blocks routine')
+            // console.log('load blocks routine')
             let data = response.data
             navTree = []
             // console.log(data)
@@ -315,7 +317,7 @@
         this.$http
           .get(this.$conf.apiServer + `/api/v1/scenario/kukaro/default2`)
           .then(response => {
-            console.log('good')
+            // console.log('good')
             let xml = response.data.xml
             let xmlDom = Blockly.Xml.textToDom(xml)
             this.demoWorkspace.clear()
@@ -347,14 +349,14 @@
             Blockly.Xml.domToWorkspace(xml, this.demoWorkspace)
 
             let sendXml = Blockly.Xml.workspaceToDom(this.demoWorkspace)
-            console.log('sendXml')
+            // console.log('sendXml')
             sendXml = Blockly.Xml.domToText(sendXml)
             // console.log(sendXml)
             this.$http
               .post(this.$conf.apiServer + `/api/v1/scenario/${owner}/2/default2/L/default`, {data: sendXml})
               .then(response => {
-                console.log('scenario')
-                console.log(response)
+                // console.log('scenario')
+                // console.log(response)
               })
 
             this.tutorialAvail = 'hidden'
@@ -364,7 +366,7 @@
             this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
             /*test*/
             if (false) {
-              console.log('test입니다.')
+              // console.log('test입니다.')
               /*case1*/
               if (false) {
                 let test = this.demoWorkspace.getAllBlocks()

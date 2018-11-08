@@ -316,6 +316,7 @@
 
             let sendXml = Blockly.Xml.workspaceToDom(this.demoWorkspace)
             console.log('sendXml')
+            sendXml = Blockly.Xml.domToText(sendXml)
             console.log(sendXml)
             this.$http
               .post(this.$conf.apiServer + `/api/v1/scenario/${owner}/2/default/L/default`, {data: sendXml})

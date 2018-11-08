@@ -21,15 +21,13 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   import Queue from 'queuejs'
 
   var navTree = []
   export default {
     name: 'rs-tb-article',
     mounted: function () {
-      console.log('mounted')
-      console.log(this.$store.state.app)
       this.demoWorkspace = Blockly.inject('blocklyDiv',
         {toolbox: document.getElementById('toolbox')});
 
@@ -225,6 +223,9 @@
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }
+        console.log('여기얌')
+        console.log(this.$store.commit('app/treeData', this.blockScenario))
+        console.log(this.$store.state.app)
         // console.log(this.blockScenario)
       },
       travelChildBlock: function (parentBlockId, blocks) {

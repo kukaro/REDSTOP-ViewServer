@@ -196,6 +196,8 @@
         // console.log('Enter Block')
         // console.log(blocks)
         this.blockScenario = []
+        console.log('makeblockscenario')
+        console.log(blocks)
         if (blocks.type === 'group' || blocks.type === 'case') {
           this.blockScenario.push(this.makeFolder(blocks.type, blocks.inputList[0].fieldRow[1].text_, blocks.id, null))
         } else {

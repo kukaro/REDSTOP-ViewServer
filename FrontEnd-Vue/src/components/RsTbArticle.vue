@@ -305,6 +305,7 @@
             let xmlDom = Blockly.Xml.textToDom(xml)
             this.demoWorkspace.clear()
             Blockly.Xml.domToWorkspace(xmlDom, this.demoWorkspace)
+            this.demoWorkspace.addChangeListener(this.onFirstComment)
           })
       },
       loadUrls: function (owner) {

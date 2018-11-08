@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   import Queue from 'queuejs'
 
   var navTree = []
@@ -261,7 +261,7 @@
             for (let idx = 0; idx < data.length; idx++) {
               if (data[idx].parentBlockId === null) {
                 navTree.push(data[idx])
-                if(data[idx].type!=='api'){
+                if (data[idx].type !== 'api') {
                   data[idx].children = []
                 }
                 q.enq(data[idx])
@@ -274,7 +274,7 @@
               q.deq()
               for (let idx = 0; idx < data.length; idx++) {
                 if (data[idx].parentBlockId === tmp.id) {
-                  if(data[idx].type!=='api'){
+                  if (data[idx].type !== 'api') {
                     data[idx].children = []
                   }
                   tmp.children.push(data[idx])
@@ -288,7 +288,7 @@
             this.renderBlock()
           })
       },
-      renderBlock: function(){
+      renderBlock: function () {
 
       },
       loadUrls: function (owner) {
@@ -318,7 +318,7 @@
             console.log('sendXml')
             console.log(sendXml)
             this.$http
-              .post(this.$conf.apiServer + `/api/v1/scenario/${owner}/2/default/L/default/${sendXml}`)
+              .post(this.$conf.apiServer + `/api/v1/scenario/${owner}/2/default/L/default`, {data: sendXml})
               .then(response => {
                 console.log('scenario')
                 console.log(response)

@@ -20,7 +20,7 @@ export default {
     height: 10%;
 }
 #title{
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 20px;
   width: 93.1px;
   height: 22px;

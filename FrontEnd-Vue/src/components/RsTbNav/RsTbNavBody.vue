@@ -14,9 +14,13 @@ import RsTbNavBodyTree from './RsTbNavBodyTree'
 export default {
   name: 'rs-tb-nav-body',
   components: {RsTbNavBodyTree},
+  watch: {
+    treeData: function () {
+      console.log('변화')
+      console.log(this.treeData)
+    }
+  },
   mounted: function () {
-    console.log('mounted')
-    console.log(this.treeData)
   },
   created: function () {
     var store = this.$store
@@ -85,7 +89,7 @@ export default {
       //     }]
       //   }]
       // }
-      treeData: this.$store.state.app.treeData[0]
+      treeData: this.$store.state.app.treeData
     }
   }
 }

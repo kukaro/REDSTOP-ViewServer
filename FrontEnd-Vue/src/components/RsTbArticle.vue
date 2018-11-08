@@ -293,7 +293,9 @@
           .get(this.$conf.apiServer+`/api/v1/scenario/kukaro/default2`)
           .then(response=>{
             console.log('good')
-            console.log(response)
+            let xml = response.data.xml
+            this.demoWorkspace.clear()
+            Blockly.Xml.domToWorkspace(xml, this.demoWorkspace)
           })
       },
       loadUrls: function (owner) {

@@ -294,8 +294,9 @@
           .then(response=>{
             console.log('good')
             let xml = response.data.xml
+            let xmlDom = Blockly.Xml.textToDom(xml)
             this.demoWorkspace.clear()
-            Blockly.Xml.domToWorkspace(xml, this.demoWorkspace)
+            Blockly.Xml.domToWorkspace(xmlDom, this.demoWorkspace)
           })
       },
       loadUrls: function (owner) {

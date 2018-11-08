@@ -127,14 +127,15 @@
           let xml_text = Blockly.Xml.domToPrettyText(xml);
           this.makeBlockScenario(this.demoWorkspace.topBlocks_[0])
           console.log('움직인다고')
+          console.log(this.blockScenario)
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro/2/default', {data: this.blockScenario}).then((response) => {
-            console.log('test call back')
-            console.log(response)
+            // console.log('test call back')
+            // console.log(response)
             this.$http
               .post(this.$conf.apiServer + `/api/v1/scenario/xml/kukaro/2/default2`, {data: xml_text})
               .then(response => {
-                console.log('onfisrtcomment')
-                console.log(response)
+                // console.log('onfirstcomment')
+                // console.log(response)
               })
           })
 

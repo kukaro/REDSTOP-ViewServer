@@ -289,7 +289,12 @@
           })
       },
       renderBlock: function () {
-
+        this.$http
+          .get(this.$conf.apiServer+`/api/v1/scenario/kukaro/default`)
+          .then(response=>{
+            console.log('good')
+            console.log(response)
+          })
       },
       loadUrls: function (owner) {
         this.$http

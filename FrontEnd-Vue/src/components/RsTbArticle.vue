@@ -60,7 +60,7 @@
           .get(this.$conf.apiServer + '/api/v1/project/kukaro')
           .then(response => {
             let {owner, is_init} = response.data[0]
-            if (is_init) {
+            if (!is_init) {
               this.loadBlocks(owner)
             } else {
               this.$http
@@ -312,7 +312,16 @@
             }
             // console.log(navTree)
             var xml = Blockly.Xml.textToDom(this.completeBlock(xmlList))
-            Blockly.Xml.domToWorkspace(xml, this.demoWorkspace);
+            Blockly.Xml.domToWorkspace(xml, this.demoWorkspace)
+
+            let sendXml = Blockly.Xml.workspaceToDom(this.demoWorkspace)
+            this.$http
+              .post(this.$conf.apiServer + `/api/v1/scenario/${owner}/2/default/L/default/${sendXml}`)
+              .then(response => {
+                console.log('scenario')
+                console.log(response)
+              })
+
             this.tutorialAvail = 'hidden'
 
             this.demoWorkspace.addChangeListener(this.onFirstComment)

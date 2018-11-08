@@ -156,7 +156,6 @@
             this.$http
               .put(this.$conf.apiServer + '/api/v1/project/kukaro/false')
               .then(response => {
-                console.log('알로하')
                 navTree = []
                 this.loadUrls('kukaro')
               })

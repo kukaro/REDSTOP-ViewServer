@@ -315,6 +315,8 @@
             Blockly.Xml.domToWorkspace(xml, this.demoWorkspace)
 
             let sendXml = Blockly.Xml.workspaceToDom(this.demoWorkspace)
+            console.log('sendXml')
+            console.log(sendXml)
             this.$http
               .post(this.$conf.apiServer + `/api/v1/scenario/${owner}/2/default/L/default/${sendXml}`)
               .then(response => {

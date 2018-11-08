@@ -18,6 +18,7 @@ export default {
     treeData: function () {
       console.log('변화')
       console.log(this.treeData)
+      console.log('변화끝')
     }
   },
   mounted: function () {

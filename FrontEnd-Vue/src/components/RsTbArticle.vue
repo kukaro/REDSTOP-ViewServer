@@ -290,7 +290,7 @@
       },
       renderBlock: function () {
         this.$http
-          .get(this.$conf.apiServer+`/api/v1/scenario/kukaro/default`)
+          .get(this.$conf.apiServer+`/api/v1/scenario/kukaro/default2`)
           .then(response=>{
             console.log('good')
             console.log(response)

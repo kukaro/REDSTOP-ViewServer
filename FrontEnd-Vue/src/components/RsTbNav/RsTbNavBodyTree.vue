@@ -2,9 +2,9 @@
   <div class="rs-tb-nav-body-tree">
     <li>
       <div :class="{bold: isFolder}" @click="toggle">
-        <img v-if="treeData.type=='g'" src="../../assets/img/group.png"/>
-        <img v-else-if="treeData.type=='c'" src="../../assets/img/case.png"/>
-        <img v-else-if="treeData.type=='a'" src="../../assets/img/api.png"/>
+        <img v-if="treeData.type=='group'" src="../../assets/img/group.png"/>
+        <img v-else-if="treeData.type=='case'" src="../../assets/img/case.png"/>
+        <img v-else-if="treeData.type=='api'" src="../../assets/img/api.png"/>
         {{treeData.name}}
         <img v-show="isFolder && open" class="arrow" src="../../assets/img/arrow-bottom.png">
         <img v-show="isFolder && !open" class="arrow" src="../../assets/img/arrow-right.png">
@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     isFolder: function () {
-      return (this.treeData.type === 'g' || this.treeData.type === 'c')
+      return (this.treeData.type === 'group' || this.treeData.type === 'case')
     }
   },
   methods: {

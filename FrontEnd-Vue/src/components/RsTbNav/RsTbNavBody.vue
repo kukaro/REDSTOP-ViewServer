@@ -33,54 +33,55 @@ export default {
   },
   data: function () {
     return {
-      treeData: {
-        name: 'User Management',
-        type: 'g',
-        children: [{
-          name: 'Sign',
-          type: 'g',
-          children: [{
-            name: 'Sign Up',
-            type: 'c'
-          },
-          {
-            name: 'Sign In',
-            type: 'c'
-          },
-          {
-            name: 'Sign Out',
-            type: 'c'
-          },
-          {
-            name: 'Verify Email',
-            type: 'c'
-          }]
-        },
-        {
-            name: 'Preferences',
-            type: 'g',
-            children: [{
-              name: 'Change User Info',
-              type: 'c',
-            children: [{
-              name: 'Post',
-              type: 'a',
-              method: 'post'
-            },
-            {
-              name: 'VerifyEmail',
-              type: 'a',
-              method: 'get'
-            },
-            {
-              name: 'Signin',
-              type: 'a',
-              method: 'post'
-            }
-            ]
-          }]
-        }]
-      }
+      // treeData: {
+      //   name: 'User Management',
+      //   type: 'g',
+      //   children: [{
+      //     name: 'Sign',
+      //     type: 'g',
+      //     children: [{
+      //       name: 'Sign Up',
+      //       type: 'c'
+      //     },
+      //     {
+      //       name: 'Sign In',
+      //       type: 'c'
+      //     },
+      //     {
+      //       name: 'Sign Out',
+      //       type: 'c'
+      //     },
+      //     {
+      //       name: 'Verify Email',
+      //       type: 'c'
+      //     }]
+      //   },
+      //   {
+      //       name: 'Preferences',
+      //       type: 'g',
+      //       children: [{
+      //         name: 'Change User Info',
+      //         type: 'c',
+      //       children: [{
+      //         name: 'Post',
+      //         type: 'a',
+      //         method: 'post'
+      //       },
+      //       {
+      //         name: 'VerifyEmail',
+      //         type: 'a',
+      //         method: 'get'
+      //       },
+      //       {
+      //         name: 'Signin',
+      //         type: 'a',
+      //         method: 'post'
+      //       }
+      //       ]
+      //     }]
+      //   }]
+      // }
+      treeData: this.$store.state.app.treeData[0]
     }
   }
 }

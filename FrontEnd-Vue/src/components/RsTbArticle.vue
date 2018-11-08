@@ -152,7 +152,14 @@
           if (xml_text === "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>") {
             $("#tutorial").show()
           }
-          this.loadUrls('kukaro')
+          if (this.demoWorkspace.getAllBlocks().length === 0) {
+            this.$http
+              .put(this.$conf.apiServer + '/api/v1/project/kukaro/false')
+              .then(response => {
+                this.loadUrls('kukaro')
+
+              })
+          }
         }
 
         // 클릭 이벤트

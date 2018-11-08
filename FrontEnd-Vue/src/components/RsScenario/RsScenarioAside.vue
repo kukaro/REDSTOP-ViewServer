@@ -2,7 +2,7 @@
   <div class="rs-scenario-aside">
     <rs-scenario-aside-title></rs-scenario-aside-title>
     <rs-scenario-aside-content></rs-scenario-aside-content>
-    <button id="run"><img src="../../assets/img/fill.png"><span>RUN</span></button>
+    <button id="btn-run"><img src="../../assets/img/fill.png"><span>RUN</span></button>
   </div>
 </template>
 
@@ -22,11 +22,11 @@ export default {
   position: absolute;
   left: 60%;
   top: 70px;
-  width: 550px;
+  width: 37%;
   height: 600px;
 
   margin-top: 70px;
-  margin-right: 30px;
+  /*margin-right: 30px;*/
   margin-bottom: 70px;
 
   border-radius: 8px;
@@ -47,17 +47,18 @@ export default {
   /*float: right;*/
   /*z-index: 1;*/
 }
-#run{
+#btn-run{
   width: 130px;
   height: 35px;
   border-radius: 20px;
   box-shadow: 0 2px 4px 0 #c6d5e9;
   background-color: #0069ff;
-  position: absolute;
+  /*position: absolute;*/
+  position: relative;
   left: 73%;
   bottom: 5%;
 }
-#run span{
+#btn-run span{
   font-family: 'Titillium Web', sans-serif;
   width: 31.5px;
   height: 21px;

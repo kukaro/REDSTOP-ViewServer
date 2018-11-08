@@ -1,14 +1,29 @@
 <template>
   <div class="rs-scenario-aside-content">
    <div id="templates">
-     <img src="../../../assets/img/bullet-title.png"><span class="title">Load Templates</span>
+     <div class="title"><img src="../../../assets/img/bullet-title.png"><span class="titleText">Load Templates</span></div>
      <ul>
        <li class="rect" v-for="item in templates" :key="item.id" @click="typeSelected(item)" :style="item.myStyle">
        <img :src="item.graph" style="width:150px; height:75px; padding-left: 10px; padding-top: 10px">
          <p style="text-align: center; font-size: 12px; margin-top: 5px">{{item.name}}</p>
        </li>
      </ul>
+     <p></p>
    </div>
+
+    <div class="testSetting">
+      <div class="title"><img src="../../../assets/img/bullet-title.png"><span class="titleText">Load Test Setting</span></div>
+      <ul>
+        <li v-for="item in testItems" :key="item.id" style="width: 33%">
+          <label for="testInput" style="font-size: 13px">
+            <img src="../../../assets/img/lnb-bullet.png">
+            <span id="minititle">{{item.text}}</span>
+            <input id="testInput" type="text" style=" width: 60px; height: 25px; border-radius: 5px; border: solid 1px #bababa; background-color: #ffffff;">
+            <span id="unit">{{item.unit}}</span>
+          </label>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -67,6 +82,20 @@ export default {
           myStyle: this.defaultStyle
         }
       ],
+      testItems: [
+        {
+          text: 'Warm-up time',
+          unit: 's'
+        },
+        {
+          text: 'Duration',
+          unit: 'm'
+        },
+        {
+          text: 'Virtual Users',
+          unit: 'VUs'
+        }
+      ],
       selectedStyle: 'border-radius: 17px; box-shadow: 0 2px 4px 0 rgba(163, 182, 198, 0.76); border: solid 1px #ff384f;background-color: #ffffff;',
       defaultStyle: 'border-radius: 17px;border: solid 1px #e2e2e2;background-color: #fdfdfd'
     }
@@ -101,7 +130,7 @@ export default {
   font-family: 'Titillium Web', sans-serif;
   /*background-color: #ffeb2f;*/
 }
-#templates .title{
+.titleText{
   padding-left: 5px;
   width: 405px;
   height: 23px;
@@ -118,7 +147,7 @@ li{
   float: left;
 }
 .rect{
-  width: 32%;
+  width: 30%;
   height: 110px;
   border-radius: 17px;
   border: solid 1px #e2e2e2;
@@ -136,4 +165,17 @@ li{
   /*font-weight: bold;*/
   /*color: #000000;*/
 /*}*/
+.testSetting {
+  clear: both;
+  margin-left: 20px;
+}
+#minititle{
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 2.46;
+  color: #000000;
+}
+#unit{
+  color: #565656;
+}
 </style>

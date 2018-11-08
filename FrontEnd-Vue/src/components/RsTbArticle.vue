@@ -60,7 +60,7 @@
           .get(this.$conf.apiServer + '/api/v1/project/kukaro')
           .then(response => {
             let {owner, is_init} = response.data[0]
-            if (!is_init) {
+            if (is_init) {
               this.loadBlocks(owner)
             } else {
               this.$http

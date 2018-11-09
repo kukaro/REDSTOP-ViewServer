@@ -434,15 +434,14 @@
         this.setNavTreeValueBfs(this.navTree)
       },
       setNavTreeValueBfs: function (node) {
-        console.log(node)
+        // let cnt = 0
+        for(let atom of node.children){
+          console.log(atom)
+          // cnt += this.setNavTreeValueBfs(atom)
+        }
+        // atom.count = cnt;
+        // return cnt
       }
-      //   let cnt = 0
-      //   for(let atom of node.children){
-      //     cnt += this.setNavTreeValueBfs(atom)
-      //   }
-      //   atom.count = cnt;
-      //   return cnt
-      // }
     }
   }
 </script>

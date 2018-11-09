@@ -12,10 +12,11 @@
 /* eslint-disable */
 import RsTbNavBodyTree from './RsTbNavBodyTree'
 export default {
+  props:['initTreeData'],
   name: 'rs-tb-nav-body',
   components: {RsTbNavBodyTree},
   watch: {
-    treeData: function () {
+    initTreeData: function () {
       console.log('변화')
       console.log(this.treeData)
       console.log(this.$store.state.app.treeData)
@@ -91,7 +92,7 @@ export default {
       //     }]
       //   }]
       // }
-      treeData: this.$store.state.app.treeData
+      treeData: this.initTreeData
     }
   }
 }

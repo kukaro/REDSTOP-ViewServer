@@ -313,6 +313,8 @@
             // console.log(navTree)
             this.renderBlock()
           })
+        this.$store.commit('app/treeData', navTree)
+        console.log(this.$store.state.app)
       },
       renderBlock: function () {
         this.$http

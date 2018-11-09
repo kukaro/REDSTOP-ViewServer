@@ -3,7 +3,6 @@
     <nav :style="navStyle">
       <rs-tb-nav-header></rs-tb-nav-header>
       <rs-tb-nav-body :init-tree-data="this.$store.state.app.treeData"></rs-tb-nav-body>
-      {{this.$store.state.app.treeData}}
       <div style="text-align: center">
         <button id="i-button" @click="showModal = true" style="text-align: center">Import APIs from Swagger</button>
       </div>

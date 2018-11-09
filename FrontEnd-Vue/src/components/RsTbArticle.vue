@@ -132,6 +132,7 @@
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro/2/default', {data: this.blockScenario}).then((response) => {
             // console.log('test call back')
             // console.log(response)
+            this.loadBlocks('kukaro')
             this.$http
               .post(this.$conf.apiServer + `/api/v1/scenario/xml/kukaro/2/default2`, {data: xml_text})
               .then(response => {

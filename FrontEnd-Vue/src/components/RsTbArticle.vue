@@ -431,8 +431,8 @@
         // this.loadBlocks(owner)
       },
       setNavTreeValue: function () {
-        this.setNavTreeValueBfs(navTree)
         console.log('bfs')
+        this.setNavTreeValueBfs(navTree)
         console.log(navTree)
       },
       setNavTreeValueBfs: function (node) {

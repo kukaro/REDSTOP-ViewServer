@@ -14,6 +14,7 @@
 
 <script>
 /* eslint-disable vue/no-dupe-keys */
+/* eslint-disable */
   import RsImportModal from './RsImport/RsImportModal'
   import RsTbNavHeader from './RsTbNav/RsTbNavHeader'
   import RsTbNavBody from './RsTbNav/RsTbNavBody'

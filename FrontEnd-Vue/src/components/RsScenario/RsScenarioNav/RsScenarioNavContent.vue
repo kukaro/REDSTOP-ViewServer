@@ -1,7 +1,7 @@
 <template>
   <div class="rs-scenario-nav-content">
     <ul>
-      <li v-for="item in items" :key="item.id" @click="selected">
+      <li v-for="item in items" :key="item.id" @click="selected(item)">
         <img src="../../../assets/img/lnb-bullet.png"/>
         {{item}}
       </li>
@@ -18,8 +18,8 @@ export default {
     }
   },
   methods: {
-    selected () {
-      console.log('테스트 하나 선택. 여기 서버 처리 해야 함')
+    selected (item) {
+      this.$router.push({name: 'RsScenarioDetail', params: { name: item }})
     }
   },
   created: function () {

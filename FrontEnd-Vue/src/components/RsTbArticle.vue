@@ -383,6 +383,7 @@
               }
             }
           })
+        this.loadBlocks(owner)
       }
     }
   }

@@ -132,7 +132,7 @@
           this.$http.post(this.$conf.apiServer + '/api/v1/send-scenario/kukaro/2/default', {data: this.blockScenario}).then((response) => {
             // console.log('test call back')
             // console.log(response)
-            this.loadBlocks('kukaro')
+            this.loadBlocksNoRender('kukaro')
             this.$http
               .post(this.$conf.apiServer + `/api/v1/scenario/xml/kukaro/2/default2`, {data: xml_text})
               .then(response => {
@@ -312,6 +312,47 @@
             }
             // console.log(navTree)
             this.renderBlock()
+            console.log('여기얌')
+            this.$store.commit('app/treeData', navTree)
+            console.log(this.$store.state.app)
+          })
+      },
+      loadBlocksNoRender: function (owner) {
+        this.$http
+          .get(this.$conf.apiServer + `/api/v1/send-scenario/${owner}/2/default`)
+          .then(response => {
+            // console.log('load blocks routine')
+            let data = response.data
+            navTree = []
+            // console.log(data)
+            let q = new Queue()
+            for (let idx = 0; idx < data.length; idx++) {
+              if (data[idx].parentBlockId === null) {
+                navTree.push(data[idx])
+                if (data[idx].type !== 'api') {
+                  data[idx].children = []
+                }
+                q.enq(data[idx])
+                data.splice(idx, 1)
+                idx--
+              }
+            }
+            while (!q.isEmpty()) {
+              let tmp = q.peek()
+              q.deq()
+              for (let idx = 0; idx < data.length; idx++) {
+                if (data[idx].parentBlockId === tmp.id) {
+                  if (data[idx].type !== 'api') {
+                    data[idx].children = []
+                  }
+                  tmp.children.push(data[idx])
+                  q.enq(data[idx])
+                  data.splice(idx, 1)
+                  idx--
+                }
+              }
+            }
+            // console.log(navTree)
             console.log('여기얌')
             this.$store.commit('app/treeData', navTree)
             console.log(this.$store.state.app)

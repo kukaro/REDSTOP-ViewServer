@@ -437,7 +437,7 @@
         let cnt = 0
         for(let atom of node){
           console.log(atom)
-          cnt += this.setNavTreeValueBfs(atom.children)
+          // cnt += this.setNavTreeValueBfs(atom.children)
         }
         atom.count = cnt;
         return cnt

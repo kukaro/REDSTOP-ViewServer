@@ -432,6 +432,7 @@
       },
       setNavTreeValue: function () {
         this.setNavTreeValueBfs(this.navTree)
+        console.log('bfs')
         console.log(this.navTree)
       },
       setNavTreeValueBfs: function (node) {

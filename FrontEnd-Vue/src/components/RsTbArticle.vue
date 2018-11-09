@@ -433,6 +433,7 @@
       setNavTreeValue: function () {
         console.log('bfs')
         this.setNavTreeValueBfs(navTree)
+        this.$store.commit('app/treeData', navTree)
         console.log(navTree)
       },
       setNavTreeValueBfs: function (node) {

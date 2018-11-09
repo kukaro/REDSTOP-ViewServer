@@ -223,9 +223,9 @@
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }
-        console.log('여기얌')
-        console.log(this.$store.commit('app/treeData', navTree))
-        console.log(this.$store.state.app)
+        // console.log('여기얌')
+        // console.log(this.$store.commit('app/treeData', navTree))
+        // console.log(this.$store.state.app)
         // console.log(this.blockScenario)
       },
       travelChildBlock: function (parentBlockId, blocks) {
@@ -383,7 +383,7 @@
               }
             }
           })
-        this.loadBlocks(owner)
+        // this.loadBlocks(owner)
       }
     }
   }

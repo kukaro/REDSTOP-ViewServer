@@ -12,10 +12,11 @@
 /* eslint-disable */
 import RsTbNavBodyTree from './RsTbNavBodyTree'
 export default {
+  props:['initTreeData'],
   name: 'rs-tb-nav-body',
   components: {RsTbNavBodyTree},
   watch: {
-    treeData: function () {
+    initTreeData: function () {
       console.log('변화')
       console.log(this.treeData)
       console.log(this.$store.state.app.treeData)
@@ -36,9 +37,8 @@ export default {
       })
       .then(function () {
         // TODO 여기서 값 제대로 들어간다! treeData 맞추서 넣으면 잘 돌아갈듯..
+        console.log('야야호')
         vm.treeData = store.state.app.treeData
-        console.log('Changed??????????')
-        console.log(vm.treeData)
       })
   },
   data: function () {
@@ -91,7 +91,7 @@ export default {
       //     }]
       //   }]
       // }
-      treeData: this.$store.state.app.treeData
+      treeData: this.initTreeData
     }
   }
 }

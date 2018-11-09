@@ -431,18 +431,17 @@
         // this.loadBlocks(owner)
       },
       setNavTreeValue: function () {
-        this.setNavTreeValueBfs(this.navTree)
+        this.setNavTreeValueBfs(navTree)
         console.log('bfs')
-        console.log(this.navTree)
       },
       setNavTreeValueBfs: function (node) {
-        // let cnt = 0
-        // for(let atom of node){
-        //   console.log(atom)
-          // cnt += this.setNavTreeValueBfs(atom.children)
-        // }
-        // atom.count = cnt;
-        // return cnt
+        let cnt = 0
+        for(let atom of node){
+          console.log(atom)
+          cnt += this.setNavTreeValueBfs(atom.children)
+        }
+        atom.count = cnt;
+        return cnt
       }
     }
   }

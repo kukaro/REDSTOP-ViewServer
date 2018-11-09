@@ -435,7 +435,7 @@
       },
       setNavTreeValueBfs: function (node) {
         let cnt = 0
-        for(let atom of node){
+        for(let atom of node.children){
           cnt += this.setNavTreeValueBfs(atom)
         }
         atom.count = cnt;

@@ -24,12 +24,18 @@ export default {
   },
   created: function () {
     // 시나리오 ID 2
-    // this.$http
-    //   .get(this.$conf.apiServer + '/api/v2/scenario/2')
-    //   .then(response => {
-    //     console.log('이거야이거')
-    //     console.log(response)
-    //   })
+    this.$http
+      .get(this.$conf.apiServer + '/api/v2/scenario/2')
+      .then(response => {
+        let temp = []
+        console.log('이거야이거')
+        console.log(response)
+
+        for (let i = 0; i < response.data.length; i++) {
+          temp.push(response.data[i].scenario_name)
+        }
+        this.items = temp
+      })
   }
 }
 </script>

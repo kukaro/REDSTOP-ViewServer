@@ -21,7 +21,7 @@
 
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   import Queue from 'queuejs'
 
   var navTree = []
@@ -304,6 +304,7 @@
                     data[idx].children = []
                   }
                   tmp.children.push(data[idx])
+                  tmp.urlCount = tmp.urlCount ? 0 : tmp.urlCount++
                   q.enq(data[idx])
                   data.splice(idx, 1)
                   idx--
@@ -346,6 +347,7 @@
                     data[idx].children = []
                   }
                   tmp.children.push(data[idx])
+                  tmp.urlCount = tmp.urlCount ? 0 : tmp.urlCount++
                   q.enq(data[idx])
                   data.splice(idx, 1)
                   idx--

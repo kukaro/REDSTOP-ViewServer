@@ -440,7 +440,7 @@
           console.log(atom)
           cnt += this.setNavTreeValueBfs(atom.children)
         }
-        atom.count = cnt;
+        node.count = cnt;
         return cnt
       }
     }

@@ -312,6 +312,7 @@
             }
             // console.log(navTree)
             this.renderBlock()
+            console.log('여기얌')
             this.$store.commit('app/treeData', navTree)
             console.log(this.$store.state.app)
           })

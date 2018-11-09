@@ -16,7 +16,7 @@ export default {
   components: { RsScenarioNav, RsScenarioSection, RsScenarioAside },
   props: ['name'],
   created: function () {
-    console.log(this.$route.params.name)
+    // console.log(this.$route.params.name)
   }
   // watch: {
   //   '$route': function (to) {

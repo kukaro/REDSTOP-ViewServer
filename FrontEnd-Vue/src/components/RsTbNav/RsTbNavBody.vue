@@ -2,7 +2,7 @@
   <div class="rs-tb-nav-body">
     <div>
       <ul>
-        <rs-tb-nav-body-tree :initTreeData="treeData" :initPath="'/test-block/' + treeData.type + treeData.name"></rs-tb-nav-body-tree>
+        <rs-tb-nav-body-tree :initTreeData="value" :initPath="'/test-block/' + value.type + value.name" v-for="(value, key) in treeData" :key="key"></rs-tb-nav-body-tree>
       </ul>
     </div>
   </div>

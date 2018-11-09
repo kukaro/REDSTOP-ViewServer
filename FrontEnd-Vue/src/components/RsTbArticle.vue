@@ -223,7 +223,6 @@
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }
-        this.loadBlocks('kukaro')
       },
       travelChildBlock: function (parentBlockId, blocks) {
         if (!blocks) {

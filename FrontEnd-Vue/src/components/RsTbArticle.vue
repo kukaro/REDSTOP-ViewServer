@@ -21,7 +21,7 @@
 
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   import Queue from 'queuejs'
 
   var navTree = []
@@ -438,10 +438,12 @@
       setNavTreeValueBfs: function (node) {
         let cnt = 0
         // console.log(node)
-        if(!node){
-          return cnt;
+        if (!node) {
+          return cnt
+        } else if (node.type === 'api') {
+          return 1
         }
-        for(let atom of node){
+        for (let atom of node) {
           atom.urlCount = this.setNavTreeValueBfs(atom.children)
           cnt += atom.urlCount
         }

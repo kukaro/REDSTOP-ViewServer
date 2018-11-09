@@ -433,10 +433,11 @@
       setNavTreeValue: function () {
         this.setNavTreeValueBfs(navTree)
         console.log('bfs')
-        console.log(navTree)
+        // console.log(navTree)
       },
       setNavTreeValueBfs: function (node) {
         let cnt = 0
+        console.log(node)
         for(let atom of node){
           atom.urlCount = this.setNavTreeValueBfs(atom.children)
           cnt += atom.urlCount

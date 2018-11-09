@@ -437,7 +437,7 @@
       },
       setNavTreeValueBfs: function (node) {
         let cnt = 0
-        console.log(node)
+        // console.log(node)
         if (!node) {
           return 1
         }

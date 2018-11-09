@@ -223,10 +223,10 @@
             this.travelChildBlock(blocks.id, blocks.childBlocks_[0])
           }
         }
-        // console.log('여기얌')
-        // this.$store.commit('app/treeData', navTree)
-        // console.log(this.$store.state.app)
-        // console.log(this.blockScenario)
+        console.log('여기얌')
+        this.$store.commit('app/treeData', navTree)
+        console.log(this.$store.state.app)
+        console.log(this.blockScenario)
       },
       travelChildBlock: function (parentBlockId, blocks) {
         if (!blocks) {
@@ -312,9 +312,9 @@
             }
             // console.log(navTree)
             this.renderBlock()
-            console.log('여기얌')
-            this.$store.commit('app/treeData', navTree)
-            console.log(this.$store.state.app)
+            // console.log('여기얌')
+            // this.$store.commit('app/treeData', navTree)
+            // console.log(this.$store.state.app)
           })
       },
       renderBlock: function () {

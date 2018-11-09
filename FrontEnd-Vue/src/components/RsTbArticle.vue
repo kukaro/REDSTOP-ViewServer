@@ -383,7 +383,7 @@
               }
             }
           })
-        this.loadBlocks(owner)
+        // this.loadBlocks(owner)
       }
     }
   }

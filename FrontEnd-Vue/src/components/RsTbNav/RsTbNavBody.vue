@@ -18,8 +18,9 @@ export default {
   watch: {
     initTreeData: function () {
       console.log('변화')
-      console.log(this.treeData)
       console.log(this.$store.state.app.treeData)
+      this.treeData = this.$store.state.app.treeData
+      console.log(this.treeData)
     }
   },
   mounted: function () {

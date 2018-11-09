@@ -432,15 +432,16 @@
       },
       setNavTreeValue: function () {
         this.setNavTreeValueBfs(this.navTree)
+        console.log(this.navTree)
       },
       setNavTreeValueBfs: function (node) {
-        let cnt = 0
-        for(let atom of node){
-          console.log(atom)
+        // let cnt = 0
+        // for(let atom of node){
+        //   console.log(atom)
           // cnt += this.setNavTreeValueBfs(atom.children)
-        }
-        atom.count = cnt;
-        return cnt
+        // }
+        // atom.count = cnt;
+        // return cnt
       }
     }
   }

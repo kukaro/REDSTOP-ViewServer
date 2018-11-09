@@ -441,6 +441,7 @@
         if (!node) {
           return cnt
         } else if (node.type === 'api') {
+          console.log('this is api')
           return 1
         }
         for (let atom of node) {

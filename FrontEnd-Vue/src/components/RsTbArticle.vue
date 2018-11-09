@@ -433,11 +433,11 @@
       setNavTreeValue: function () {
         this.setNavTreeValueBfs(navTree)
         console.log('bfs')
-        // console.log(navTree)
+        console.log(navTree)
       },
       setNavTreeValueBfs: function (node) {
         let cnt = 0
-        console.log(node)
+        // console.log(node)
         if(!node){
           return cnt;
         }

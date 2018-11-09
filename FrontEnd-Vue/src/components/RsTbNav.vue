@@ -3,6 +3,7 @@
     <nav :style="navStyle">
       <rs-tb-nav-header></rs-tb-nav-header>
       <rs-tb-nav-body :init-tree-data="this.$store.state.app.treeData"></rs-tb-nav-body>
+      {{this.$store.state.app.treeData}}
       <div style="text-align: center">
         <button id="i-button" @click="showModal = true" style="text-align: center">Import APIs from Swagger</button>
       </div>
@@ -13,44 +14,44 @@
 
 <script>
 /* eslint-disable vue/no-dupe-keys */
-import RsImportModal from './RsImport/RsImportModal'
-import RsTbNavHeader from './RsTbNav/RsTbNavHeader'
-import RsTbNavBody from './RsTbNav/RsTbNavBody'
+  import RsImportModal from './RsImport/RsImportModal'
+  import RsTbNavHeader from './RsTbNav/RsTbNavHeader'
+  import RsTbNavBody from './RsTbNav/RsTbNavBody'
 
-export default {
-  name: 'rs-tb-nav',
-  components: { RsTbNavBody, RsTbNavHeader, RsImportModal },
-  computed: {
-    navStyle () {
-      return {
-        width: screen.width * 0.2 + 'px'
+  export default {
+    name: 'rs-tb-nav',
+    components: {RsTbNavBody, RsTbNavHeader, RsImportModal},
+    computed: {
+      navStyle() {
+        return {
+          width: screen.width * 0.2 + 'px'
+        }
       }
-    }
-  },
-  data () {
-    return {
-      windowWidth: window.innerWidth,
-      showModal: false
-    }
-  },
-  methods: {
-    handleWindowResize (event) {
-      this.windowWidth = event.currentTarget.innerWidth
-      this.navStyle()
     },
-    navStyle () {
+    data() {
       return {
-        width: screen.width * 0.2 + 'px'
+        windowWidth: window.innerWidth,
+        showModal: false
       }
+    },
+    methods: {
+      handleWindowResize(event) {
+        this.windowWidth = event.currentTarget.innerWidth
+        this.navStyle()
+      },
+      navStyle() {
+        return {
+          width: screen.width * 0.2 + 'px'
+        }
+      }
+    },
+    beforeDestroy: function () {
+      window.removeEventListener('resize', this.handleWindowResize)
+    },
+    mounted() {
+      window.addEventListener('resize', this.handleWindowResize)
     }
-  },
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.handleWindowResize)
-  },
-  mounted () {
-    window.addEventListener('resize', this.handleWindowResize)
   }
-}
 </script>
 
 <style scoped>
@@ -63,6 +64,7 @@ export default {
     background-color: #ffffff;
     border-right: 1px solid #F2F7FB;
   }
+
   #i-button {
     width: 250px;
     height: 43px;

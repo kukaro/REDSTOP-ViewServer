@@ -9,6 +9,8 @@ import RsMrBoard from '@/components/RsMr/RsMrBoard'
 import RsMrApi from '@/components/RsMrApi'
 import RsReport from '@/components/RsReport'
 import RsScenario from '@/components/RsScenario/RsScenario'
+import RsScenarioDetail from '@/components/RsScenario/RsScenarioDetail'
+import RsScenarioStart from '@/components/RsScenario/RsScenarioStart'
 
 Vue.use(Router)
 
@@ -61,7 +63,18 @@ export default new Router({
     },
     {
       path: '/scenario',
-      component: RsScenario
+      component: RsScenario,
+      children: [
+        {
+          path: '',
+          component: RsScenarioStart
+        },
+        {
+          path: ':name',
+          name: 'RsScenarioDetail',
+          component: RsScenarioDetail
+        }
+      ]
     }
   ]
 })

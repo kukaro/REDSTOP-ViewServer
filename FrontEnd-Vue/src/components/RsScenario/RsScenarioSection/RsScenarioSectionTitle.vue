@@ -1,13 +1,14 @@
 <template>
   <div class="rs-scenario-section-title">
-    <p id="title">Load Test1</p>
+    <p id="title">{{ $props.name }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'rs-scenario-section-title',
-  components: { }
+  components: { },
+  props: ['name']
 }
 </script>
 

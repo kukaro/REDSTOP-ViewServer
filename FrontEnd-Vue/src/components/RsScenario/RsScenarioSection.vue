@@ -1,6 +1,6 @@
 <template>
   <div class="rs-scenario-section">
-    <rs-scenario-section-title></rs-scenario-section-title>
+    <rs-scenario-section-title :name="this.$props.name"></rs-scenario-section-title>
     <rs-scenario-section-content></rs-scenario-section-content>
   </div>
 </template>
@@ -11,6 +11,7 @@ import RsScenarioSectionContent from './RsScenarioSection/RsScenarioSectionConte
 
 export default {
   name: 'rs-scenario-section',
+  props: ['name'],
   components: { RsScenarioSectionTitle, RsScenarioSectionContent }
 }
 </script>

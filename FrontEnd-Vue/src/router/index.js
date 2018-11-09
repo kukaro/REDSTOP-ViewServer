@@ -72,7 +72,8 @@ export default new Router({
         {
           path: ':name',
           name: 'RsScenarioDetail',
-          component: RsScenarioDetail
+          component: RsScenarioDetail,
+          props: true
         }
       ]
     }

@@ -304,7 +304,7 @@
                     data[idx].children = []
                   }
                   tmp.children.push(data[idx])
-                  tmp.urlCount = tmp.urlCount ? 0 : tmp.urlCount++
+                  tmp.urlCount = tmp.urlCount ? tmp.urlCount++ : 0
                   q.enq(data[idx])
                   data.splice(idx, 1)
                   idx--
@@ -347,7 +347,7 @@
                     data[idx].children = []
                   }
                   tmp.children.push(data[idx])
-                  tmp.urlCount = tmp.urlCount ? 0 : tmp.urlCount++
+                  tmp.urlCount = tmp.urlCount ? tmp.urlCount++ : 0
                   q.enq(data[idx])
                   data.splice(idx, 1)
                   idx--

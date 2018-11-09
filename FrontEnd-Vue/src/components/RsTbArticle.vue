@@ -66,7 +66,6 @@
               this.$http
                 .put(this.$conf.apiServer + '/api/v1/project/kukaro/true')
                 .then(response => {
-
                   // console.log('project도달')
                   // console.log(response)
                 })
@@ -312,6 +311,7 @@
             }
             // console.log(navTree)
             this.renderBlock()
+            this.setNavTreeValue()
             console.log('여기얌')
             this.$store.commit('app/treeData', navTree)
             console.log(this.$store.state.app)
@@ -353,6 +353,7 @@
               }
             }
             // console.log(navTree)
+            this.setNavTreeValue()
             console.log('여기얌')
             this.$store.commit('app/treeData', navTree)
             console.log(this.$store.state.app)
@@ -428,6 +429,17 @@
             }
           })
         // this.loadBlocks(owner)
+      },
+      setNavTreeValue: function () {
+        this.setNavTreeValueBfs(this.navTree)
+      },
+      setNavTreeValueBfs: function (node) {
+        let cnt = 0
+        for(let atom of node){
+          cnt += this.setNavTreeValueBfs(atom)
+        }
+        atom.count = cnt;
+        return cnt
       }
     }
   }

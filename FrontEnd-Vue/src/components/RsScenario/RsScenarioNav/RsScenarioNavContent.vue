@@ -1,7 +1,10 @@
 <template>
   <div class="rs-scenario-nav-content">
     <ul>
-      <li v-for="item in items" :key="item.id" @click="selected"><img src="../../../assets/img/lnb-bullet.png"/>   {{item}}</li>
+      <li v-for="item in items" :key="item.id" @click="selected">
+        <img src="../../../assets/img/lnb-bullet.png"/>
+        {{item}}
+      </li>
     </ul>
   </div>
 </template>
@@ -18,6 +21,15 @@ export default {
     selected () {
       console.log('테스트 하나 선택. 여기 서버 처리 해야 함')
     }
+  },
+  created: function () {
+    // 시나리오 ID 2
+    // this.$http
+    //   .get(this.$conf.apiServer + '/api/v2/scenario/2')
+    //   .then(response => {
+    //     console.log('이거야이거')
+    //     console.log(response)
+    //   })
   }
 }
 </script>

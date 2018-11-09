@@ -4,7 +4,7 @@
      <div class="title"><img src="../../../assets/img/bullet-title.png"><span class="titleText">Load Templates</span></div>
      <ul>
        <li class="rect" v-for="item in templates" :key="item.id" @click="typeSelected(item)" :style="item.myStyle">
-       <img :src="item.graph" style="width:150px; height:75px; padding-left: 10px; padding-top: 10px">
+       <img :src="item.graph" style="">
          <p style="text-align: center; font-size: 12px; margin-top: 5px">{{item.name}}</p>
        </li>
      </ul>
@@ -13,9 +13,10 @@
     <div class="assertions">
       <div class="title"><img src="../../../assets/img/bullet-title.png"><span class="titleText">Assertions</span></div>
       <ul style="margin-left: 20px">
-        <li v-for="item in templates[selectedID].params" :key="item.id">
+        <li v-for="item in templates[selectedID].assertions" :key="item.id">
           <img src="../../../assets/img/lnb-bullet.png">
-          {{item}}
+          <span id="minititle">{{item.text}}</span>
+          <input id="testInput" type="text" :value="item.value" style="font-size: 11px; text-align:center; width: 45px; height: 25px; border-radius: 5px; border: solid 1px #bababa; background-color: #ffffff;">
         </li>
       </ul>
     </div>
@@ -33,15 +34,33 @@ export default {
         { id: 0,
           name: 'Default',
           graph: require('@/assets/img/object-type-00.png'),
-          params: ['assertion1', 'assertion2'],
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Median'
+            }
+          ],
           isSelected: false,
           myStyle: this.defaultStyle
         },
         {
           id: 1,
-          name: 'Disetime',
+          name: 'Baseline',
           graph: require('@/assets/img/object-type-01.png'),
-          params: ['assertion1'],
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Max'
+            },
+            {
+              text: 'Time Taken',
+              value: 'Average'
+            },
+            {
+              text: 'Assertion failures per',
+              value: 'second'
+            }
+          ],
           isSelected: false,
           myStyle: this.defaultStyle
         },
@@ -49,7 +68,20 @@ export default {
           id: 2,
           name: 'Peak',
           graph: require('@/assets/img/object-type-02.png'),
-          params: ['assertion1', 'assertion2', 'assertion3', 'assertion4'],
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Max'
+            },
+            {
+              text: 'Time Taken',
+              value: 'Average'
+            },
+            {
+              text: 'Assertion failures per',
+              value: 'second'
+            }
+          ],
           isSelected: false,
           myStyle: this.defaultStyle
         },
@@ -57,15 +89,41 @@ export default {
           id: 3,
           name: 'Stress',
           graph: require('@/assets/img/object-type-03.png'),
-          params: ['assertion1', 'assertion2', 'assertion3', 'assertion4', 'assertion5'],
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Average'
+            },
+            {
+              text: 'Running VU',
+              value: 10
+            },
+            {
+              text: 'Assertion failures per',
+              value: 'second'
+            }
+          ],
           isSelected: false,
           myStyle: this.defaultStyle
         },
         {
           id: 4,
-          name: 'Seale',
+          name: 'Soak',
           graph: require('@/assets/img/object-type-04.png'),
-          params: ['assertion1', 'assertion2'],
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Average'
+            },
+            {
+              text: 'Time Taken',
+              value: 'Median'
+            },
+            {
+              text: 'Assertion failures per',
+              value: 'second'
+            }
+          ],
           isSelected: false,
           myStyle: this.defaultStyle
         },
@@ -73,7 +131,20 @@ export default {
           id: 5,
           name: 'Spike',
           graph: require('@/assets/img/object-type-05.png'),
-          params: ['assertion1', 'assertion2'],
+          assertions: [
+            {
+              text: 'Assertion failures per',
+              value: 'second'
+            },
+            {
+              text: 'Time Taken',
+              value: 'Average'
+            },
+            {
+              text: 'Time Taken',
+              value: 'Max'
+            }
+          ],
           isSelected: false,
           myStyle: this.defaultStyle
         }
@@ -126,11 +197,9 @@ export default {
 #templates{
   margin-left: 20px;
 }
+
 .rect{
-  /*width: 30%;*/
   float: left;
-}
-.rect{
   width: 30%;
   height: 110px;
   border-radius: 17px;
@@ -138,6 +207,10 @@ export default {
   background-color: #fdfdfd;
   margin-right: 5px;
   margin-top: 8px;
+}
+.rect img{
+  margin: 0 auto;
+  width:100%; height:80%; padding-left: 10px; padding-top: 10px
 }
 /*#title{*/
   /*margin-top: 10px;*/

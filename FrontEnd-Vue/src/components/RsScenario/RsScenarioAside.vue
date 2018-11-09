@@ -21,9 +21,9 @@ export default {
 .rs-scenario-aside {
   position: absolute;
   left: 60%;
-  top: 70px;
+  top: 5%;
   width: 37%;
-  height: 600px;
+  height: 80%;
 
   margin-top: 70px;
   /*margin-right: 30px;*/

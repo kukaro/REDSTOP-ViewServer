@@ -29,17 +29,17 @@ export default {
     var vm = this
     console.log('야호')
     console.log(this.$store)
-    this.$http
-      .get(this.$conf.apiServer + '/api/v1/treeinit')
-      .then(function (response) {
-        store.commit('app/treeData', response.data.data)
-      })
-      .then(function () {
-        // TODO 여기서 값 제대로 들어간다! treeData 맞추서 넣으면 잘 돌아갈듯..
-        vm.treeData = store.state.app.treeData
-        console.log('Changed??????????')
-        console.log(vm.treeData)
-      })
+    // this.$http
+    //   .get(this.$conf.apiServer + '/api/v1/treeinit')
+    //   .then(function (response) {
+    //     store.commit('app/treeData', response.data.data)
+    //   })
+    //   .then(function () {
+    //     // TODO 여기서 값 제대로 들어간다! treeData 맞추서 넣으면 잘 돌아갈듯..
+    //     vm.treeData = store.state.app.treeData
+    //     console.log('Changed??????????')
+    //     console.log(vm.treeData)
+    //   })
   },
   data: function () {
     return {

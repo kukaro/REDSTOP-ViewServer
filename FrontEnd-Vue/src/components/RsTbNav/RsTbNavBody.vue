@@ -2,7 +2,7 @@
   <div class="rs-tb-nav-body">
     <div>
       <ul>
-        <rs-tb-nav-body-tree :initTreeData="treeData" :initPath="'/test-block/' + treeData.type + treeData.name"></rs-tb-nav-body-tree>
+        <rs-tb-nav-body-tree :initTreeData="value" :initPath="'/test-block/' + value.type + value.name" v-for="(value, key) in treeData" :key="key"></rs-tb-nav-body-tree>
       </ul>
     </div>
   </div>
@@ -18,9 +18,9 @@ export default {
   watch: {
     initTreeData: function () {
       console.log('변화')
-      console.log(this.treeData)
       console.log(this.$store.state.app.treeData)
-      console.log('변화끝')
+      this.treeData = this.$store.state.app.treeData
+      console.log(this.treeData)
     }
   },
   mounted: function () {
@@ -30,16 +30,17 @@ export default {
     var vm = this
     console.log('야호')
     console.log(this.$store)
-    this.$http
-      .get(this.$conf.apiServer + '/api/v1/treeinit')
-      .then(function (response) {
-        store.commit('app/treeData', response.data.data)
-      })
-      .then(function () {
-        // TODO 여기서 값 제대로 들어간다! treeData 맞추서 넣으면 잘 돌아갈듯..
-        console.log('야야호')
-        vm.treeData = store.state.app.treeData
-      })
+    // this.$http
+    //   .get(this.$conf.apiServer + '/api/v1/treeinit')
+    //   .then(function (response) {
+    //     store.commit('app/treeData', response.data.data)
+    //   })
+    //   .then(function () {
+    //     // TODO 여기서 값 제대로 들어간다! treeData 맞추서 넣으면 잘 돌아갈듯..
+    //     console.log('야야호')
+    //     vm.treeData = store.state.app.treeData
+    //     console.log(vm.treeData)
+    //   })
   },
   data: function () {
     return {

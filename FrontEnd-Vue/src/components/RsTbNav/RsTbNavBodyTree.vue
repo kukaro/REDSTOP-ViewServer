@@ -23,6 +23,11 @@
 export default {
   props: ['initTreeData', 'initPath'],
   name: 'rs-tb-nav-body-tree',
+  watch: {
+    initTreeData: function () {
+      this.treeData = this.initTreeData
+    }
+  },
   created: function () {
   },
   data: function () {

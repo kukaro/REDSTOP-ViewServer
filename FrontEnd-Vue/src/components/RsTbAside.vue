@@ -2,7 +2,7 @@
   <div class="rs-tb-aside">
     <aside>
       <rs-tb-aside-title :initBlockId="this.$store.state.app.currentBlockId"></rs-tb-aside-title>
-      <!--<rs-tb-aside-contents :initTitleName="url"></rs-tb-aside-contents>-->
+      <rs-tb-aside-contents :initBlockId="this.$store.state.app.currentBlockId"></rs-tb-aside-contents>
     </aside>
   </div>
 </template>

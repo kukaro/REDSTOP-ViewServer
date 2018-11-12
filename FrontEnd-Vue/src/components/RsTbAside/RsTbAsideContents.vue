@@ -56,7 +56,7 @@
       },
       data: function () {
         return {
-          currentBlock: null
+          currentBlock: {id: 'default', name: 'default', parentBlockId: null, type: 'api'}
         }
       }
     }

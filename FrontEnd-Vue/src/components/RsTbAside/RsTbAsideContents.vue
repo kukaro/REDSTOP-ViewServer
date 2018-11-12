@@ -37,27 +37,27 @@
           this.currentBlock = currentBlock
           console.log(currentBlock)
         }
-      },
-      created: function () {
-        console.log('여기는 rs-tb-aside-content created')
-        let treeDataSerial = this.$store.state.app.treeDataSerial
-        let currentBlockID = this.$store.state.app.currentBlockId
-        let currentBlock = null
-        if (treeDataSerial !== null) {
-          for (let atom of treeDataSerial) {
-            if (atom.id === currentBlockID) {
-              currentBlock = atom
-              break;
-            }
+      }
+    },
+    created: function () {
+      console.log('여기는 rs-tb-aside-content created')
+      let treeDataSerial = this.$store.state.app.treeDataSerial
+      let currentBlockID = this.$store.state.app.currentBlockId
+      let currentBlock = null
+      if (treeDataSerial !== null) {
+        for (let atom of treeDataSerial) {
+          if (atom.id === currentBlockID) {
+            currentBlock = atom
+            break;
           }
-          this.currentBlock = currentBlock
-          console.log(currentBlock)
         }
-      },
-      data: function () {
-        return {
-          currentBlock: {id: 'default', name: 'default', parentBlockId: null, type: 'api'}
-        }
+        this.currentBlock = currentBlock
+        console.log(currentBlock)
+      }
+    },
+    data: function () {
+      return {
+        currentBlock: {id: 'default', name: 'default', parentBlockId: null, type: 'api'}
       }
     }
   }

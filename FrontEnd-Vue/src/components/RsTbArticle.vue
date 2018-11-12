@@ -188,7 +188,7 @@
             blockParentValue = this.demoWorkspace.getBlockById(event.blockId).getParent().getParent().getFieldValue('GroupName')
             var blockParentValueTC = this.demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('TestCase')
             // location.href = '#/test-block/g' + blockParentValue + '-' + 'c' + blockParentValueTC + '-' + blockType + blockValue
-            this.$router.push(/aside')
+            this.$router.push('/aside')
           }
 
           // 감싸고 있는 그룹 확인

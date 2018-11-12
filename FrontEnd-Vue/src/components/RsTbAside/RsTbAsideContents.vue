@@ -23,7 +23,7 @@
     components: {RsTbAsideAblock, RsTbAsideCblock, RsTbAsideGblock},
     watch: {
       initBlockId: function () {
-        console.log('여기는 rs-tb-aside-content watch')
+        // console.log('여기는 rs-tb-aside-content watch')
         let treeDataSerial = this.$store.state.app.treeDataSerial
         let currentBlockID = this.$store.state.app.currentBlockId
         let currentBlock = null
@@ -35,12 +35,12 @@
             }
           }
           this.currentBlock = currentBlock
-          console.log(currentBlock)
+          // console.log(currentBlock)
         }
       }
     },
     created: function () {
-      console.log('여기는 rs-tb-aside-content created')
+      // console.log('여기는 rs-tb-aside-content created')
       let treeDataSerial = this.$store.state.app.treeDataSerial
       let currentBlockID = this.$store.state.app.currentBlockId
       let currentBlock = null
@@ -52,7 +52,7 @@
           }
         }
         this.currentBlock = currentBlock
-        console.log(currentBlock)
+        // console.log(currentBlock)
       }
     },
     data: function () {

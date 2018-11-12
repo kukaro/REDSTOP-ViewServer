@@ -4,7 +4,7 @@
       <img v-if="currentBlock.type=='group'" class='title-icon' src="../../assets/img/group.png">
       <img v-else-if="currentBlock.type=='case'" class='title-icon' src="../../assets/img/case.png">
       <img v-else class='title-icon' src="../../assets/img/api.png">
-      <span v-if="currentBlock.type=='api'">{{currentBlock.url}}&nbsp;</span>
+      <span v-if="currentBlock.type=='api'"><b style="color: deepskyblue;">{{currentBlock.method}}</b>{{currentBlock.url}}&nbsp;</span>
       <span v-else>{{currentBlock.name}}</span>
       <img id="edit-icon" src="../../assets/img/edit.png" width="15" height="15">
     </div>

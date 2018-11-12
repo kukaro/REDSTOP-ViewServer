@@ -1,7 +1,7 @@
 <template>
   <div class="rs-tb-aside">
     <aside>
-      <rs-tb-aside-title :initTitleName="this.$store.state.app.currentBlockId"></rs-tb-aside-title>
+      <rs-tb-aside-title :initBlockId="this.$store.state.app.currentBlockId"></rs-tb-aside-title>
       <!--<rs-tb-aside-contents :initTitleName="url"></rs-tb-aside-contents>-->
     </aside>
   </div>

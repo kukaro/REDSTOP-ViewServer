@@ -18,26 +18,28 @@
 import casing from 'eslint-plugin-vue/lib/utils/casing'
 
 export default {
-  props: ['initTitleName'],
+  props: ['initBlockId'],
   name: 'rs-tb-aside-title',
   watch: {
-    initTitleName: function () {
-      var temp = this.initTitleName.split('-')
-      this.titleName = temp[temp.length - 1]
-      this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
-      // console.log('여기는 rs-tb-aside-title')
-      // this.tableValue = this.globalTableValue
-      // console.log(this.tableValue)
+    initBlockId: function () {
+      // var temp = this.initTitleName.split('-')
+      // this.titleName = temp[temp.length - 1]
+      // this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
+      console.log('여기는 rs-tb-aside-title watch')
+      let treeDataSerial = this.$store.state.app.treeDataSerial;
+      console.log(treeDataSerial)
     }
   },
   created: function () {
-    var temp = this.initTitleName.split('-')
-    this.titleName = temp[temp.length - 1]
-    this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
+    // var temp = this.initTitleName.split('-')
+    // this.titleName = temp[temp.length - 1]
+    // this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
     // console.log(this.curUrl)
-    // console.log('여기는 rs-tb-aside-title')
-    this.tableValue = this.globalTableValue
-    console.log(this.tableValue)
+    console.log('여기는 rs-tb-aside-title created')
+    // this.tableValue = this.globalTableValue
+    // console.log(this.tableValue)
+    let treeDataSerial = this.$store.state.app.treeDataSerial;
+    console.log(treeDataSerial)
   },
   data: function () {
     return {

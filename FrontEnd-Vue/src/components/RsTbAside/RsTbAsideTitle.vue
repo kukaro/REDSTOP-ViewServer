@@ -29,7 +29,7 @@
         let treeDataSerial = this.$store.state.app.treeDataSerial
         console.log(treeDataSerial)
         let currentBlock = null
-        if (!treeDataSerial) {
+        if (treeDataSerial !== null) {
           for (let atom of treeDataSerial) {
             if (atom.id === atom.id) {
               currentBlock = atom
@@ -51,7 +51,7 @@
       let treeDataSerial = this.$store.state.app.treeDataSerial
       console.log(treeDataSerial)
       let currentBlock = null
-      if (!treeDataSerial) {
+      if (treeDataSerial !== null) {
         for (let atom of treeDataSerial) {
           if (atom.id === atom.id) {
             currentBlock = atom

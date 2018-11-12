@@ -45,6 +45,8 @@ export default {
   methods: {
     toggle: function () {
       // document.location.href = '#/test-block/' + this.path;
+      console.log('호롤롤로')
+      console.log(this.treeData)
       this.$router.push('/aside')
       if (this.isFolder) {
         this.open = !this.open

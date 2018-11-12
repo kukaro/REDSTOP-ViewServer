@@ -23,9 +23,6 @@
     name: 'rs-tb-aside-title',
     watch: {
       initBlockId: function () {
-        // var temp = this.initTitleName.split('-')
-        // this.titleName = temp[temp.length - 1]
-        // this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
         console.log('여기는 rs-tb-aside-title watch')
         let treeDataSerial = this.$store.state.app.treeDataSerial
         let currentBlockID = this.$store.state.app.currentBlockId
@@ -43,13 +40,7 @@
       }
     },
     created: function () {
-      // var temp = this.initTitleName.split('-')
-      // this.titleName = temp[temp.length - 1]
-      // this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
-      // console.log(this.curUrl)
       console.log('여기는 rs-tb-aside-title created')
-      // this.tableValue = this.globalTableValue
-      // console.log(this.tableValue)
       let treeDataSerial = this.$store.state.app.treeDataSerial
       let currentBlockID = this.$store.state.app.currentBlockId
       let currentBlock = null
@@ -66,11 +57,6 @@
     },
     data: function () {
       return {
-        titleName: this.initTitleName,
-        curMethod: 'GET',
-        baseUrl: 'https://www.naver.com',
-        curUrl: this.baseUrl,
-        tableValue: this.globalTableValue,
         currentBlock: {id: 'default', name: 'default', parentBlockId: null, type: 'api'}
       }
     },

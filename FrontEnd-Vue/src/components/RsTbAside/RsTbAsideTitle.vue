@@ -27,6 +27,7 @@
         // this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
         console.log('여기는 rs-tb-aside-title watch')
         let treeDataSerial = this.$store.state.app.treeDataSerial
+        console.log(treeDataSerial)
         let currentBlock = null
         if (!treeDataSerial) {
           for (let atom of treeDataSerial) {
@@ -48,6 +49,7 @@
       // this.tableValue = this.globalTableValue
       // console.log(this.tableValue)
       let treeDataSerial = this.$store.state.app.treeDataSerial
+      console.log(treeDataSerial)
       let currentBlock = null
       if (!treeDataSerial) {
         for (let atom of treeDataSerial) {

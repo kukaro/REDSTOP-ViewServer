@@ -45,7 +45,7 @@ export default {
   methods: {
     toggle: function () {
       // document.location.href = '#/test-block/' + this.path;
-      this.$router.push('#/test-block/aside')
+      this.$router.push('/aside')
       if (this.isFolder) {
         this.open = !this.open
       }

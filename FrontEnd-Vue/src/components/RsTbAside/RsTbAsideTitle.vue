@@ -28,13 +28,15 @@
         console.log('여기는 rs-tb-aside-title watch')
         let treeDataSerial = this.$store.state.app.treeDataSerial
         let currentBlock = null
-        for (let atom of treeDataSerial) {
-          if (atom.id === atom.id) {
-            currentBlock = atom
-            break;
+        if (!treeDataSerial) {
+          for (let atom of treeDataSerial) {
+            if (atom.id === atom.id) {
+              currentBlock = atom
+              break;
+            }
           }
+          console.log(currentBlock)
         }
-        console.log(currentBlock)
       }
     },
     created: function () {
@@ -47,13 +49,15 @@
       // console.log(this.tableValue)
       let treeDataSerial = this.$store.state.app.treeDataSerial
       let currentBlock = null
-      for (let atom of treeDataSerial) {
-        if (atom.id === atom.id) {
-          currentBlock = atom
-          break;
+      if (!treeDataSerial) {
+        for (let atom of treeDataSerial) {
+          if (atom.id === atom.id) {
+            currentBlock = atom
+            break;
+          }
         }
+        console.log(currentBlock)
       }
-      console.log(currentBlock)
     },
     data: function () {
       return {

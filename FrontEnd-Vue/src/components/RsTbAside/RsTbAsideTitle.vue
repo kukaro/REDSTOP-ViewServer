@@ -27,17 +27,16 @@
         // this.curUrl = this.baseUrl + casing.getConverter('kebab-case')(this.titleName.slice(1))
         console.log('여기는 rs-tb-aside-title watch')
         let treeDataSerial = this.$store.state.app.treeDataSerial
-        console.log(treeDataSerial)
+        let currentBlockID = this.$store.state.app.currentBlockId
         let currentBlock = null
         if (treeDataSerial !== null) {
           for (let atom of treeDataSerial) {
-            if (atom.id === atom.id) {
+            if (atom.id === currentBlockID) {
               currentBlock = atom
               break;
             }
           }
           this.currentBlock = currentBlock
-          console.log(currentBlock)
         }
       }
     },
@@ -50,17 +49,16 @@
       // this.tableValue = this.globalTableValue
       // console.log(this.tableValue)
       let treeDataSerial = this.$store.state.app.treeDataSerial
-      console.log(treeDataSerial)
+      let currentBlockID = this.$store.state.app.currentBlockId
       let currentBlock = null
       if (treeDataSerial !== null) {
         for (let atom of treeDataSerial) {
-          if (atom.id === atom.id) {
+          if (atom.id === currentBlockID) {
             currentBlock = atom
             break;
           }
         }
         this.currentBlock = currentBlock
-        console.log(currentBlock)
       }
     },
     data: function () {

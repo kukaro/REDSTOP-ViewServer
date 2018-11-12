@@ -1,8 +1,8 @@
 <template>
   <div class="rs-tb-aside">
     <aside>
-      <rs-tb-aside-title :initTitleName="url"></rs-tb-aside-title>
-      <rs-tb-aside-contents :initTitleName="url"></rs-tb-aside-contents>
+      <rs-tb-aside-title :initTitleName="this.$store.state.app.currentBlockId"></rs-tb-aside-title>
+      <!--<rs-tb-aside-contents :initTitleName="url"></rs-tb-aside-contents>-->
     </aside>
   </div>
 </template>
@@ -13,11 +13,11 @@ import RsTbAsideTitle from './RsTbAside/RsTbAsideTitle'
 import RsTbAsideContents from "./RsTbAside/RsTbAsideContents"
 
 export default {
-  props: ['url'],
+  // props: ['url'],
   name: 'rs-tb-aside',
   created: function () {
     console.log('debug 임돠')
-    console.log(this.url)
+    // console.log(this.url)
   },
   updated: function () {
   },

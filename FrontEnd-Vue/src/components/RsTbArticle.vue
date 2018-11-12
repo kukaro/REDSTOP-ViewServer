@@ -229,6 +229,8 @@
         // console.log('여기얌')
         // this.$store.commit('app/treeData', navTree)
         // console.log(this.$store.state.app)
+        this.$store.commit('app/treeDataSerial', navTree)
+        console.log(this.$store.state.app)
       },
       travelChildBlock: function (parentBlockId, blocks) {
         if (!blocks) {

@@ -1,10 +1,10 @@
 <template>
   <div class="rs-tb-aside-title">
     <div width="80%" style="float: left;">
-      <img v-if="titleName[0]=='g'" class='title-icon' src="../../assets/img/group.png">
-      <img v-else-if="titleName[0]=='c'" class='title-icon' src="../../assets/img/case.png">
+      <img v-if="currentBlock.type=='group'" class='title-icon' src="../../assets/img/group.png">
+      <img v-else-if="currentBlock.type=='case'" class='title-icon' src="../../assets/img/case.png">
       <img v-else class='title-icon' src="../../assets/img/api.png">
-      {{titleName.slice(1)}}&nbsp;
+      {{currentBlock.name}}&nbsp;
       <img id="edit-icon" src="../../assets/img/edit.png" width="15" height="15">
     </div>
     <!--<div width="20%" style="float: right;">-->
@@ -36,6 +36,7 @@
               break;
             }
           }
+          this.currentBlock = currentBlock
           console.log(currentBlock)
         }
       }
@@ -58,6 +59,7 @@
             break;
           }
         }
+        this.currentBlock = currentBlock
         console.log(currentBlock)
       }
     },
@@ -67,7 +69,8 @@
         curMethod: 'GET',
         baseUrl: 'https://www.naver.com',
         curUrl: this.baseUrl,
-        tableValue: this.globalTableValue
+        tableValue: this.globalTableValue,
+        currentBlock: {id: 'default', name: 'default', parentBlockId: null, type: 'api'}
       }
     },
     methods: {

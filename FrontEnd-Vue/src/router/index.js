@@ -27,7 +27,7 @@ export default new Router({
       component: RsTb,
       children: [
         {
-          path: ':url',
+          path: '/aside',
           name: 'rs-tb2-singleurl',
           component: RsTbAside,
           props: true

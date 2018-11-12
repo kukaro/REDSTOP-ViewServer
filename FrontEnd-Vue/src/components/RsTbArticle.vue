@@ -173,6 +173,7 @@
 
             // 이동
             // location.href = '#/test-block/' + blockType + blockValue
+            this.$store.commit('app/currentBlock', this.demoWorkspace.getBlockById(event.blockId))
             this.$router.push('/aside')
           } else if (blockType === 'Test Case') {
             // Test Case 부터는 감싸고 있는 그룹이 있는지 확인
@@ -180,6 +181,7 @@
             blockValue = this.demoWorkspace.getBlockById(event.blockId).getFieldValue('TestCase')
             blockParentValue = this.demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('GroupName')
             // location.href = '#/test-block/g' + blockParentValue + '-' + blockType + blockValue
+            this.$store.commit('app/currentBlock', this.demoWorkspace.getBlockById(event.blockId))
             this.$router.push('/aside')
           } else if (blockType === 'API') {
             // API는 감싸고 있는 그룹과 Test Case가 있는지 확인
@@ -188,6 +190,7 @@
             blockParentValue = this.demoWorkspace.getBlockById(event.blockId).getParent().getParent().getFieldValue('GroupName')
             var blockParentValueTC = this.demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('TestCase')
             // location.href = '#/test-block/g' + blockParentValue + '-' + 'c' + blockParentValueTC + '-' + blockType + blockValue
+            this.$store.commit('app/currentBlock', this.demoWorkspace.getBlockById(event.blockId))
             this.$router.push('/aside')
           }
 

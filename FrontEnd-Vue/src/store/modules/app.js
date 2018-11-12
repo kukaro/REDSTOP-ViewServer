@@ -10,7 +10,8 @@
 import conf from '../../assets/js/conf'
 const state = {
   treeData : null,
-  treeDataSerial : null
+  treeDataSerial : null,
+  currentBlock: null,
 }
 
 const getters  = {
@@ -23,9 +24,11 @@ const mutations = {
   treeData ( state, payload )  {
     state.treeData  = payload
   },
-
   treeDataSerial (state, payload) {
     state.treeDataSerial = payload
+  },
+  currentBlock (state, payload) {
+    state.currentBlock = payload
   },
 
   end () {}

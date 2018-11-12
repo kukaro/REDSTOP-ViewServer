@@ -37,6 +37,7 @@
             }
           }
           this.currentBlock = currentBlock
+          console.log(currentBlock)
         }
       }
     },
@@ -59,6 +60,7 @@
           }
         }
         this.currentBlock = currentBlock
+        console.log(currentBlock)
       }
     },
     data: function () {

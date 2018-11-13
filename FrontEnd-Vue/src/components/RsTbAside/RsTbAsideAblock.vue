@@ -73,14 +73,14 @@ export default {
     // console.log(this.globalTableValue)
     // this.tableValue = this.globalTableValue
     //
-    // for(let i=0; i< this.tableValue.length;i++){
-    //   this.tableInput[i]=[]
-    //   let j = 0
-    //   for(let atom in this.tableValue[i]){
-    //     this.tableInput[i][j]=this.tableValue[i][atom];
-    //     j++;
-    //   }
-    // }
+    for(let i=0; i< this.tableValue.length;i++){
+      this.tableInput[i]=[]
+      let j = 0
+      for(let atom in this.tableValue[i]){
+        this.tableInput[i][j]=this.tableValue[i][atom];
+        j++;
+      }
+    }
   },
   watch: {
     apiTestResult: function () {
@@ -110,7 +110,23 @@ export default {
       curMethod: 'GET',
       responseBodyData: { },
       apiTestResult: this.initApiTestResult,
-      tableValue: this.globalTableValue,
+      tableValue: [
+        {
+          'Key': 'type',
+          'Value': 'init',
+          'Description': null
+        },
+        {
+          'Key': 'side',
+          'Value': 'buy',
+          'Description': null
+        },
+        {
+          'Key': 'side',
+          'Value': 'buy',
+          'Description': null
+        }
+      ],
       tableInput: []
     }
   },

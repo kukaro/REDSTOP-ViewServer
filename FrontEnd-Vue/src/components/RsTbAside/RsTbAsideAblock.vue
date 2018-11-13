@@ -164,7 +164,7 @@
         this.$http
           .post('http://52.79.221.114:3000/api/v1/apitest', json)
           .then(response => {
-            // console.log(response)
+            console.log(response)
             this.responseBodyData = response.data.result.data;
             this.responseData.status = response.data.result.status;
             this.responseData.size = response.data.result.size;

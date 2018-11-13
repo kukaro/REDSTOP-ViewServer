@@ -70,17 +70,17 @@ export default {
   name: 'rs-tb-aside-ablock',
   created: function () {
     console.log('여기여기여기')
-    console.log(this.globalTableValue)
-    this.tableValue = this.globalTableValue
-
-    for(let i=0; i< this.tableValue.length;i++){
-      this.tableInput[i]=[]
-      let j = 0
-      for(let atom in this.tableValue[i]){
-        this.tableInput[i][j]=this.tableValue[i][atom];
-        j++;
-      }
-    }
+    // console.log(this.globalTableValue)
+    // this.tableValue = this.globalTableValue
+    //
+    // for(let i=0; i< this.tableValue.length;i++){
+    //   this.tableInput[i]=[]
+    //   let j = 0
+    //   for(let atom in this.tableValue[i]){
+    //     this.tableInput[i][j]=this.tableValue[i][atom];
+    //     j++;
+    //   }
+    // }
   },
   watch: {
     apiTestResult: function () {

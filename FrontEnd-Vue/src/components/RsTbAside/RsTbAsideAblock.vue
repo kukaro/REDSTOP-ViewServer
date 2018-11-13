@@ -13,7 +13,8 @@
           <a class="dropdown-item" href="#" @click="aClick('DELETE')">DELETE</a>
         </div>
       </div>
-      <input type="text" class="form-control rs-api-input" aria-label="Text input with dropdown button" :value="currentBlock.url">
+      <input type="text" class="form-control rs-api-input" aria-label="Text input with dropdown button"
+             :value="currentBlock.url">
     </div>
     <br>
     <div width="20%" style="float: right;">
@@ -52,7 +53,7 @@
   </div>
 </template>
 <script>
-/* eslint-disable */
+  /* eslint-disable */
   import RsTbAsideAblockApi from './RsTbAsideAblock/RsTbAsideAblockApi'
   import RsTbAsideAblockAssertion from './RsTbAsideAblock/RsTbAsideAblockAssertion'
   import RsTbAsideAblockRequest from './RsTbAsideAblock/RsTbAsideAblockRequest'
@@ -169,6 +170,10 @@
             this.responseData.status = response.data.result.status;
             this.responseData.size = response.data.result.size;
             this.responseData.time = response.data.result.time;
+          })
+          .catch(response => {
+            console.log('catch')
+            console.log(response)
           })
 
       },

@@ -153,8 +153,8 @@
         console.log('클릭 클릭 이벤트 탔습니다!')
         var json = {
           data: {},
-          url: this.targeturl,
-          method: this.curMethod
+          url: this.currentBlock.url,
+          method: this.currentBlock.method
         }
 
         json.data = this.tableValue

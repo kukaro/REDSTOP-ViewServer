@@ -101,6 +101,7 @@
       },
       initCurrentBlock: function () {
         this.currentBlock = this.initCurrentBlock
+        console.log(this.currentBlock)
       }
     },
     components: {

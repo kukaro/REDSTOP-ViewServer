@@ -4,7 +4,7 @@
     <div class="input-group">
       <div class="input-group-prepend">
         <button class="btn btn-outline-secondary dropdown-toggle rs-api-sel" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">{{((currentBlock !== null && currentBlock.url !== null) ? currentBlock.url : 'GET')}}
+                aria-haspopup="true" aria-expanded="false">{{((currentBlock && currentBlock.url) ? currentBlock.url : 'GET')}}
         </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#" @click="aClick('GET')">GET</a>

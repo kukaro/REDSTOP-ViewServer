@@ -69,7 +69,6 @@ export default {
   props: ['initTitleName', 'initApiTestResult','initCurrentBlock'],
   name: 'rs-tb-aside-ablock',
   created: function () {
-    this.titleName = casing.getConverter('kebab-case')(this.initTitleName)
     console.log(this.globalTableValue)
     this.tableValue = this.globalTableValue
     // console.log(this.tableRowData)

@@ -70,20 +70,16 @@ export default {
   name: 'rs-tb-aside-ablock',
   created: function () {
     console.log(this.globalTableValue)
-    this.tableValue = this.globalTableValue
-    // console.log(this.tableRowData)
-    // var values = Object.keys(this.tableRowData).map(key => this.tableRowData[key])
-    // this.tableRowData = values
+    // this.tableValue = this.globalTableValue
 
-    for(let i=0; i< this.tableValue.length;i++){
-      this.tableInput[i]=[]
-      let j = 0
-      for(let atom in this.tableValue[i]){
-        this.tableInput[i][j]=this.tableValue[i][atom];
-        j++;
-      }
-    }
-    // console.log(this.tableInput)
+    // for(let i=0; i< this.tableValue.length;i++){
+    //   this.tableInput[i]=[]
+    //   let j = 0
+    //   for(let atom in this.tableValue[i]){
+    //     this.tableInput[i][j]=this.tableValue[i][atom];
+    //     j++;
+    //   }
+    // }
   },
   watch: {
     apiTestResult: function () {
@@ -123,11 +119,6 @@ export default {
   methods: {
     clickPlay: function () { // 여기서 API 테스트 하기
       console.log('클릭 클릭 이벤트 탔습니다!')
-      // console.log(this.starstar)
-
-      // console.log(colSize)
-       //console.log(this.targeturl)
-      // console.log(this.curMethod)
       var json = {
         data : {},
         url : this.targeturl,

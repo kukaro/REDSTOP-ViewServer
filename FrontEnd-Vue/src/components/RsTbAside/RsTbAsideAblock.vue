@@ -6,7 +6,6 @@
         <button class="btn btn-outline-secondary dropdown-toggle rs-api-sel" type="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">{{curMethod}}
         </button>
-        <input type="text" value="hihi">
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#" @click="aClick('GET')">GET</a>
           <a class="dropdown-item" href="#" @click="aClick('POST')">POST</a>
@@ -14,8 +13,7 @@
           <a class="dropdown-item" href="#" @click="aClick('DELETE')">DELETE</a>
         </div>
       </div>
-      <input type="text" v-model="targeturl" class="form-control rs-api-input"
-             aria-label="Text input with dropdown button" value="hihi">
+      <input type="text" class="form-control rs-api-input" aria-label="Text input with dropdown button" value="hihi">
     </div>
     <br>
     <div width="20%" style="float: right;">

@@ -14,7 +14,7 @@
         </div>
       </div>
       <input type="text" v-model="targeturl" class="form-control rs-api-input"
-             aria-label="Text input with dropdown button" :value="currentBlock.url">
+             aria-label="Text input with dropdown button" :value="currentBlock">
     </div>
     <br>
     <div width="20%" style="float: right;">

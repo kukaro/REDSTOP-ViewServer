@@ -86,9 +86,6 @@ export default {
       this.apiTestResult = this.initApiTestResult
       this.responseBodyData = this.apiTestResult.data
     },
-    initTitleName: function () {
-      this.titleName = this.initTitleName.slice(1)
-    }
   },
   components: {RsTbAsideAblockApi,
     RsTbAsideAblockAssertion,

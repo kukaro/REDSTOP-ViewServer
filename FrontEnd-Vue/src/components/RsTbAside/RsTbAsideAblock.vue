@@ -4,7 +4,7 @@
     <div class="input-group">
       <div class="input-group-prepend">
         <button class="btn btn-outline-secondary dropdown-toggle rs-api-sel" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">{{curMethod}}
+                aria-haspopup="true" aria-expanded="false">{{currentBlock.method}}
         </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#" @click="aClick('GET')">GET</a>
@@ -13,7 +13,7 @@
           <a class="dropdown-item" href="#" @click="aClick('DELETE')">DELETE</a>
         </div>
       </div>
-      <input type="text" class="form-control rs-api-input" aria-label="Text input with dropdown button" value="hihi">
+      <input type="text" class="form-control rs-api-input" aria-label="Text input with dropdown button" :value="currentBlock.url">
     </div>
     <br>
     <div width="20%" style="float: right;">
@@ -173,7 +173,7 @@
 
       },
       aClick: function (method) {
-        this.curMethod = method
+        this.currentBlock.method = method
       }
     }
   }

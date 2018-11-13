@@ -80,7 +80,8 @@
     name: 'rs-tb-aside-ablock',
     created: function () {
       console.log('여기여기여기')
-      console.log(this.currentBlock)
+      this.currentBlock = this.initCurrentBlock
+      console.log(this.initCurrentBlock)
       // console.log(this.globalTableValue)
       // this.tableValue = this.globalTableValue
       //
@@ -98,6 +99,9 @@
         this.apiTestResult = this.initApiTestResult
         this.responseBodyData = this.apiTestResult.data
       },
+      initCurrentBlock: function () {
+        this.currentBlock = this.initCurrentBlock
+      }
     },
     components: {
       RsTbAsideAblockApi,

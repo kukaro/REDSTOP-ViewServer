@@ -37,9 +37,6 @@
           this.currentBlock = currentBlock
           // console.log(currentBlock)
         }
-      },
-      initCurrentBlock: function () {
-        this.currentBlock = this.initCurrentBlock
       }
     },
     created: function () {

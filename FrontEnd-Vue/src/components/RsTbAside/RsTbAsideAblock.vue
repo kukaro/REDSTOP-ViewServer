@@ -4,7 +4,7 @@
     <div class="input-group">
       <div class="input-group-prepend">
         <button class="btn btn-outline-secondary dropdown-toggle rs-api-sel" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">{{ curMethod}}
+                aria-haspopup="true" aria-expanded="false">{{currentBlock.method}}
         </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#" @click="aClick('GET')">GET</a>
@@ -14,7 +14,7 @@
         </div>
       </div>
       <input type="text" v-model="targeturl" class="form-control rs-api-input"
-             aria-label="Text input with dropdown button" :value="currentBlock">
+             aria-label="Text input with dropdown button" :value="currentBlock.url">
     </div>
     <br>
     <div width="20%" style="float: right;">
@@ -80,7 +80,6 @@
     name: 'rs-tb-aside-ablock',
     created: function () {
       console.log('여기여기여기')
-      console.log(this.currentBlock)
       // console.log(this.globalTableValue)
       // this.tableValue = this.globalTableValue
       //
@@ -139,7 +138,7 @@
             'Description': null
           }
         ],
-        currentBlock: this.currentBlock,
+        currentBlock: this.initCurrentBlock,
         tableInput: []
       }
     },

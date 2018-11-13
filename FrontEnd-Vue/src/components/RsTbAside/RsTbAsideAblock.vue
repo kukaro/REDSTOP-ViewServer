@@ -80,6 +80,7 @@
     name: 'rs-tb-aside-ablock',
     created: function () {
       console.log('여기여기여기')
+      console.log(this.currentBlock)
       // console.log(this.globalTableValue)
       // this.tableValue = this.globalTableValue
       //

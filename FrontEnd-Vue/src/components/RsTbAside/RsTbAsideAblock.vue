@@ -66,7 +66,7 @@ import casing from 'eslint-plugin-vue/lib/utils/casing'
 import RsTbAsideAblockRequestBodyTabTableRow from './RsTbAsideAblock/RsTbAsideAblockRequest/RsTbAsideAblockRequestBodyTabTable/RsTbAsideAblockRequestBodyTabTableRow'
 
 export default {
-  props: ['initTitleName', 'initApiTestResult'],
+  props: ['initTitleName', 'initApiTestResult','initCurrentBlock'],
   name: 'rs-tb-aside-ablock',
   created: function () {
     this.titleName = casing.getConverter('kebab-case')(this.initTitleName)
@@ -112,7 +112,7 @@ export default {
   },
   data: function () {
     return {
-      titleName: this.initTitleName.slice(1),
+      titleName: this.initCurrentBlock.name,
       responseData: {'status': 0, 'time': 0, 'size': 0},
       curMethod: 'GET',
       responseBodyData: { },

@@ -7,7 +7,7 @@
       <rs-tb-aside-cblock></rs-tb-aside-cblock>
     </div>
     <div v-else-if="currentBlock.type=='api'">
-      <rs-tb-aside-ablock :init-title-name="titleName"></rs-tb-aside-ablock>
+      <rs-tb-aside-ablock :initCurrentBlock="currentBlock"></rs-tb-aside-ablock>
     </div>
 
   </div>

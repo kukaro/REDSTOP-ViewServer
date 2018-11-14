@@ -2,7 +2,8 @@
   <div class="rs-tb-nav">
     <nav :style="navStyle">
       <rs-tb-nav-header :init-nav-header-list="navHeaderList"></rs-tb-nav-header>
-      <rs-tb-nav-body :init-tree-data="this.$store.state.app.treeData"></rs-tb-nav-body>
+      <rs-tb-nav-body v-if="headerKey==0" :init-tree-data="this.$store.state.app.treeData" :init-header-key="key"></rs-tb-nav-body>
+      <rs-tb-nav-body2 v-else-if="headerKey==1" :init-tree-data="this.$store.state.app.treeData" :init-header-key="key"></rs-tb-nav-body2>
       <!--<span>{{this.$store.state.app.treeData}}</span>-->
       <div class="importButton">
         <button id="i-button" @click="showModal = true" style="text-align: center">Import APIs from Swagger</button>
@@ -18,10 +19,11 @@
   import RsImportModal from './RsImport/RsImportModal'
   import RsTbNavHeader from './RsTbNav/RsTbNavHeader'
   import RsTbNavBody from './RsTbNav/RsTbNavBody'
+  import RsTbNavBody2 from './RsTbNav/RsTbNavBody2'
 
   export default {
     name: 'rs-tb-nav',
-    components: {RsTbNavBody, RsTbNavHeader, RsImportModal},
+    components: {RsTbNavBody, RsTbNavHeader, RsImportModal, RsTbNavBody2},
     computed: {
       navStyle() {
         return {
@@ -31,6 +33,7 @@
     },
     data() {
       return {
+        headerKey: 0,
         navHeaderList: ['Explorer', 'History'],
         windowWidth: window.innerWidth,
         showModal: false
@@ -45,6 +48,9 @@
         return {
           width: screen.width * 0.2 + 'px'
         }
+      },
+      headerSelected(key) {
+        this.headerKey = key
       }
     },
     beforeDestroy: function () {

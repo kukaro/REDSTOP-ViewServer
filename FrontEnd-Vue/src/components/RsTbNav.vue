@@ -1,7 +1,7 @@
 <template>
   <div class="rs-tb-nav">
     <nav :style="navStyle">
-      <rs-tb-nav-header></rs-tb-nav-header>
+      <rs-tb-nav-header :init-nav-header-list="navHeaderList"></rs-tb-nav-header>
       <rs-tb-nav-body :init-tree-data="this.$store.state.app.treeData"></rs-tb-nav-body>
       <!--<span>{{this.$store.state.app.treeData}}</span>-->
       <div class="importButton">
@@ -31,6 +31,7 @@
     },
     data() {
       return {
+        navHeaderList: ['Explorer', 'History'],
         windowWidth: window.innerWidth,
         showModal: false
       }

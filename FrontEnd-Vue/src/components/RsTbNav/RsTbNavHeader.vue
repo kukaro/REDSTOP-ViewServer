@@ -12,13 +12,14 @@
 <script>
 import RsTbNavHeaderItem from './RsTbNavHeaderItem'
 export default {
+  props: ['initNavHeaderList'],
   name: 'rs-tb-nav-header',
   components: {RsTbNavHeaderItem},
   created: function () {
   },
   data: function () {
     return {
-      navHeaderList: ['Explorer', 'History'],
+      navHeaderList: this.initNavHeaderList,
       clickNumber: 0
     }
   },

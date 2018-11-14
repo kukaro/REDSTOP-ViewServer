@@ -26,7 +26,7 @@ export default {
   methods: {
     mouseClick: function (key) {
       this.clickNumber = key
-      this.$emit('headerSelected', key)
+      this.$emit('headerSelectedEvent', key)
       // console.log(this.clickNumber)
     }
   }

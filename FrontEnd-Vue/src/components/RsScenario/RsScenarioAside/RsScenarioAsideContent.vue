@@ -31,62 +31,8 @@ export default {
   data () {
     return {
       templates: [
-        { id: 0,
-          name: 'Default',
-          graph: require('@/assets/img/object-type-00.png'),
-          assertions: [
-            {
-              text: 'Time Taken',
-              value: 'Median'
-            }
-          ],
-          isSelected: false,
-          myStyle: this.defaultStyle
-        },
         {
-          id: 1,
-          name: 'Baseline',
-          graph: require('@/assets/img/object-type-01.png'),
-          assertions: [
-            {
-              text: 'Time Taken',
-              value: 'Max'
-            },
-            {
-              text: 'Time Taken',
-              value: 'Average'
-            },
-            {
-              text: 'Assertion failures per',
-              value: 'second'
-            }
-          ],
-          isSelected: false,
-          myStyle: this.defaultStyle
-        },
-        {
-          id: 2,
-          name: 'Peak',
-          graph: require('@/assets/img/object-type-02.png'),
-          assertions: [
-            {
-              text: 'Time Taken',
-              value: 'Max'
-            },
-            {
-              text: 'Time Taken',
-              value: 'Average'
-            },
-            {
-              text: 'Assertion failures per',
-              value: 'second'
-            }
-          ],
-          isSelected: false,
-          myStyle: this.defaultStyle
-        },
-        {
-          id: 3,
+          id: 0,
           name: 'Stress',
           graph: require('@/assets/img/object-type-03.png'),
           assertions: [
@@ -107,7 +53,7 @@ export default {
           myStyle: this.defaultStyle
         },
         {
-          id: 4,
+          id: 1,
           name: 'Soak',
           graph: require('@/assets/img/object-type-04.png'),
           assertions: [
@@ -118,6 +64,60 @@ export default {
             {
               text: 'Time Taken',
               value: 'Median'
+            },
+            {
+              text: 'Assertion failures per',
+              value: 'second'
+            }
+          ],
+          isSelected: false,
+          myStyle: this.defaultStyle
+        },
+        { id: 2,
+          name: 'Default',
+          graph: require('@/assets/img/object-type-00.png'),
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Median'
+            }
+          ],
+          isSelected: false,
+          myStyle: this.defaultStyle
+        },
+        {
+          id: 3,
+          name: 'Baseline',
+          graph: require('@/assets/img/object-type-01.png'),
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Max'
+            },
+            {
+              text: 'Time Taken',
+              value: 'Average'
+            },
+            {
+              text: 'Assertion failures per',
+              value: 'second'
+            }
+          ],
+          isSelected: false,
+          myStyle: this.defaultStyle
+        },
+        {
+          id: 4,
+          name: 'Peak',
+          graph: require('@/assets/img/object-type-02.png'),
+          assertions: [
+            {
+              text: 'Time Taken',
+              value: 'Max'
+            },
+            {
+              text: 'Time Taken',
+              value: 'Average'
             },
             {
               text: 'Assertion failures per',

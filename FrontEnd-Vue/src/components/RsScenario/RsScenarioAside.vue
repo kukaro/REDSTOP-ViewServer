@@ -21,31 +21,12 @@ export default {
 .rs-scenario-aside {
   position: absolute;
   left: 60%;
-  top: 5%;
+  top: 13%;
   width: 37%;
   height: 80%;
-
-  margin-top: 70px;
-  /*margin-right: 30px;*/
-  margin-bottom: 70px;
-
   border-radius: 8px;
   box-shadow: 0 2px 4px 0 rgba(163, 182, 198, 0.76);
   background-color: #ffffff;
-
-  /*border-radius: 8px;*/
-  /*box-shadow: 0 2px 4px 0 rgba(163, 182, 198, 0.76);*/
-  /*background-color: #ffffff;*/
-
-  /*padding-top: 60px;*/
-  /*margin-left: 10%;*/
-  /*padding-left: 30px;*/
-  /*padding-right: 30px;*/
-  /*width: 40%;*/
-  /*height: 100%;*/
-  /*margin-right: 40px;*/
-  /*float: right;*/
-  /*z-index: 1;*/
 }
 #btn-run{
   width: 130px;

@@ -1,5 +1,6 @@
 <template>
   <div class="rs-scenario-run-progress-content">
+    <chartjs-line :labels="labels" :data="dataset" :bind="true"></chartjs-line>
     <button id="btn-run" @click="gotoreport"><span>결과보기</span></button>
   </div>
 </template>
@@ -11,6 +12,12 @@ export default {
     gotoreport () {
       this.$router.push({name: 'RsReport'})
       // this.$router.push({name: 'RsScenarioDetail', params: { name: item }})
+    }
+  },
+  data () {
+    return {
+      labels: ['00:00', '00:01', '00:02', '00:03', '00:04', '00:05', '00:06', '00:07', '00.08'],
+      dataset: [65, 59, 80, 81, 56, 55, 40, 43, 15, 33]
     }
   }
 }

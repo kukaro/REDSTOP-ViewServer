@@ -59,7 +59,7 @@ export default new Router({
     },
     {
       path: '/report',
-      name: 'rs-report',
+      name: 'RsReport',
       component: RsReport
     },
     {

@@ -9,7 +9,9 @@
 /* eslint-disable */
 import conf from '../../assets/js/conf'
 const state = {
-  treeData : null
+  treeData : null,
+  treeDataSerial : null,
+  currentBlockId: null,
 }
 
 const getters  = {
@@ -21,6 +23,12 @@ const getters  = {
 const mutations = {
   treeData ( state, payload )  {
     state.treeData  = payload
+  },
+  treeDataSerial (state, payload) {
+    state.treeDataSerial = payload
+  },
+  currentBlockId (state, payload) {
+    state.currentBlockId = payload
   },
 
   end () {}

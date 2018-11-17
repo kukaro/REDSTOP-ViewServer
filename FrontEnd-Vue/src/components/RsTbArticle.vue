@@ -66,7 +66,6 @@
               this.$http
                 .put(this.$conf.apiServer + '/api/v1/project/kukaro/true')
                 .then(response => {
-
                   // console.log('project도달')
                   // console.log(response)
                 })
@@ -173,20 +172,26 @@
             blockValue = this.demoWorkspace.getBlockById(event.blockId).getFieldValue('GroupName')
 
             // 이동
-            location.href = '#/test-block/' + blockType + blockValue
+            // location.href = '#/test-block/' + blockType + blockValue
+            this.$store.commit('app/currentBlockId', event.blockId)
+            this.$router.push('/aside')
           } else if (blockType === 'Test Case') {
             // Test Case 부터는 감싸고 있는 그룹이 있는지 확인
             blockType = 'c'
             blockValue = this.demoWorkspace.getBlockById(event.blockId).getFieldValue('TestCase')
             blockParentValue = this.demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('GroupName')
-            location.href = '#/test-block/g' + blockParentValue + '-' + blockType + blockValue
+            // location.href = '#/test-block/g' + blockParentValue + '-' + blockType + blockValue
+            this.$store.commit('app/currentBlockId', event.blockId)
+            this.$router.push('/aside')
           } else if (blockType === 'API') {
             // API는 감싸고 있는 그룹과 Test Case가 있는지 확인
             blockType = 'a'
             blockValue = encodeURIComponent(this.demoWorkspace.getBlockById(event.blockId).getFieldValue('URL'))
             blockParentValue = this.demoWorkspace.getBlockById(event.blockId).getParent().getParent().getFieldValue('GroupName')
             var blockParentValueTC = this.demoWorkspace.getBlockById(event.blockId).getParent().getFieldValue('TestCase')
-            location.href = '#/test-block/g' + blockParentValue + '-' + 'c' + blockParentValueTC + '-' + blockType + blockValue
+            // location.href = '#/test-block/g' + blockParentValue + '-' + 'c' + blockParentValueTC + '-' + blockType + blockValue
+            this.$store.commit('app/currentBlockId', event.blockId)
+            this.$router.push('/aside')
           }
 
           // 감싸고 있는 그룹 확인
@@ -227,6 +232,8 @@
         // console.log('여기얌')
         // this.$store.commit('app/treeData', navTree)
         // console.log(this.$store.state.app)
+        this.$store.commit('app/treeDataSerial', this.blockScenario)
+        console.log(this.$store.state.app)
       },
       travelChildBlock: function (parentBlockId, blocks) {
         if (!blocks) {
@@ -312,6 +319,7 @@
             }
             // console.log(navTree)
             this.renderBlock()
+            this.setNavTreeValue()
             console.log('여기얌')
             this.$store.commit('app/treeData', navTree)
             console.log(this.$store.state.app)
@@ -353,6 +361,7 @@
               }
             }
             // console.log(navTree)
+            this.setNavTreeValue()
             console.log('여기얌')
             this.$store.commit('app/treeData', navTree)
             console.log(this.$store.state.app)
@@ -428,6 +437,24 @@
             }
           })
         // this.loadBlocks(owner)
+      },
+      setNavTreeValue: function () {
+        console.log('bfs')
+        this.setNavTreeValueBfs(navTree)
+        this.$store.commit('app/treeData', navTree)
+        console.log(navTree)
+      },
+      setNavTreeValueBfs: function (node) {
+        let cnt = 0
+        // console.log(node)
+        if (!node) {
+          return 1
+        }
+        for (let atom of node) {
+          atom.urlCount = this.setNavTreeValueBfs(atom.children)
+          cnt += atom.urlCount
+        }
+        return cnt
       }
     }
   }

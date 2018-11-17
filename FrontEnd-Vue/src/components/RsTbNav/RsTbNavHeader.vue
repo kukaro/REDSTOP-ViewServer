@@ -12,19 +12,21 @@
 <script>
 import RsTbNavHeaderItem from './RsTbNavHeaderItem'
 export default {
+  props: ['initNavHeaderList'],
   name: 'rs-tb-nav-header',
   components: {RsTbNavHeaderItem},
   created: function () {
   },
   data: function () {
     return {
-      navHeaderList: ['Explorer', 'History'],
+      navHeaderList: this.initNavHeaderList,
       clickNumber: 0
     }
   },
   methods: {
     mouseClick: function (key) {
       this.clickNumber = key
+      this.$emit('headerSelectedEvent', key)
       // console.log(this.clickNumber)
     }
   }

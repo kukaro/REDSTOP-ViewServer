@@ -12,6 +12,7 @@ const state = {
   treeData : null,
   treeDataSerial : null,
   currentBlockId: null,
+  scenarioName: 'KKK1245'
 }
 
 const getters  = {
@@ -30,7 +31,9 @@ const mutations = {
   currentBlockId (state, payload) {
     state.currentBlockId = payload
   },
-
+  scenarioName (state, payload) {
+    state.scenarioName = payload
+  },
   end () {}
 }
 

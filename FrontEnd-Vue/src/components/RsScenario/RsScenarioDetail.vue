@@ -2,6 +2,7 @@
   <div class="rs-scenario-detail">
     <rs-scenario-section :name="$route.params.name"></rs-scenario-section>
     <rs-scenario-aside></rs-scenario-aside>
+    <router-view></router-view>
   </div>
 </template>
 

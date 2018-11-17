@@ -2,7 +2,7 @@
   <div class="rs-scenario-aside">
     <rs-scenario-aside-title></rs-scenario-aside-title>
     <rs-scenario-aside-content></rs-scenario-aside-content>
-    <button id="btn-run"><img src="../../assets/img/fill.png"><span>RUN</span></button>
+    <button id="btn-run" @click="gotorun"><img src="../../assets/img/fill.png"><span>RUN</span></button>
   </div>
 </template>
 
@@ -12,7 +12,13 @@ import RsScenarioAsideContent from './RsScenarioAside/RsScenarioAsideContent'
 
 export default {
   name: 'rs-scenario-aside',
-  components: { RsScenarioAsideTitle, RsScenarioAsideContent }
+  components: { RsScenarioAsideTitle, RsScenarioAsideContent },
+  methods: {
+    gotorun () {
+      this.$router.push({name: 'RsScenarioRun'})
+      // this.$router.push({name: 'RsScenarioDetail', params: { name: item }})
+    }
+  }
 }
 </script>
 
@@ -21,7 +27,7 @@ export default {
 .rs-scenario-aside {
   position: absolute;
   left: 60%;
-  top: 13%;
+  top: 15%;
   width: 37%;
   height: 80%;
   border-radius: 8px;

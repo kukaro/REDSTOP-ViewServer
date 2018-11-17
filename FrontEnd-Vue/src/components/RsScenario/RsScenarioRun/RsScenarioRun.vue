@@ -15,7 +15,8 @@ export default {
   name: 'rs-scenario-run',
   components: { RsScenarioRunTitle, RsScenarioRunInfo, RsScenarioRunProgress },
   created: function () {
-
+    // console.log('여기는 넘겨받은거야!!')
+    // console.log(this.$store.state.app.loadType)
   },
   data () {
     return {

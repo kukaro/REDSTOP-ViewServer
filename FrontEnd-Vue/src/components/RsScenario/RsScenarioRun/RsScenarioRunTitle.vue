@@ -1,6 +1,7 @@
 <template>
   <div class="rs-scenario-run-title">
     <p id="title">{{ $store.state.app.scenarioName }}</p>
+    <!--<p>{{ $store.state.app.loadType }}</p>-->
   </div>
 </template>
 

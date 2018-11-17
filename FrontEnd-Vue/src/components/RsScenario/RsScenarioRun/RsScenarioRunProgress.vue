@@ -1,18 +1,17 @@
 <template>
   <div class="rs-scenario-run-progress">
-    <rs-scenario-aside-title></rs-scenario-aside-title>
-    <rs-scenario-aside-content></rs-scenario-aside-content>
-    <!--<button id="btn-run" @click="gotorun"><img src="../../assets/img/fill.png"><span>RUN</span></button>-->
+    <rs-scenario-run-progress-title></rs-scenario-run-progress-title>
+    <rs-scenario-run-progress-content></rs-scenario-run-progress-content>
   </div>
 </template>
 
 <script>
-import RsScenarioAsideTitle from '../RsScenarioAside/RsScenarioAsideTItle'
-import RsScenarioAsideContent from '../RsScenarioAside/RsScenarioAsideContent'
+import RsScenarioRunProgressTitle from '../RsScenarioRun/RsScenarioRunProgressTitle'
+import RsScenarioRunProgressContent from '../RsScenarioRun/RsScenarioRunProgressContent'
 
 export default {
   name: 'rs-scenario-run-progress',
-  components: { RsScenarioAsideTitle, RsScenarioAsideContent }
+  components: { RsScenarioRunProgressTitle, RsScenarioRunProgressContent }
 }
 </script>
 

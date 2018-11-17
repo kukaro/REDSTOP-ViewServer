@@ -28,6 +28,11 @@ import RsScenarioAsideContentMiddle from './RsScenarioAsideContentMiddle'
 export default {
   name: 'rs-scenario-aside-content',
   components: { RsScenarioAsideContentMiddle },
+  created: function () {
+    this.selectedID = this.$store.state.app.loadType
+    this.typeSelected(this.templates[this.selectedID])
+    // console.log('Here! ID? =========>' + this.selectedID)
+  },
   data () {
     return {
       templates: [
@@ -160,6 +165,9 @@ export default {
         item.isSelected = true
         item.myStyle = this.selectedStyle
         this.selectedID = item.id
+
+        this.$store.commit('app/loadType', item.id)
+        // console.log(this.$store.state.app.loadType)
 
         for (let i = 0; i < this.templates.length; i++) {
           if (i !== item.id) {

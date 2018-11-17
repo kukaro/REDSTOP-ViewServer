@@ -1,6 +1,6 @@
 <template>
   <div class="rs-scenario-run-progress-content">
-    <chartjs-line :labels="labels" :data="dataset" :bind="true"></chartjs-line>
+    <chartjs-line :labels="labels" :data="dataset" :bind="true" :datalabel="'Response Time'"></chartjs-line>
     <button id="btn-run" @click="gotoreport"><span>결과보기</span></button>
   </div>
 </template>

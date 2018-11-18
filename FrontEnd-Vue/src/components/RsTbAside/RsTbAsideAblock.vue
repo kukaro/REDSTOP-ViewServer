@@ -190,15 +190,15 @@
             console.log(Object.keys(err))
             console.log(err.response)
             if(this.currentBlock.id === atom.id){
-              this.responseBodyData = err.data.result.data;
-              this.responseData.status = err.data.result.status;
-              this.responseData.size = err.data.result.size;
-              this.responseData.time = err.data.result.time;
+              this.responseBodyData = err.response.data.result.data;
+              this.responseData.status = err.response.data.result.status;
+              this.responseData.size = err.response.data.result.size;
+              this.responseData.time = err.response.data.result.time;
             }
-            atom.bodyData = err.data.result.data;
-            atom.status = err.data.result.status;
-            atom.size = err.data.result.size;
-            atom.time = err.data.result.time;
+            atom.bodyData = err.response.data.result.data;
+            atom.status = err.response.data.result.status;
+            atom.size = err.response.data.result.size;
+            atom.time = err.response.data.result.time;
           })
         }
 

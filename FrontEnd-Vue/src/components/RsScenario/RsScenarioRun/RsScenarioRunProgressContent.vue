@@ -14,23 +14,18 @@ export default {
   methods: {
     gotoreport () {
       this.$router.push({name: 'RsReport'})
-      // this.$router.push({name: 'RsScenarioDetail', params: { name: item }})
     },
     addData () {
-      // this.dataset.push(this.dataentry)
+      if(this.count===6){ // 30초만 타이머 돌도록 고정
+        clearInterval(this.timer)
+      }
       this.$http
         .get(this.$conf.apiServer+'/api/v2/number')
         .then(response => {
           this.dataset.push(response.data.number)
           this.dataset2.push(response.data.number2)
-          // this.apiCnt = response.data.count;
-          // console.log('count : ' + response.data.count)
         });
-
-      // this.dataset.push(26)
-      // this.labels.push(this.datalabel)
-      this.datalabel = ''
-      this.dataentry = ''
+      this.count++
     }
   },
   created: function () {
@@ -39,10 +34,11 @@ export default {
   },
   data () {
     return {
+      count: 0,
       timer: '',
       labels: ['00:00', '00:05', '00:10', '00:15', '00:20', '00:25', '00:30'],
-      dataset: [30],
-      dataset2: [20]
+      dataset: [],
+      dataset2: []
     }
   }
 }

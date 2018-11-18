@@ -15,6 +15,7 @@ export default {
   },
   watch: {
     initTableValue: function () {
+      console.log('변신한다값')
       this.tableValue = this.initTableValue
     }
   },

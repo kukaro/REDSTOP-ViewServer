@@ -19,6 +19,7 @@
         <img id="play-icon" src="../../assets/img/play.png" width="35" height="35" @click="clickPlay">
       </div>
     </div>
+    <br>
 
     <rs-tb-aside-ablock-assertion></rs-tb-aside-ablock-assertion>
 

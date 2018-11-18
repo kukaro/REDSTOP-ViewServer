@@ -189,12 +189,12 @@
             console.log('error 핸들링')
             console.log(Object.keys(err))
             console.log(err.response)
-            // if(this.currentBlock.id === atom.id){
-            //   this.responseBodyData = err.data.result.data;
-            //   this.responseData.status = err.data.result.status;
-            //   this.responseData.size = err.data.result.size;
-            //   this.responseData.time = err.data.result.time;
-            // }
+            if(this.currentBlock.id === atom.id){
+              this.responseBodyData = err.data.result.data;
+              this.responseData.status = err.data.result.status;
+              this.responseData.size = err.data.result.size;
+              this.responseData.time = err.data.result.time;
+            }
           })
         }
 

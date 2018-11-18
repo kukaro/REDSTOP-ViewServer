@@ -32,6 +32,7 @@ export default {
   data: function () {
     return {
       currentBlock: this.initCurrentBlock,
+      childBlocks: [],
       tableValue: [
         {
           'Method': 'POST',
@@ -68,6 +69,9 @@ export default {
       let treeDataSerial = this.$store.state.app.treeDataSerial;
       console.log('makeTableValue')
       console.log(treeDataSerial)
+      for(let atom of treeDataSerial){
+        console.log(atom)
+      }
     }
   }
 }

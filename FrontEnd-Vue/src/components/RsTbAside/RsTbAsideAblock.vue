@@ -185,7 +185,7 @@
               atom.size = response.data.result.size;
               atom.time = response.data.result.time;
               console.log('*****')
-              console.log(treeDataSerial)
+              console.log(atom)
             }).catch(err => {
             console.log('error 핸들링')
             console.log(Object.keys(err))

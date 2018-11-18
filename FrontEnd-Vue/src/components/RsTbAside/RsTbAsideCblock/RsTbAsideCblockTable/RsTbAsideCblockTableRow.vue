@@ -1,6 +1,6 @@
 <template>
     <tr class="rs-tb-aside-cblock-table-row">
-      <td v-for="(value,key) in tableRowData" :key="key" :class="{'last-row-success':key===6 && (key[0]===2 || key[0]===3),'name-row':key===1,'url-row':key===2, 'last-row-fail':key===6 && (key[0]===4 || key[0]===5)}">
+      <td v-for="(value,key) in tableRowData" :key="key" :class="{'last-row-success':key===6 && (Math.ceil(key/100)===2 || Math.ceil(key/100)===3),'name-row':key===1,'url-row':key===2, 'last-row-fail':key===6 && (Math.ceil(key/100)===4 || Math.ceil(key/100)===5)}">
         <span v-if="value!=null">{{value}}</span>
         <span v-else>-</span>
       </td>

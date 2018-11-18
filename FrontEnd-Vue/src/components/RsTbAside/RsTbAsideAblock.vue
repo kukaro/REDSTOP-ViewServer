@@ -178,10 +178,10 @@
                 // console.log(this.currentBlock.id)
                 // console.log(atom.id)
                 if(this.currentBlock.id === atom.id){
-                  tmpCurrentBlock.bodyData = this.responseBodyData = response.data.result.data;
-                  tmpCurrentBlock.status = this.responseData.status = response.data.result.status;
-                  tmpCurrentBlock.size = this.responseData.size = response.data.result.size;
-                  tmpCurrentBlock.time = this.responseData.time = response.data.result.time;
+                  this.currentBlock.bodyData = tmpCurrentBlock.bodyData = this.responseBodyData = response.data.result.data;
+                  this.currentBlock.status = tmpCurrentBlock.status = this.responseData.status = response.data.result.status;
+                  this.currentBlock.size = tmpCurrentBlock.size = this.responseData.size = response.data.result.size;
+                  this.currentBlock.time = tmpCurrentBlock.time = this.responseData.time = response.data.result.time;
                   this.currentBlock = tmpCurrentBlock
                 }
                 atom.bodyData = response.data.result.data;
@@ -198,10 +198,10 @@
               // console.log(Object.keys(err))
               // console.log(err.response)
               if(this.currentBlock.id === atom.id){
-                tmpCurrentBlock.bodyData = this.responseBodyData = err.response.data.result.data;
-                tmpCurrentBlock.status = this.responseData.status = err.response.data.result.status;
-                tmpCurrentBlock.size = this.responseData.size = err.response.data.result.size;
-                tmpCurrentBlock.time = this.responseData.time = err.response.data.result.time;
+                this.currentBlock.bodyData = tmpCurrentBlock.bodyData = this.responseBodyData = err.response.data.result.data;
+                this.currentBlock.status = tmpCurrentBlock.status = this.responseData.status = err.response.data.result.status;
+                this.currentBlock.size = tmpCurrentBlock.size = this.responseData.size = err.response.data.result.size;
+                this.currentBlock.time = tmpCurrentBlock.time = this.responseData.time = err.response.data.result.time;
                 this.currentBlock = tmpCurrentBlock
               }
               atom.bodyData = err.response.data.result.data;

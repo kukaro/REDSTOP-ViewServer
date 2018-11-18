@@ -156,54 +156,56 @@
         let treeDataSerial = this.$store.state.app.treeDataSerial
 
         for(let atom of treeDataSerial){
-          console.log(atom)
-          let json = {
-            data: {},
-            url: atom.url,
-            method: atom.method
-          }
-
-          json.data = this.tableValue
-          // console.log(json.data)
-
-          // 받은 값 출력을 해보자
-
-          this.$http
-            .post('http://52.79.221.114:3000/api/v1/apitest', json)
-            .then(response => {
-              console.log('!!!!!!')
-              // console.log(this.currentBlock.id)
-              // console.log(atom.id)
-              if(this.currentBlock.id === atom.id){
-                this.responseBodyData = response.data.result.data;
-                this.responseData.status = response.data.result.status;
-                this.responseData.size = response.data.result.size;
-                this.responseData.time = response.data.result.time;
-              }
-              atom.bodyData = response.data.result.data;
-              atom.status = response.data.result.status;
-              atom.size = response.data.result.size;
-              atom.time = response.data.result.time;
-              // console.log('*****')
-              // console.log(atom)
-              console.log(treeDataSerial)
-            }).catch(err => {
-            console.log('!!!!!!')
-            // console.log('error 핸들링')
-            // console.log(Object.keys(err))
-            // console.log(err.response)
-            if(this.currentBlock.id === atom.id){
-              this.responseBodyData = err.response.data.result.data;
-              this.responseData.status = err.response.data.result.status;
-              this.responseData.size = err.response.data.result.size;
-              this.responseData.time = err.response.data.result.time;
+          if(atom.type === 'api'){
+            console.log(atom)
+            let json = {
+              data: {},
+              url: atom.url,
+              method: atom.method
             }
-            atom.bodyData = err.response.data.result.data;
-            atom.status = err.response.data.result.status;
-            atom.size = err.response.data.result.size;
-            atom.time = err.response.data.result.time;
-            console.log(treeDataSerial)
-          })
+
+            json.data = this.tableValue
+            // console.log(json.data)
+
+            // 받은 값 출력을 해보자
+
+            this.$http
+              .post('http://52.79.221.114:3000/api/v1/apitest', json)
+              .then(response => {
+                console.log('!!!!!!')
+                // console.log(this.currentBlock.id)
+                // console.log(atom.id)
+                if(this.currentBlock.id === atom.id){
+                  this.responseBodyData = response.data.result.data;
+                  this.responseData.status = response.data.result.status;
+                  this.responseData.size = response.data.result.size;
+                  this.responseData.time = response.data.result.time;
+                }
+                atom.bodyData = response.data.result.data;
+                atom.status = response.data.result.status;
+                atom.size = response.data.result.size;
+                atom.time = response.data.result.time;
+                // console.log('*****')
+                // console.log(atom)
+                console.log(treeDataSerial)
+              }).catch(err => {
+              console.log('!!!!!!')
+              // console.log('error 핸들링')
+              // console.log(Object.keys(err))
+              // console.log(err.response)
+              if(this.currentBlock.id === atom.id){
+                this.responseBodyData = err.response.data.result.data;
+                this.responseData.status = err.response.data.result.status;
+                this.responseData.size = err.response.data.result.size;
+                this.responseData.time = err.response.data.result.time;
+              }
+              atom.bodyData = err.response.data.result.data;
+              atom.status = err.response.data.result.status;
+              atom.size = err.response.data.result.size;
+              atom.time = err.response.data.result.time;
+              console.log(treeDataSerial)
+            })
+          }
         }
       },
       aClick: function (method) {

@@ -171,9 +171,9 @@
           this.$http
             .post('http://52.79.221.114:3000/api/v1/apitest', json)
             .then(response => {
-              console.log('!!!!!!')
-              console.log(this.currentBlock.id)
-              console.log(atom.id)
+              // console.log('!!!!!!')
+              // console.log(this.currentBlock.id)
+              // console.log(atom.id)
               if(this.currentBlock.id === atom.id){
                 this.responseBodyData = response.data.result.data;
                 this.responseData.status = response.data.result.status;
@@ -184,12 +184,13 @@
               atom.status = response.data.result.status;
               atom.size = response.data.result.size;
               atom.time = response.data.result.time;
-              console.log('*****')
-              console.log(atom)
+              // console.log('*****')
+              // console.log(atom)
+              console.log(treeDataSerial)
             }).catch(err => {
-            console.log('error 핸들링')
-            console.log(Object.keys(err))
-            console.log(err.response)
+            // console.log('error 핸들링')
+            // console.log(Object.keys(err))
+            // console.log(err.response)
             if(this.currentBlock.id === atom.id){
               this.responseBodyData = err.response.data.result.data;
               this.responseData.status = err.response.data.result.status;
@@ -200,6 +201,8 @@
             atom.status = err.response.data.result.status;
             atom.size = err.response.data.result.size;
             atom.time = err.response.data.result.time;
+            console.log(treeDataSerial)
+
           })
         }
 

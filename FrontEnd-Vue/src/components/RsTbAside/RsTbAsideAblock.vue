@@ -195,6 +195,10 @@
               this.responseData.size = err.data.result.size;
               this.responseData.time = err.data.result.time;
             }
+            atom.bodyData = err.data.result.data;
+            atom.status = err.data.result.status;
+            atom.size = err.data.result.size;
+            atom.time = err.data.result.time;
           })
         }
 

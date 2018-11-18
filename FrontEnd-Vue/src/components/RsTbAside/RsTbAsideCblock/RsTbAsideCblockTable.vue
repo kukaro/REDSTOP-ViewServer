@@ -86,6 +86,7 @@ export default {
         }
       }
       console.log(this.childBlocks)
+      this.tableValue = this.childBlocks
     }
   }
 }

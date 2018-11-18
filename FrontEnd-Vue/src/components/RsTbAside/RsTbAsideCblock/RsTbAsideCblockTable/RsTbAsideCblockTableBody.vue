@@ -10,6 +10,14 @@ export default {
   components: {RsTbAsideCblockTableRow},
   props: ['initTableValue'],
   name: 'rs-tb-aside-cblock-table-body',
+  created: function (){
+    this.tableValue = this.initTableValue
+  },
+  watch: {
+    initTableValue: function () {
+      this.tableValue = this.initTableValue
+    }
+  },
   data: function () {
     return {
       tableValue: this.initTableValue

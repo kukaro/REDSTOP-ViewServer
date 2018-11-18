@@ -81,7 +81,7 @@ export default {
             'TimeTaken': atom.time,
             'Status': atom.status
           }
-          this.childBlocks.push(atom)
+          this.childBlocks.push(tmpBlockData)
         }
       }
       console.log(this.childBlocks)

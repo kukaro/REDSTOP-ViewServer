@@ -204,8 +204,8 @@
             atom.time = err.response.data.result.time;
             console.log(treeDataSerial)
           })
+          return
         }
-        return
       },
       aClick: function (method) {
         this.curMethod = method

@@ -152,6 +152,7 @@
     methods: {
       clickPlay: function () { // 여기서 API 테스트 하기
         console.log('클릭 클릭 이벤트 탔습니다!')
+        console.log(this.$store.state)
         var json = {
           data: {},
           url: this.currentBlock.url,

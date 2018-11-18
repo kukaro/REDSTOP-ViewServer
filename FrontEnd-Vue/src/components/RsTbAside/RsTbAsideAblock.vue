@@ -170,7 +170,7 @@
           this.$http
             .post('http://52.79.221.114:3000/api/v1/apitest', json)
             .then(response => {
-              if(this.currentBlock.id === this.atom.id){
+              if(this.currentBlock.id === atom.id){
                 this.responseBodyData = response.data.result.data;
                 this.responseData.status = response.data.result.status;
                 this.responseData.size = response.data.result.size;

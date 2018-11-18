@@ -174,9 +174,9 @@
             this.$http
               .post('http://52.79.221.114:3000/api/v1/apitest', json)
               .then(response => {
-                // console.log('!!!!!!')
-                // console.log(this.currentBlock.id)
-                // console.log(atom.id)
+                console.log('!!!!!!')
+                console.log('then case')
+                console.log(response)
                 if(this.currentBlock.id === atom.id){
                   this.currentBlock.bodyData = tmpCurrentBlock.bodyData = this.responseBodyData = response.data.result.data;
                   this.currentBlock.status = tmpCurrentBlock.status = this.responseData.status = response.data.result.status;
@@ -190,13 +190,13 @@
                 atom.time = response.data.result.time;
                 // console.log('*****')
                 // console.log(atom)
-                console.log(treeDataSerial)
+                // console.log(treeDataSerial)
                 // console.log(atom)
               }).catch(err => {
-              // console.log('!!!!!!')
-              // console.log('error 핸들링')
+              console.log('!!!!!!')
+              console.log('error 핸들링')
               // console.log(Object.keys(err))
-              // console.log(err.response)
+              console.log(err.response)
               if(this.currentBlock.id === atom.id){
                 this.currentBlock.bodyData = tmpCurrentBlock.bodyData = this.responseBodyData = err.response.data.result.data;
                 this.currentBlock.status = tmpCurrentBlock.status = this.responseData.status = err.response.data.result.status;
@@ -208,7 +208,7 @@
               atom.status = err.response.data.result.status;
               atom.size = err.response.data.result.size;
               atom.time = err.response.data.result.time;
-              console.log(treeDataSerial)
+              // console.log(treeDataSerial)
               // console.log(atom)
             })
           }

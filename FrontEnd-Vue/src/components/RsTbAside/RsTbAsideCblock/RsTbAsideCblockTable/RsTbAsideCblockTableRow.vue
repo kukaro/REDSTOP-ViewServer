@@ -35,10 +35,10 @@ export default {
     padding: 7px;
   }
   .name-row{
-    width: 30px;
+    width: 10px;
   }
   .url-row{
-    width: 30px;
+    width: 10px;
   }
   .last-row{
     color: #00c292;

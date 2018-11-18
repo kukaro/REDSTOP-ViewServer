@@ -154,8 +154,7 @@
         console.log('클릭 클릭 이벤트 탔습니다!')
         // console.log(this.$store.state.app.treeDataSerial)
         let treeDataSerial = this.$store.state.app.treeDataSerial
-        this.currentBlock = null
-        this.currentBlock = this.initCurrentBlock
+        let tmpCurrentBlock = {}
 
         for(let atom of treeDataSerial){
           if(atom.type === 'api'){
@@ -178,10 +177,11 @@
                 // console.log(this.currentBlock.id)
                 // console.log(atom.id)
                 if(this.currentBlock.id === atom.id){
-                  this.currentBlock.bodyData = this.responseBodyData = response.data.result.data;
-                  this.currentBlock.status = this.responseData.status = response.data.result.status;
-                  this.currentBlock.size = this.responseData.size = response.data.result.size;
-                  this.currentBlock.time = this.responseData.time = response.data.result.time;
+                  tmpCurrentBlock.bodyData = this.responseBodyData = response.data.result.data;
+                  tmpCurrentBlock.status = this.responseData.status = response.data.result.status;
+                  tmpCurrentBlock.size = this.responseData.size = response.data.result.size;
+                  tmpCurrentBlock.time = this.responseData.time = response.data.result.time;
+                  this.currentBlock = tmpCurrentBlock
                 }
                 atom.bodyData = response.data.result.data;
                 atom.status = response.data.result.status;
@@ -197,10 +197,11 @@
               // console.log(Object.keys(err))
               // console.log(err.response)
               if(this.currentBlock.id === atom.id){
-                this.currentBlock.bodyData = this.responseBodyData = err.response.data.result.data;
-                this.currentBlock.status = this.responseData.status = err.response.data.result.status;
-                this.currentBlock.size = this.responseData.size = err.response.data.result.size;
-                this.currentBlock.time = this.responseData.time = err.response.data.result.time;
+                tmpCurrentBlock.bodyData = this.responseBodyData = err.response.data.result.data;
+                tmpCurrentBlock.status = this.responseData.status = err.response.data.result.status;
+                tmpCurrentBlock.size = this.responseData.size = err.response.data.result.size;
+                tmpCurrentBlock.time = this.responseData.time = err.response.data.result.time;
+                this.currentBlock = tmpCurrentBlock
               }
               atom.bodyData = err.response.data.result.data;
               atom.status = err.response.data.result.status;

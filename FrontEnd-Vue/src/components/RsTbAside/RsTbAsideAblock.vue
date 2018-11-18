@@ -75,6 +75,7 @@
   import casing from 'eslint-plugin-vue/lib/utils/casing'
   import RsTbAsideAblockRequestBodyTabTableRow
     from './RsTbAsideAblock/RsTbAsideAblockRequest/RsTbAsideAblockRequestBodyTabTable/RsTbAsideAblockRequestBodyTabTableRow'
+  import _ from 'lodash'
 
   export default {
     props: ['initTitleName', 'initApiTestResult', 'initCurrentBlock'],
@@ -154,7 +155,7 @@
         console.log('클릭 클릭 이벤트 탔습니다!')
         // console.log(this.$store.state.app.treeDataSerial)
         let treeDataSerial = this.$store.state.app.treeDataSerial
-        let tmpCurrentBlock = {}
+        let tmpCurrentBlock = _.cloneDeep(this.currentBlock)
 
         for(let atom of treeDataSerial){
           if(atom.type === 'api'){

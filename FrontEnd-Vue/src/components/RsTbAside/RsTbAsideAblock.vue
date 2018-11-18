@@ -154,6 +154,7 @@
         console.log('클릭 클릭 이벤트 탔습니다!')
         // console.log(this.$store.state.app.treeDataSerial)
         let treeDataSerial = this.$store.state.app.treeDataSerial
+        this.currentBlock = null
         this.currentBlock = this.initCurrentBlock
 
         for(let atom of treeDataSerial){

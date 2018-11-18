@@ -180,6 +180,7 @@
                   this.currentBlock.status = this.responseData.status = response.data.result.status;
                   this.currentBlock.size = this.responseData.size = response.data.result.size;
                   this.currentBlock.time = this.responseData.time = response.data.result.time;
+                  this.currentBlock = this.currentBlock
                 }
                 atom.bodyData = response.data.result.data;
                 atom.status = response.data.result.status;
@@ -199,6 +200,7 @@
                 this.currentBlock.status = this.responseData.status = err.response.data.result.status;
                 this.currentBlock.size = this.responseData.size = err.response.data.result.size;
                 this.currentBlock.time = this.responseData.time = err.response.data.result.time;
+                this.currentBlock = this.currentBlock
               }
               atom.bodyData = err.response.data.result.data;
               atom.status = err.response.data.result.status;

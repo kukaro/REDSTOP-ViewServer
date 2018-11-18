@@ -164,7 +164,7 @@
           }
 
           json.data = this.tableValue
-          console.log(json.data)
+          // console.log(json.data)
 
           // 받은 값 출력을 해보자
 

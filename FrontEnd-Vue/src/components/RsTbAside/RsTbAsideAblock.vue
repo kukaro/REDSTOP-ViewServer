@@ -205,7 +205,7 @@
             console.log(treeDataSerial)
           })
         }
-
+        return
       },
       aClick: function (method) {
         this.curMethod = method

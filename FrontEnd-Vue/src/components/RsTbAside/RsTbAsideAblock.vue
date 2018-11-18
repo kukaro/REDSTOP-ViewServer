@@ -205,8 +205,8 @@
                 this.currentBlock.status = tmpCurrentBlock.status = this.responseData.status = err.response.data.result.status;
                 this.currentBlock.size = tmpCurrentBlock.size = this.responseData.size = err.response.data.result.size;
                 this.currentBlock.time = tmpCurrentBlock.time = this.responseData.time = err.response.data.result.time;
-                this.currentBlock.endTime = tmpCurrentBlock.endTime = this.responseData.endTime = err.data.result.endTime;
-                this.currentBlock.startTime = tmpCurrentBlock.startTime = this.responseData.startTime = err.data.result.startTime;
+                this.currentBlock.endTime = tmpCurrentBlock.endTime = this.responseData.endTime = err.response.data.result.endTime;
+                this.currentBlock.startTime = tmpCurrentBlock.startTime = this.responseData.startTime = err.response.data.result.startTime;
                 this.currentBlock = tmpCurrentBlock
               }
               atom.bodyData = err.response.data.result.data;

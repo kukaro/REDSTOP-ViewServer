@@ -185,7 +185,10 @@
               atom.time = response.data.result.time;
               console.log('*****')
               console.log(treeDataSerial)
-            })
+            }).catch(err => {
+            console.log('error 핸들링')
+            console.log(err)
+          })
         }
 
       },

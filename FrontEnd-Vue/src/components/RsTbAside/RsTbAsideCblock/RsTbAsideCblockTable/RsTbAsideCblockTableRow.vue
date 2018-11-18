@@ -37,11 +37,9 @@ export default {
   }
   .name-row{
     word-break:break-all;
-    color: red;
   }
   .url-row{
     word-break:break-all;
-    color: blue;
   }
   .last-row{
     color: #00c292;

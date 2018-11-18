@@ -72,6 +72,15 @@ export default {
       this.childBlocks = []
       for(let atom of treeDataSerial){
         if(atom.parentBlockId === this.currentBlock.id){
+          let tmpBlockData = {
+            'Method': atom.method,
+            'Name': atom.name,
+            'URL': atom.url,
+            'StartTime': null,
+            'FinishTime': null,
+            'TimeTaken': atom.time,
+            'Status': atom.status
+          }
           this.childBlocks.push(atom)
         }
       }

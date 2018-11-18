@@ -14,7 +14,7 @@
         </div>
       </div>
       <input type="text" class="form-control rs-api-input" aria-label="Text input with dropdown button"
-             :value="currentBlock.url">
+             :value="currentBlock.url">&nbsp;&nbsp;
       <div width="20%" style="float: right;">
         <img id="play-icon" src="../../assets/img/play.png" width="35" height="35" @click="clickPlay">
       </div>

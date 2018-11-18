@@ -188,6 +188,7 @@
               // console.log(atom)
               console.log(treeDataSerial)
             }).catch(err => {
+            console.log('!!!!!!')
             // console.log('error 핸들링')
             // console.log(Object.keys(err))
             // console.log(err.response)

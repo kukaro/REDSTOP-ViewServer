@@ -1,7 +1,7 @@
 <template>
     <tr class="rs-tb-aside-cblock-table-row">
       <td v-for="(value,key) in tableRowData" :key="key" :class="{'last-row':key==6}">
-        <span v-if="value!=null">{{value}}</span>
+        <span v-if="value!=null">{{value.length <= 20 ? value : '...' + value.substr(value.length-20, value.length)}}</span>
         <span v-else>-</span>
       </td>
     </tr>

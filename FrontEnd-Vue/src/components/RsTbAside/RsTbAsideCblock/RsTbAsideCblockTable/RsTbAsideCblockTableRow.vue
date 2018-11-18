@@ -36,9 +36,11 @@ export default {
   }
   .name-row{
     width: 10px;
+    color: red;
   }
   .url-row{
     width: 10px;
+    color: blue;
   }
   .last-row{
     color: #00c292;

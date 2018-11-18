@@ -44,11 +44,11 @@
     </table>
     <br><br>
     <!--<rs-tb-aside-ablock-response></rs-tb-aside-ablock-response>-->
-    <rs-tb-aside-ablock-response-title :initResponseData="responseData"></rs-tb-aside-ablock-response-title>
+    <rs-tb-aside-ablock-response-title :initResponseData="currentBlock"></rs-tb-aside-ablock-response-title>
     <rs-tb-aside-ablock-response-tab></rs-tb-aside-ablock-response-tab>
     <!--<rs-tb-aside-ablock-response-body></rs-tb-aside-ablock-response-body>-->
     <br>
-    <rs-tb-aside-ablock-response-body-item v-for="(value, key) in responseBodyData" :key="key" :initKey="key"
+    <rs-tb-aside-ablock-response-body-item v-for="(value, key) in currentBlock.bodyData" :key="key" :initKey="key"
                                            :initValue="value"></rs-tb-aside-ablock-response-body-item>
 
   </div>

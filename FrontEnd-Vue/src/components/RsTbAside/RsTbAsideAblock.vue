@@ -180,6 +180,8 @@
               this.atom.status = response.data.result.status;
               this.atom.size = response.data.result.size;
               this.atom.time = response.data.result.time;
+              console.log('*****')
+              console.log(treeDataSerial)
             })
         }
 

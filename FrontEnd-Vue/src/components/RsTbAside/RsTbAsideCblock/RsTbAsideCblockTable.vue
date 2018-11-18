@@ -74,7 +74,7 @@ export default {
         if(atom.parentBlockId === this.currentBlock.id){
           let tmpBlockData = {
             'Method': atom.method,
-            'Name': atom.name,
+            'Name': atom.url,
             'URL': atom.url,
             'StartTime': atom.startTime,
             'FinishTime': atom.endTime,

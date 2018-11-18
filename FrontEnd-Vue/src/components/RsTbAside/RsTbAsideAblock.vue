@@ -171,7 +171,7 @@
           this.$http
             .post('http://52.79.221.114:3000/api/v1/apitest', json)
             .then(response => {
-              // console.log('!!!!!!')
+              console.log('!!!!!!')
               // console.log(this.currentBlock.id)
               // console.log(atom.id)
               if(this.currentBlock.id === atom.id){

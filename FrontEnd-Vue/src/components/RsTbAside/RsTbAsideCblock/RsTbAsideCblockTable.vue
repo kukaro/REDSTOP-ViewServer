@@ -68,10 +68,14 @@ export default {
     makeTableValue (){
       let treeDataSerial = this.$store.state.app.treeDataSerial;
       console.log('makeTableValue')
-      console.log(treeDataSerial)
+      // console.log(treeDataSerial)
+      this.childBlocks = []
       for(let atom of treeDataSerial){
-        console.log(atom)
+        if(atom.parentBlockId === this.currentBlock.id){
+          this.childBlocks.push(atom)
+        }
       }
+      console.log(this.childBlocks)
     }
   }
 }

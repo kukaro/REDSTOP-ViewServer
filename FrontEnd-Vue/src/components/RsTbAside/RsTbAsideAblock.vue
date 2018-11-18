@@ -190,7 +190,7 @@
                 atom.time = response.data.result.time;
                 // console.log('*****')
                 // console.log(atom)
-                // console.log(treeDataSerial)
+                console.log(treeDataSerial)
                 // console.log(atom)
               }).catch(err => {
               // console.log('!!!!!!')
@@ -208,7 +208,7 @@
               atom.status = err.response.data.result.status;
               atom.size = err.response.data.result.size;
               atom.time = err.response.data.result.time;
-              // console.log(treeDataSerial)
+              console.log(treeDataSerial)
               // console.log(atom)
             })
           }

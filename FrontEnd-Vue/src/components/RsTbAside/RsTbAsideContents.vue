@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+/*eslint-disable */
   import RsTbAsideAblock from './RsTbAsideAblock'
   import RsTbAsideCblock from './RsTbAsideCblock'
   import RsTbAsideGblock from './RsTbAsideGblock'

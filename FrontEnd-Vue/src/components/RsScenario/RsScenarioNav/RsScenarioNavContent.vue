@@ -19,7 +19,14 @@ export default {
   },
   methods: {
     selected (item) {
+      this.$store.commit('app/scenarioName', item)
+      // store.commit('app/scenarioName', item)
+      console.log('이건 시나리오 이름이야')
+      console.log(this.$store.state.app.scenarioName)
+
       this.$router.push({name: 'RsScenarioDetail', params: { name: item }})
+
+      // console.log(this.$)
     }
   },
   created: function () {
@@ -28,8 +35,8 @@ export default {
       .get(this.$conf.apiServer + '/api/v2/scenario/2')
       .then(response => {
         let temp = []
-        console.log('이거야이거')
-        console.log(response)
+        // console.log('이거야이거')
+        // console.log(response)
 
         for (let i = 0; i < response.data.length; i++) {
           temp.push(response.data[i].scenario_name)

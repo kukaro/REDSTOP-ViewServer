@@ -52,7 +52,7 @@
   </div>
 </template>
 <script>
-  /* eslint-disable */
+/* eslint-disable */
   import RsTbAsideAblockApi from './RsTbAsideAblock/RsTbAsideAblockApi'
   import RsTbAsideAblockAssertion from './RsTbAsideAblock/RsTbAsideAblockAssertion'
   import RsTbAsideAblockRequest from './RsTbAsideAblock/RsTbAsideAblockRequest'

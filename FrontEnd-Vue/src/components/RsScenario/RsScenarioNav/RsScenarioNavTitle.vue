@@ -2,7 +2,7 @@
   <div class="rs-scenario-nav-title">
     <div id="title">
       <span id="titleText">Scenarios</span>
-      <button id="btn-new" @click="newLoadTest"><img src="../../../assets/img/btn-new.png"><span>NEW</span></button>
+      <button id="btn-new" @click="newItem"><img src="../../../assets/img/btn-new.png"><span>NEW</span></button>
     </div>
     <div class="line"></div>
   </div>
@@ -13,8 +13,8 @@ export default {
   name: 'rs-scenario-nav-title',
   components: { },
   methods: {
-    newLoadTest () {
-      console.log('새로운 load test scenario 만들기') // 서버 처리 다시 해야 함
+    newItem () {
+      // console.log('새로운 load test scenario 만들기') // 서버 처리 다시 해야 함
     }
   }
 }

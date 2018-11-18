@@ -8,6 +8,7 @@
 </template>
 
 <script>
+/*eslint-disable */
 import RsTbAsideCblockTableHeader from './RsTbAsideCblockTable/RsTbAsideCblockTableHeader'
 import RsTbAsideCblockTableBody from './RsTbAsideCblockTable/RsTbAsideCblockTableBody'
 

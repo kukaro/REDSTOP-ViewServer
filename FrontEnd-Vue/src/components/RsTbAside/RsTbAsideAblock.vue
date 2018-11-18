@@ -152,27 +152,36 @@
     methods: {
       clickPlay: function () { // 여기서 API 테스트 하기
         console.log('클릭 클릭 이벤트 탔습니다!')
-        console.log(this.$store.state.app)
-        var json = {
-          data: {},
-          url: this.currentBlock.url,
-          method: this.currentBlock.method
+        // console.log(this.$store.state.app.treeDataSerial)
+        let treeDataSerial = this.$store.state.app.treeDataSerial
+
+        for(let atom of treeDataSerial){
+          let json = {
+            data: {},
+            url: atom.url,
+            method: atom.method
+          }
+
+          json.data = this.tableValue
+          console.log(json.data)
+
+          // 받은 값 출력을 해보자
+
+          this.$http
+            .post('http://52.79.221.114:3000/api/v1/apitest', json)
+            .then(response => {
+              if(this.currentBlock.id === this.atom.id){
+                this.responseBodyData = response.data.result.data;
+                this.responseData.status = response.data.result.status;
+                this.responseData.size = response.data.result.size;
+                this.responseData.time = response.data.result.time;
+              }
+              this.atom.bodyData = response.data.result.data;
+              this.atom.status = response.data.result.status;
+              this.atom.size = response.data.result.size;
+              this.atom.time = response.data.result.time;
+            })
         }
-
-        json.data = this.tableValue
-        console.log(json.data)
-
-        // 받은 값 출력을 해보자
-
-        this.$http
-          .post('http://52.79.221.114:3000/api/v1/apitest', json)
-          .then(response => {
-            // console.log(response)
-            this.responseBodyData = response.data.result.data;
-            this.responseData.status = response.data.result.status;
-            this.responseData.size = response.data.result.size;
-            this.responseData.time = response.data.result.time;
-          })
 
       },
       aClick: function (method) {

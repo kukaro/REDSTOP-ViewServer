@@ -1,8 +1,8 @@
 <template>
   <div class="rs-scenario-run-progress-content">
     <canvas id="mycanvas2" count="2"></canvas>
-    <chartjs-line :datalabel="'TPS'" :data="dataset" :bind="true" :backgroundcolor="'#4966eb'" :bordercolor="'#4966eb'" target="mycanvas2"></chartjs-line>
-    <chartjs-line :datalabel="'Response Time'" :data="dataset2" target="mycanvas2"></chartjs-line>
+    <chartjs-line :labels="labels" :datalabel="'TPS'" :data="dataset" :bind="true" :backgroundcolor="'#4966eb'" :bordercolor="'#4966eb'" target="mycanvas2"></chartjs-line>
+    <chartjs-line :labels="labels" :datalabel="'Response Time'" :data="dataset2" target="mycanvas2"></chartjs-line>
     <button id="btn-run" @click="gotoreport"><span>결과보기</span></button>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       timer: '',
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['00:00', '00:05', '00:10', '00:15', '00:20', '00:25', '00:30'],
       dataset: [30],
       dataset2: [20]
     }

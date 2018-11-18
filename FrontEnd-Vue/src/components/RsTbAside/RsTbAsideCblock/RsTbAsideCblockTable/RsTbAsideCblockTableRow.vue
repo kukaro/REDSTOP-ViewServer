@@ -1,6 +1,6 @@
 <template>
     <tr class="rs-tb-aside-cblock-table-row">
-      <td v-for="(value,key) in tableRowData" :key="key" :class="{'last-row':key==6,'name-row':key==1,'url-row':key==2}">
+      <td v-for="(value,key) in tableRowData" :key="key" :class="{'last-row':key===6,'name-row':key===1,'url-row':key===2}">
         <span v-if="value!=null">{{value}}</span>
         <span v-else>-</span>
       </td>

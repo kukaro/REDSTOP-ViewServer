@@ -176,10 +176,10 @@
                 this.responseData.size = response.data.result.size;
                 this.responseData.time = response.data.result.time;
               }
-              this.atom.bodyData = response.data.result.data;
-              this.atom.status = response.data.result.status;
-              this.atom.size = response.data.result.size;
-              this.atom.time = response.data.result.time;
+              atom.bodyData = response.data.result.data;
+              atom.status = response.data.result.status;
+              atom.size = response.data.result.size;
+              atom.time = response.data.result.time;
               console.log('*****')
               console.log(treeDataSerial)
             })

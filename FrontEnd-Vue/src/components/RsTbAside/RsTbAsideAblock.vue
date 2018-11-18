@@ -149,7 +149,7 @@ export default {
           this.responseData.size = response.data.result.size;
           this.responseData.time = response.data.result.time;
         })
-
+      
     },
     aClick: function (method) {
       this.curMethod = method

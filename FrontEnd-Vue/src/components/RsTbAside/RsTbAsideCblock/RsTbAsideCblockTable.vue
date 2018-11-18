@@ -17,11 +17,15 @@ export default {
   created: function () {
     console.log('aside cblock table')
     console.log(this.currentBlock)
+    this.makeTableValue()
+
   },
   watch: {
     initCurrentBlock: function () {
       this.currentBlock = this.initCurrentBlock
+      console.log('aside cblock table')
       console.log(this.currentBlock)
+      this.makeTableValue()
     }
   },
   components: { RsTbAsideCblockTableBody, RsTbAsideCblockTableHeader },
@@ -57,6 +61,13 @@ export default {
           'Status': 'PASS'
         }
       ]
+    }
+  },
+  methods: {
+    makeTableValue (){
+      let treeDataSerial = this.$store.state.app.treeDataSerial;
+      console.log('makeTableValue')
+      console.log(treeDataSerial)
     }
   }
 }

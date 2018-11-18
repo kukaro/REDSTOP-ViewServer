@@ -7,6 +7,10 @@ import router from './router'
 import axios from 'axios'
 import conf from './assets/js/conf'
 import store from './store'
+import 'chart.js'
+import 'hchs-vue-charts'
+
+Vue.use(VueCharts)
 
 Vue.prototype.$http = axios
 Vue.prototype.$conf = conf

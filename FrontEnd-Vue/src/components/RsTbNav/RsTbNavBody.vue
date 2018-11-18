@@ -17,10 +17,10 @@ export default {
   components: {RsTbNavBodyTree},
   watch: {
     initTreeData: function () {
-      console.log('변화')
-      console.log(this.$store.state.app.treeData)
+      // console.log('변화')
+      // console.log(this.$store.state.app.treeData)
       this.treeData = this.$store.state.app.treeData
-      console.log(this.treeData)
+      // console.log(this.treeData)
     }
   },
   mounted: function () {
@@ -28,8 +28,8 @@ export default {
   created: function () {
     var store = this.$store
     var vm = this
-    console.log('야호')
-    console.log(this.$store)
+    // console.log('야호')
+    // console.log(this.$store)
     // this.$http
     //   .get(this.$conf.apiServer + '/api/v1/treeinit')
     //   .then(function (response) {

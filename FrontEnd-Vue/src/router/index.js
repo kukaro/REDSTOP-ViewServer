@@ -11,6 +11,7 @@ import RsReport from '@/components/RsReport'
 import RsScenario from '@/components/RsScenario/RsScenario'
 import RsScenarioDetail from '@/components/RsScenario/RsScenarioDetail'
 import RsScenarioStart from '@/components/RsScenario/RsScenarioStart'
+import RsScenarioRun from '@/components/RsScenario/RsScenarioRun/RsScenarioRun'
 
 Vue.use(Router)
 
@@ -58,7 +59,7 @@ export default new Router({
     },
     {
       path: '/report',
-      name: 'rs-report',
+      name: 'RsReport',
       component: RsReport
     },
     {
@@ -73,7 +74,15 @@ export default new Router({
           path: ':name',
           name: 'RsScenarioDetail',
           component: RsScenarioDetail,
-          props: true
+          props: true,
+          children: [
+            {
+              path: 'run',
+              name: 'RsScenarioRun',
+              component: RsScenarioRun,
+              props: true
+            }
+          ]
         }
       ]
     }

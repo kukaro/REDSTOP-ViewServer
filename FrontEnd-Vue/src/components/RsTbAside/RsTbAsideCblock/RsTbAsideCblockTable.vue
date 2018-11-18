@@ -76,8 +76,8 @@ export default {
             'Method': atom.method,
             'Name': atom.name,
             'URL': atom.url,
-            'StartTime': null,
-            'FinishTime': null,
+            'StartTime': atom.startTime,
+            'FinishTime': atom.endTime,
             'TimeTaken': atom.time,
             'Status': atom.status
           }

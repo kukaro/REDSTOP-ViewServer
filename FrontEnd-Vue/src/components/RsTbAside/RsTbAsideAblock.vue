@@ -187,7 +187,7 @@
               console.log(treeDataSerial)
             }).catch(err => {
             console.log('error 핸들링')
-            console.log(err)
+            console.log(Object.keys(err))
           })
         }
 

@@ -17,7 +17,8 @@ export default {
   },
   watch: {
     initTableRowData: function () {
-      this.tableRowData = this.initTableRowData
+      var values = Object.keys(this.tableRowData).map(key => this.tableRowData[key])
+      this.tableRowData = values
     }
   },
   data: function () {

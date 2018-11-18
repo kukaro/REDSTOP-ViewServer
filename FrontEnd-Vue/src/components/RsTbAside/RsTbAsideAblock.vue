@@ -182,12 +182,16 @@
                   this.currentBlock.status = tmpCurrentBlock.status = this.responseData.status = response.data.result.status;
                   this.currentBlock.size = tmpCurrentBlock.size = this.responseData.size = response.data.result.size;
                   this.currentBlock.time = tmpCurrentBlock.time = this.responseData.time = response.data.result.time;
+                  this.currentBlock.endTime = tmpCurrentBlock.endTime = this.responseData.endTime = response.data.result.endTime;
+                  this.currentBlock.startTime = tmpCurrentBlock.startTime = this.responseData.startTime = response.data.result.startTime;
                   this.currentBlock = tmpCurrentBlock
                 }
                 atom.bodyData = response.data.result.data;
                 atom.status = response.data.result.status;
                 atom.size = response.data.result.size;
                 atom.time = response.data.result.time;
+                atom.endTime = response.data.result.endTime;
+                atom.startTime = response.data.result.startTime;
                 // console.log('*****')
                 // console.log(atom)
                 // console.log(treeDataSerial)
@@ -201,12 +205,16 @@
                 this.currentBlock.status = tmpCurrentBlock.status = this.responseData.status = err.response.data.result.status;
                 this.currentBlock.size = tmpCurrentBlock.size = this.responseData.size = err.response.data.result.size;
                 this.currentBlock.time = tmpCurrentBlock.time = this.responseData.time = err.response.data.result.time;
+                this.currentBlock.endTime = tmpCurrentBlock.endTime = this.responseData.endTime = err.data.result.endTime;
+                this.currentBlock.startTime = tmpCurrentBlock.startTime = this.responseData.startTime = err.data.result.startTime;
                 this.currentBlock = tmpCurrentBlock
               }
               atom.bodyData = err.response.data.result.data;
               atom.status = err.response.data.result.status;
               atom.size = err.response.data.result.size;
               atom.time = err.response.data.result.time;
+              atom.endTime = err.data.result.endTime;
+              atom.startTime = err.data.result.startTime;
               // console.log(treeDataSerial)
               // console.log(atom)
             })

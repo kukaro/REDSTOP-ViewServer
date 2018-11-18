@@ -9,10 +9,22 @@ import RsTbAsideCblockTable from './RsTbAsideCblock/RsTbAsideCblockTable'
 import RsTbAsideCblockButton from './RsTbAsideCblock/RsTbAsideCblockButton'
 
 export default {
-  name: 'rs-tb-aside-cblock',
   components: {RsTbAsideCblockButton, RsTbAsideCblockTable},
+  props: ['initCurrentBlock'],
+  name: 'rs-tb-aside-cblock',
+  created: function () {
+    console.log('생성됬슴돠.')
+    console.log(this.currentBlock)
+  },
+  watch: {
+    initCurrentBlock: function () {
+      this.currentBlock = this.initCurrentBlock
+      console.log(this.currentBlock)
+    }
+  },
   data: function () {
     return {
+      currentBlock: this.initCurrentBlock
     }
   }
 }

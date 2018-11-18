@@ -4,7 +4,7 @@
       <rs-tb-aside-gblock></rs-tb-aside-gblock>
     </div>
     <div v-else-if="currentBlock.type=='case'">
-      <rs-tb-aside-cblock></rs-tb-aside-cblock>
+      <rs-tb-aside-cblock :initCurrentBlock="currentBlock"></rs-tb-aside-cblock>
     </div>
     <div v-else-if="currentBlock.type=='api'">
       <rs-tb-aside-ablock :initCurrentBlock="currentBlock"></rs-tb-aside-ablock>

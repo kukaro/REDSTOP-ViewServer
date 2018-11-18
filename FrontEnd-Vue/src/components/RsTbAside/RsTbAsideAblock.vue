@@ -197,7 +197,7 @@
               // console.log('error 핸들링')
               // console.log(Object.keys(err))
               // console.log(err.response)
-              if(this.currentBlock.id === atom.id){
+              if(this.currentBlock.id === adtom.id){
                 tmpCurrentBlock.bodyData = this.responseBodyData = err.response.data.result.data;
                 tmpCurrentBlock.status = this.responseData.status = err.response.data.result.status;
                 tmpCurrentBlock.size = this.responseData.size = err.response.data.result.size;

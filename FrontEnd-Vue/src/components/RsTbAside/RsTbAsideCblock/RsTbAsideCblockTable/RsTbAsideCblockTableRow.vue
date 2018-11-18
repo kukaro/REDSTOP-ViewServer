@@ -35,12 +35,12 @@ export default {
     padding: 7px;
   }
   .name-row{
-    word-break:break-all
+    word-break:break-all;
     width: 10%;
     color: red;
   }
   .url-row{
-    word-break:break-all
+    word-break:break-all;
     width: 5%;
     color: blue;
   }

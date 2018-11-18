@@ -155,12 +155,12 @@
         // console.log(this.$store.state.app.treeDataSerial)
         let treeDataSerial = this.$store.state.app.treeDataSerial
 
-        for(let atom of treeDataSerial){
-          console.log(atom)
+        for(let idx in treeDataSerial){
+          console.log(treeDataSerial[idx])
           let json = {
             data: {},
-            url: atom.url,
-            method: atom.method
+            url: treeDataSerial[idx].url,
+            method: treeDataSerial[idx].method
           }
 
           json.data = this.tableValue
@@ -174,35 +174,34 @@
               // console.log('!!!!!!')
               // console.log(this.currentBlock.id)
               // console.log(atom.id)
-              if(this.currentBlock.id === atom.id){
+              if(this.currentBlock.id === treeDataSerial[idx].id){
                 this.responseBodyData = response.data.result.data;
                 this.responseData.status = response.data.result.status;
                 this.responseData.size = response.data.result.size;
                 this.responseData.time = response.data.result.time;
               }
-              atom.bodyData = response.data.result.data;
-              atom.status = response.data.result.status;
-              atom.size = response.data.result.size;
-              atom.time = response.data.result.time;
+              treeDataSerial[idx].bodyData = response.data.result.data;
+              treeDataSerial[idx].status = response.data.result.status;
+              treeDataSerial[idx].size = response.data.result.size;
+              treeDataSerial[idx].time = response.data.result.time;
               // console.log('*****')
-              // console.log(atom)
+              // console.log(treeDataSerial[idx])
               console.log(treeDataSerial)
             }).catch(err => {
             // console.log('error 핸들링')
             // console.log(Object.keys(err))
             // console.log(err.response)
-            if(this.currentBlock.id === atom.id){
+            if(this.currentBlock.id === treeDataSerial[idx].id){
               this.responseBodyData = err.response.data.result.data;
               this.responseData.status = err.response.data.result.status;
               this.responseData.size = err.response.data.result.size;
               this.responseData.time = err.response.data.result.time;
             }
-            atom.bodyData = err.response.data.result.data;
-            atom.status = err.response.data.result.status;
-            atom.size = err.response.data.result.size;
-            atom.time = err.response.data.result.time;
+            treeDataSerial[idx].bodyData = err.response.data.result.data;
+            treeDataSerial[idx].status = err.response.data.result.status;
+            treeDataSerial[idx].size = err.response.data.result.size;
+            treeDataSerial[idx].time = err.response.data.result.time;
             console.log(treeDataSerial)
-
           })
         }
 

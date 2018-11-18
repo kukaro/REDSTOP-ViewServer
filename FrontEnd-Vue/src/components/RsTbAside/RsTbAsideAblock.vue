@@ -187,6 +187,7 @@
               // console.log('*****')
               // console.log(atom)
               console.log(treeDataSerial)
+              return
             }).catch(err => {
             console.log('!!!!!!')
             // console.log('error 핸들링')
@@ -203,8 +204,8 @@
             atom.size = err.response.data.result.size;
             atom.time = err.response.data.result.time;
             console.log(treeDataSerial)
+            return
           })
-          return
         }
       },
       aClick: function (method) {

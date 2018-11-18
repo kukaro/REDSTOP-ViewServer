@@ -12,10 +12,22 @@ import RsTbAsideCblockTableHeader from './RsTbAsideCblockTable/RsTbAsideCblockTa
 import RsTbAsideCblockTableBody from './RsTbAsideCblockTable/RsTbAsideCblockTableBody'
 
 export default {
+  props: ['initCurrentBlock'],
   name: 'rs-tb-aside-cblock-table',
+  created: function () {
+    console.log('aside cblock table')
+    console.log(this.currentBlock)
+  },
+  watch: {
+    initCurrentBlock: function () {
+      this.currentBlock = this.initCurrentBlock
+      console.log(this.currentBlock)
+    }
+  },
   components: { RsTbAsideCblockTableBody, RsTbAsideCblockTableHeader },
   data: function () {
     return {
+      currentBlock: this.initCurrentBlock,
       tableValue: [
         {
           'Method': 'POST',

@@ -1,6 +1,6 @@
 <template>
   <div class="rs-tb-aside-cblock">
-    <rs-tb-aside-cblock-table></rs-tb-aside-cblock-table>
+    <rs-tb-aside-cblock-table :init-current-block="currentBlock"></rs-tb-aside-cblock-table>
     <rs-tb-aside-cblock-button></rs-tb-aside-cblock-button>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
   props: ['initCurrentBlock'],
   name: 'rs-tb-aside-cblock',
   created: function () {
-    console.log('생성됬슴돠.')
+    console.log('aside cblock')
     console.log(this.currentBlock)
   },
   watch: {

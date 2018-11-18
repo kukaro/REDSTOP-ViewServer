@@ -213,8 +213,8 @@
               atom.status = err.response.data.result.status;
               atom.size = err.response.data.result.size;
               atom.time = err.response.data.result.time;
-              atom.endTime = err.data.result.endTime;
-              atom.startTime = err.data.result.startTime;
+              atom.endTime = err.response.data.result.endTime;
+              atom.startTime = err.response.data.result.startTime;
               // console.log(treeDataSerial)
               // console.log(atom)
             })

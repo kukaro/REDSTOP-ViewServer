@@ -1,11 +1,11 @@
 <template>
   <div class="rs-scenario-run-progress-content">
     <canvas id="mycanvas2" count="5"></canvas>
-    <chartjs-line :labels="labels" :datalabel="'TPS'" :data="dataset" :bind="true" :backgroundcolor="'#4966eb'" :bordercolor="'#4966eb'" :pointborderwidth="5" :pointbordercolor="'#4966eb'" target="mycanvas2" :pointhoverbackgroundcolor="'#4966eb'"></chartjs-line>
-    <chartjs-line :labels="labels" :datalabel="'Response Time'" :data="dataset2" :backgroundcolor="'#2bbee8'" :bordercolor="'#2bbee8'" :pointborderwidth="5" :pointbordercolor="'#2bbee8'" target="mycanvas2" :pointhoverbackgroundcolor="'#2bbee8'"></chartjs-line>
-    <chartjs-line :labels="labels" :datalabel="'VUs'" :data="dataset3" :backgroundcolor="'#77c61f'" :bordercolor="'#77c61f'" :pointborderwidth="5" :pointbordercolor="'#77c61f'" :pointbackgroundcolor="'#77c61f'" target="mycanvas2" :pointhoverbackgroundcolor="'#77c61f'"></chartjs-line>
-    <chartjs-line :labels="labels" :datalabel="'Failures'" :data="dataset4" :backgroundcolor="'#eb9e49'" :bordercolor="'#eb9e49'" :pointborderwidth="5" :pointbordercolor="'#eb9e49'" :pointbackgroundcolor="'#eb9e49'" target="mycanvas2" :pointhoverbackgroundcolor="'#eb9e49'"></chartjs-line>
-    <chartjs-line :labels="labels" :datalabel="'Failures/s'" :data="dataset5" :backgroundcolor="'#ebd249'" :bordercolor="'#ebd249'" :pointborderwidth="5" :pointbordercolor="'#ebd249'" :pointbackgroundcolor="'#ebd249'" target="mycanvas2" :pointhoverbackgroundcolor="'#ebd249'"></chartjs-line>
+    <chartjs-line :labels="labels" :datalabel="'TPS'" :data="dataset" :bind="true" :backgroundcolor="'#4966eb'" :bordercolor="'#4966eb'" :pointborderwidth="5" :pointbordercolor="'#4966eb'" target="mycanvas2" :pointhoverbackgroundcolor="'#4966eb'" :linetension="0"></chartjs-line>
+    <chartjs-line :labels="labels" :datalabel="'Response Time'" :data="dataset2" :backgroundcolor="'#2bbee8'" :bordercolor="'#2bbee8'" :pointborderwidth="5" :pointbordercolor="'#2bbee8'" target="mycanvas2" :pointhoverbackgroundcolor="'#2bbee8'" :linetension="0"></chartjs-line>
+    <chartjs-line :labels="labels" :datalabel="'VUs'" :data="dataset3" :backgroundcolor="'#77c61f'" :bordercolor="'#77c61f'" :pointborderwidth="5" :pointbordercolor="'#77c61f'" :pointbackgroundcolor="'#77c61f'" target="mycanvas2" :pointhoverbackgroundcolor="'#77c61f'" :linetension="0"></chartjs-line>
+    <chartjs-line :labels="labels" :datalabel="'Failures'" :data="dataset4" :backgroundcolor="'#eb9e49'" :bordercolor="'#eb9e49'" :pointborderwidth="5" :pointbordercolor="'#eb9e49'" :pointbackgroundcolor="'#eb9e49'" target="mycanvas2" :pointhoverbackgroundcolor="'#eb9e49'" :linetension="0"></chartjs-line>
+    <chartjs-line :labels="labels" :datalabel="'Failures/s'" :data="dataset5" :backgroundcolor="'#ebd249'" :bordercolor="'#ebd249'" :pointborderwidth="5" :pointbordercolor="'#ebd249'" :pointbackgroundcolor="'#ebd249'" target="mycanvas2" :pointhoverbackgroundcolor="'#ebd249'" :linetension="0"></chartjs-line>
 
     <button id="btn-run" @click="gotoreport"><span>결과보기</span></button>
   </div>

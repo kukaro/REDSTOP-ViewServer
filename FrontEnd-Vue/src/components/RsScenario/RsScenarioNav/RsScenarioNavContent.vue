@@ -6,6 +6,12 @@
         {{item}}
       </li>
     </ul>
+    <div class="exportButton">
+      <button id="e-button">Export to JMeter</button>
+    </div>
+    <!--<div class="exportButton">-->
+      <!--<button id="i-button" @clck="showModal = true" style="text-align: center">Import APIs from Swagger</button>-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -64,5 +70,35 @@ li {
   font-size: 13px;
   font-weight: 600;
   color: #233539;
+}
+#e-button {
+  width: 100%;
+  height: 43px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 #c6d5e9;
+  background-color: #39496d;
+  color: white;
+  font-family: TitilliumWeb;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+/*.exportButton{*/
+   /*position: absolute;*/
+   /*right: 10%;*/
+   /*left: 10%;*/
+   /*display:flex;*/
+   /*align-items:center;*/
+   /*justify-content:center;*/
+   /*bottom: 8%;*/
+ /*}*/
+.exportButton{
+  position: absolute;
+  right: 10%;
+  left: 10%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  bottom: 20%;
 }
 </style>

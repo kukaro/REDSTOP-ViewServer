@@ -1,7 +1,8 @@
 <template>
   <div class="rs-tb-aside-gblock">
     <div v-for="(value,key) in objList" :key>
-      <img src="../../assets/img/group.png" width="18px" height="16px">
+      <img v-if="value.type === 'group'" src="../../assets/img/group.png" width="18px" height="16px">
+      <img v-else-if="value.type === 'case'" src="../../assets/img/case.png" width="18px" height="16px">
       <span>{{value.name}}</span>
       <rs-tb-aside-gblock-table :initValue="value"></rs-tb-aside-gblock-table>
       <br><br>

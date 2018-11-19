@@ -47,8 +47,10 @@ export default {
         let tmp = q.peek()
         q.deq()
         console.log(tmp)
-        for(let atom of tmp.children){
-          q.enq(atom)
+        if(tmp.children!==undefined){
+          for(let atom of tmp.children){
+            q.enq(atom)
+          }
         }
       }
       // console.log(treeData)

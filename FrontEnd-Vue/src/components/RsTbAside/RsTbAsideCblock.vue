@@ -14,13 +14,13 @@ export default {
   props: ['initCurrentBlock'],
   name: 'rs-tb-aside-cblock',
   created: function () {
-    console.log('aside cblock')
-    console.log(this.currentBlock)
+    // console.log('aside cblock')
+    // console.log(this.currentBlock)
   },
   watch: {
     initCurrentBlock: function () {
       this.currentBlock = this.initCurrentBlock
-      console.log(this.currentBlock)
+      // console.log(this.currentBlock)
     }
   },
   data: function () {

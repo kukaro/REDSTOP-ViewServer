@@ -1,7 +1,7 @@
 <template>
   <div class="rs-tb-aside-contents">
     <div v-if="currentBlock.type=='group'">
-      <rs-tb-aside-gblock></rs-tb-aside-gblock>
+      <rs-tb-aside-gblock :initCurrentBlock="currentBlock"></rs-tb-aside-gblock>
     </div>
     <div v-else-if="currentBlock.type=='case'">
       <rs-tb-aside-cblock :initCurrentBlock="currentBlock"></rs-tb-aside-cblock>

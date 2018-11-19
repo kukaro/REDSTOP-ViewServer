@@ -15,8 +15,9 @@ export default {
   props: ['initValue'],
   name: 'rs-tb-aside-gblock-table',
   created: function () {
-    // console.log('aside gblock table')
-    // console.log(this.value)
+    console.log('aside gblock table')
+    console.log(this.$store.state.app.treeData)
+    console.log(this.$store.state.app.treeDataSerial)
     this.value = this.initValue
     this.tableValue = []
     if(this.value.type === 'case'){
@@ -33,8 +34,9 @@ export default {
   },
   watch: {
     initValue: function () {
-      // console.log('aside gblock table')
-      // console.log(this.value)
+      console.log('aside gblock table')
+      console.log(this.$store.state.app.treeData)
+      console.log(this.$store.state.app.treeDataSerial)
       this.value = this.initValue
       this.tableValue = []
       if(this.value.type === 'case'){

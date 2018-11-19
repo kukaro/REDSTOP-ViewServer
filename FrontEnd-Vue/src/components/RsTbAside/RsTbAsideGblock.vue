@@ -11,6 +11,7 @@
 <script>
 /*eslint-disable */
 import RsTbAsideGblockTable from './RsTbAsideGblock/RsTbAsideGblockTable'
+import Queue from 'queuejs'
 export default {
   props: ['initCurrentBlock'],
   name: 'rs-tb-aside-gblock',
@@ -37,8 +38,21 @@ export default {
           this.childBlocks.push(atom)
         }
       }
-      console.log(treeData)
-      console.log(treeDataSerial)
+      let q = new Queue()
+      let objList = []
+      for(let atom of treeData){
+        q.enq(atom)
+      }
+      while(!q.isEmpty()){
+        let tmp = q.peek()
+        q.deq()
+        console.log(tmp)
+        for(let atom of tmp.children){
+          q.enq(atom)
+        }
+      }
+      // console.log(treeData)
+      // console.log(treeDataSerial)
     }
   },
   data: function () {
@@ -46,7 +60,7 @@ export default {
       currentBlock: this.initCurrentBlock,
       childBlocks: []
     }
-  }
+  },
 }
 </script>
 

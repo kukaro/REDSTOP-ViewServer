@@ -21,6 +21,7 @@
       console.log(this.$store.state.app.treeData)
       let treeDataSerial = this.$store.state.app.treeDataSerial
       this.value = this.initValue
+      console.log(this.value)
       this.tableValue = []
       if (this.value.type === 'case') {
         for (let atom of treeDataSerial) {
@@ -66,6 +67,8 @@
         console.log(this.$store.state.app.treeData)
         let treeDataSerial = this.$store.state.app.treeDataSerial
         this.value = this.initValue
+        console.log(this.value)
+
         this.tableValue = []
         if (this.value.type === 'case') {
           for (let atom of treeDataSerial) {

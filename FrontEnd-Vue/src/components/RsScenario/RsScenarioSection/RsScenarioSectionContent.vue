@@ -3,7 +3,7 @@
     <div class="blockView">
       <div class="blockWrapper">
         <div id="tutorial" :style="{'visibility':tutorialAvail}">
-          <img src="../assets/img/tutorial.png"><br><br>
+          <img src="../../..//assets/img/tutorial.png"><br><br>
           <p>왼쪽 블럭을 끌어다 놓으세요!</p>
         </div>
 

@@ -49,7 +49,7 @@ export default {
         if(tmp.parentBlockId === this.currentBlock.id){
           objList.push(tmp)
         }
-        console.log(tmp)
+        // console.log(tmp)
         if(tmp.children !== undefined){
           for(let atom of tmp.children){
             q.enq(atom)

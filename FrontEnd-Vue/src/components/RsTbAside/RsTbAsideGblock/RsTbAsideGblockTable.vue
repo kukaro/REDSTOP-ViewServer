@@ -17,10 +17,10 @@
     props: ['initValue'],
     name: 'rs-tb-aside-gblock-table',
     created: function () {
-      console.log('create aside gblock table')
+      // console.log('create aside gblock table')
       let treeDataSerial = this.$store.state.app.treeDataSerial
       this.value = this.initValue
-      console.log(this.value)
+      // console.log(this.value)
       let tmpTableValue = []
 
       if (this.value.type === 'case') {
@@ -47,9 +47,9 @@
         }
       } else if (this.value.type === 'group') {
         for (let atom of this.value.children) {
-          console.log('watch group')
-          console.log(this.value.children)
-          console.log(atom)
+          // console.log('watch group')
+          // console.log(this.value.children)
+          // console.log(atom)
           let successCount = '0(0%)'
           let failCount = '0(0%)'
           let tmp = {

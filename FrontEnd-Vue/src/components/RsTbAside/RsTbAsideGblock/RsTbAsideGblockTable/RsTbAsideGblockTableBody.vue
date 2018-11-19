@@ -12,7 +12,8 @@ export default {
   name: 'rs-tb-aside-glock-table-body',
   watch: {
     initValue: function () {
-     this.tableValue = this.initTableValue
+      console.log('aside gblock tablerow')
+      this.tableValue = this.initTableValue
     }
   },
   data: function () {

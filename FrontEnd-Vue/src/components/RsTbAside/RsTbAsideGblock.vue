@@ -46,13 +46,17 @@ export default {
       while(!q.isEmpty()){
         let tmp = q.peek()
         q.deq()
+        if(tmp.parentBlockId === this.currentBlock.id){
+          objList.push(tmp)
+        }
         console.log(tmp)
-        if(tmp.children!==undefined){
+        if(tmp.children !== undefined){
           for(let atom of tmp.children){
             q.enq(atom)
           }
         }
       }
+      console.log(objList)
       // console.log(treeData)
       // console.log(treeDataSerial)
     }

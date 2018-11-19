@@ -13,6 +13,7 @@ export default {
   watch: {
     initTableValue: function () {
       console.log('aside gblock tablerow')
+      console.log(this.initTableValue)
       this.tableValue = this.initTableValue
     }
   },

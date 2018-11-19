@@ -50,7 +50,7 @@ export default {
   },
   watch: {
     initCurrentBlock: function () {
-      console.log('tree당')
+      // console.log('tree당')
       this.currentBlock = this.initCurrentBlock
       this.childBlocks = []
       let treeDataSerial = this.$store.state.app.treeDataSerial

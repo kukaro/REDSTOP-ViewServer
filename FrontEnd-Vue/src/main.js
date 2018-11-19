@@ -9,7 +9,9 @@ import conf from './assets/js/conf'
 import store from './store'
 import 'chart.js'
 import 'hchs-vue-charts'
+import VueProgress from 'vue-progress'
 
+Vue.use(VueProgress)
 Vue.use(VueCharts)
 
 Vue.prototype.$http = axios

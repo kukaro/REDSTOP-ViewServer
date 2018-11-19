@@ -6,26 +6,29 @@
 
             <div class="rs-modal-header">
               <slot name="header">
-                <span id="titleText" class="label label-default">Export Scenario to</span>
+                <span class="titleText label label-default">Export Scenario to</span>
                 <img height="25" width="70" src="http://jmeter.apache.org/images/jmeter.png" alt="JMeter logo">
+                <span class="titleText label label-default">Format</span>
               </slot>
             </div>
 
             <div class="modal-body">
               <slot name="body">
-
                 <label for="scenario" style="font-size: 13px">Export할 시나리오를 선택하세요</label><br>
                 <select class="form-control" id="scenario" v-model="selectedScenario">
                   <option v-for="item in scenarios" :key="item.id">{{item}}</option>
                 </select>
+                <div style="text-align: right"><button id="submit" @click="submitted"><span class="minitext">OK</span></button></div>
 
-                <button id="submit">OK</button>
+                <div class="jmeter-format" v-if="isSubmittted">
+                  <progress-bar type="line" ref="line" :options="options"></progress-bar>
+                  <span id="successMsg">{{msg}}</span><br>
+                </div>
               </slot>
             </div>
 
             <div class="rs-modal-footer">
               <slot name="footer">
-                <span id="successMsg" v-if="isSubmittted"><span class="logo">swagger</span>{{msg}}</span> <br>
                 <button id="back" class="modal-default-button" @click="$emit('close')"><span class="minitext">EXIT</span></button>
               </slot>
             </div>
@@ -45,7 +48,11 @@ export default {
       msg: '',
       swaggerURL: '',
       scenarios: ['a', 'b'],
-      selectedScenario: 'default'
+      selectedScenario: 'default',
+      options: {
+        color: '#007AFF',
+        strokeWidth: 0.5
+      }
     }
   },
   created: function () {
@@ -60,25 +67,34 @@ export default {
         this.scenarios = temp
       })
   },
+  mounted: function () {
+    // this.$refs.line.animate(1.0)
+  },
   methods: {
     submitted () {
-      this.$http.put('http://52.79.221.114:3000/api/v1/import', {swaggerURL: this.swaggerURL})
-        .then(response => {
-          // console.log(response.data.success)
-          this.isSubmittted = true
-          if (response.data.success === true) {
-            this.msg = '로부터 API 정보를 성공적으로 가져왔습니다!'
-            // console.log(response.data)
-          } else {
-            this.msg = '로부터 API 정보를 가져오는데 실패했습니다. 다시 시도해주세요'
-          }
-        })
+      this.isSubmittted = true
+      this.$refs.line.animate(1.0)
+      this.msg = '.jmx 파일로 내보냈습니다.'
+
+      // this.$http.put('http://52.79.221.114:3000/api/v1/import', {swaggerURL: this.swaggerURL})
+      //   .then(response => {
+      //     // console.log(response.data.success)
+      //     this.isSubmittted = true
+      //     if (response.data.success === true) {
+      //       this.msg = '로부터 API 정보를 성공적으로 가져왔습니다!'
+      //       // console.log(response.data)
+      //     } else {
+      //       this.msg = '로부터 API 정보를 가져오는데 실패했습니다. 다시 시도해주세요'
+      //     }
+      //   })
     }
   }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
   .modal-mask {
     position: fixed;
     z-index: 9998;
@@ -97,8 +113,8 @@ export default {
   }
 
   .modal-container {
-    width: 500px;
-    height: 300px;
+    width: 40%;
+    height: 40%;
     margin: 0px auto;
     padding: 20px 30px;
     background-color: #fff;
@@ -156,7 +172,7 @@ export default {
     display: flex;
     justify-content: center;
   }
-  #titleText{
+  .titleText{
     width: 185px;
     height: 31px;
     font-family: TitilliumWeb;
@@ -176,6 +192,9 @@ export default {
     color: #73932c;
   }
   #back{
+    position: absolute;
+    bottom: 32%;
+    right: 32%;
     width: 100px;
     height: 40px;
     border-radius: 20px;
@@ -206,7 +225,12 @@ export default {
     width: 318px;
     height: 19px;
     font-family: NotoSansCJKkr;
-    font-size: 13px;
+    font-size: 14px;
     color: #2482cf;
+  }
+  .jmeter-format{
+    text-align: center;
+    /*background-color: #f3f3f3;*/
+    /*height: 20%;*/
   }
 </style>

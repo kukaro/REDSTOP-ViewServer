@@ -24,7 +24,7 @@ export default {
 }
 p{
   position: absolute;
-  left: 40%;
+  left: 30%;
   top: 40%;
   font-size: 1.2em;
 }

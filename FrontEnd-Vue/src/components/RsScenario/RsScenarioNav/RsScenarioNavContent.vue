@@ -7,7 +7,7 @@
       </li>
     </ul>
     <div class="exportButton">
-      <button id="e-button" @click="showModal = true">Export to JMeter</button>
+      <button id="e-button" @click="showModal = true">Export to JMeter format</button>
     </div>
     <rs-scenario-nav-modal v-if="showModal" @close="showModal = false"></rs-scenario-nav-modal>
     <!--<div class="exportButton">-->

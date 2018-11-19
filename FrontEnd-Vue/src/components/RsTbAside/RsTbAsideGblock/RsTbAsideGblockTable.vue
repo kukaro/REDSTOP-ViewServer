@@ -36,7 +36,7 @@
             }
 
             let tmp = {
-              'Name': atom.url,
+              'Name': atom.name,
               'URLCount': 1,
               'SuccessCount': successCount,
               'FailCount': failCount

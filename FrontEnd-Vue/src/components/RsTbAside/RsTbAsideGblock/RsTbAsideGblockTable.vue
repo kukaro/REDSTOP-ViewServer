@@ -17,12 +17,12 @@
     props: ['initValue'],
     name: 'rs-tb-aside-gblock-table',
     created: function () {
-      console.log('aside gblock table')
-      console.log(this.$store.state.app.treeData)
+      console.log('create aside gblock table')
       let treeDataSerial = this.$store.state.app.treeDataSerial
       this.value = this.initValue
       console.log(this.value)
-      this.tableValue = []
+      let tmpTableValue = []
+
       if (this.value.type === 'case') {
         for (let atom of treeDataSerial) {
           if (atom.parentBlockId === this.value.id) {
@@ -42,24 +42,26 @@
               'SuccessCount': successCount,
               'FailCount': failCount
             }
-            this.tableValue.push(tmp)
+            tmpTableValue.push(tmp)
           }
         }
       } else if (this.value.type === 'group') {
-        for (let atom of treeDataSerial) {
-          if (atom.parentBlockId === this.value.id) {
-            let successCount = '0(0%)'
-            let failCount = '0(0%)'
-            let tmp = {
-              'Name': atom.name,
-              'URLCount': atom.urlCount,
-              'SuccessCount': successCount,
-              'FailCount': failCount
-            }
-            this.tableValue.push(tmp)
+        for (let atom of this.value.children) {
+          console.log('watch group')
+          console.log(this.value.children)
+          console.log(atom)
+          let successCount = '0(0%)'
+          let failCount = '0(0%)'
+          let tmp = {
+            'Name': atom.name,
+            'URLCount': atom.urlCount,
+            'SuccessCount': successCount,
+            'FailCount': failCount
           }
+          tmpTableValue.push(tmp)
         }
       }
+      this.tableValue = tmpTableValue
     },
     watch: {
       initValue: function () {

@@ -67,7 +67,8 @@
         let treeDataSerial = this.$store.state.app.treeDataSerial
         this.value = this.initValue
         console.log(this.value)
-        this.tableValue = []
+        let tmpTableValue = []
+
         if (this.value.type === 'case') {
           for (let atom of treeDataSerial) {
             if (atom.parentBlockId === this.value.id) {
@@ -87,7 +88,7 @@
                 'SuccessCount': successCount,
                 'FailCount': failCount
               }
-              this.tableValue.push(tmp)
+              tmpTableValue.push(tmp)
             }
           }
         } else if (this.value.type === 'group') {
@@ -103,9 +104,10 @@
               'SuccessCount': successCount,
               'FailCount': failCount
             }
-            this.tableValue.push(tmp)
+            tmpTableValue.push(tmp)
           }
         }
+        this.tableValue = tmpTableValue
       }
     },
     components: {RsTbAsideGblockTableBody, RsTbAsideGblockTableHeader},

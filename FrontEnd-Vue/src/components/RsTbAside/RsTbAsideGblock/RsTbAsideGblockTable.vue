@@ -27,10 +27,10 @@
           if (atom.parentBlockId === this.value.id) {
             let successCount = '0(0%)'
             let failCount = '0(0%)'
-            if (Math.ceil(atom.status / 100) === 2 && Math.ceil(atom.status / 100) === 3) {
+            if (Math.ceil(atom.status / 100) === 2 || Math.ceil(atom.status / 100) === 3) {
               successCount = '1(100%)'
               failCount = '0(0%)'
-            } else if (Math.ceil(atom.status / 100) === 4 && Math.ceil(atom.status / 100) === 5) {
+            } else if (Math.ceil(atom.status / 100) === 4 || Math.ceil(atom.status / 100) === 5) {
               successCount = '0(0%)'
               failCount = '100(100%)'
             }
@@ -59,10 +59,10 @@
             if (atom.parentBlockId === this.value.id) {
               let successCount = '0(0%)'
               let failCount = '0(0%)'
-              if (Math.ceil(atom.status / 100) === 2 && Math.ceil(atom.status / 100) === 3) {
+              if (Math.ceil(atom.status / 100) === 2 || Math.ceil(atom.status / 100) === 3) {
                 successCount = '1(100%)'
                 failCount = '0(0%)'
-              } else if (Math.ceil(atom.status / 100) === 4 && Math.ceil(atom.status / 100) === 5) {
+              } else if (Math.ceil(atom.status / 100) === 4 || Math.ceil(atom.status / 100) === 5) {
                 successCount = '0(0%)'
                 failCount = '100(100%)'
               }

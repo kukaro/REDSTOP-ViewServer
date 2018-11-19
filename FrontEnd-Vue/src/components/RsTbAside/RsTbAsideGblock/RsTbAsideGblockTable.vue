@@ -25,7 +25,7 @@ export default {
       this.value = this.initValue
       this.tableRowData = []
       if(this.value.type === 'case'){
-        for(let atom of this.value){
+        for(let atom of this.value.children){
           let tmp = {
             'Name': atom.name,
             'URLCount': 1,

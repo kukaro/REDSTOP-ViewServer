@@ -11,6 +11,12 @@
 export default {
   props: ['initTableRowData'],
   name: 'rs-tb-aside-gblock-table-row',
+  watch: {
+    initTableRowData: function () {
+      var values = Object.keys(this.tableRowData).map(key => this.tableRowData[key])
+      this.tableRowData = values
+    }
+  },
   created: function () {
     var values = Object.keys(this.tableRowData).map(key => this.tableRowData[key])
     this.tableRowData = values

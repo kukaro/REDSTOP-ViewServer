@@ -10,6 +10,7 @@
   </div>
 </template>
 <script>
+/*eslint-disable */
 import RsTbAsideGblockTable from './RsTbAsideGblock/RsTbAsideGblockTable'
 export default {
   props: ['initCurrentBlock'],
@@ -18,7 +19,12 @@ export default {
   created: function () {
     console.log('aside gblock')
     let treeDataSerial = this.$store.state.app.treeDataSerial
-    console.log(treeDataSerial)
+    for(let atom of treeDataSerial){
+      if(atom.parentBlockId === this.currentBlock.id){
+        this.childBlocks.push(atom)
+      }
+    }
+    console.log(this.childBlocks)
   },
   watch: {
     initCurrentBlock: function () {
@@ -29,6 +35,7 @@ export default {
   data: function () {
     return {
       currentBlock: this.initCurrentBlock
+      childBlocks: []
     }
   }
 }

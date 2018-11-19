@@ -63,11 +63,10 @@
     },
     watch: {
       initValue: function () {
-        console.log('aside gblock table')
-        console.log(this.$store.state.app.treeData)
+        console.log('watch aside gblock table')
         let treeDataSerial = this.$store.state.app.treeDataSerial
         this.value = this.initValue
-
+        console.log(this.value)
         this.tableValue = []
         if (this.value.type === 'case') {
           for (let atom of treeDataSerial) {

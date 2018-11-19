@@ -51,7 +51,7 @@ export default {
       selectedScenario: 'default',
       options: {
         color: '#007AFF',
-        strokeWidth: 0.5
+        strokeWidth: 1
       }
     }
   },

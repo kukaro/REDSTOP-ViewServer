@@ -20,9 +20,9 @@ export default {
       this.$router.push({name: 'RsReport'})
     },
     addData () {
-      if(this.count===6){ // 30초만 타이머 돌도록 고정
-        clearInterval(this.timer)
-      }
+      // if(this.count===6){ // 30초만 타이머 돌도록 고정
+      //   clearInterval(this.timer)
+      // }
       this.$http
         .get(this.$conf.apiServer+'/api/v2/number')
         .then(response => {
@@ -43,7 +43,7 @@ export default {
     return {
       count: 0,
       timer: '',
-      labels: ['00:00', '00:05', '00:10', '00:15', '00:20', '00:25', '00:30'],
+      labels: ['00:00', '00:05', '00:10', '00:15', '00:20', '00:25', '00:30', '00:35', '00:40', '00:45', '00:50', '00:55', '00:60'],
       dataset: [],
       dataset2: [],
       dataset3: [],

@@ -7,8 +7,9 @@
       </li>
     </ul>
     <div class="exportButton">
-      <button id="e-button">Export to JMeter</button>
+      <button id="e-button" @click="showModal = true">Export to JMeter</button>
     </div>
+    <rs-scenario-nav-modal v-if="showModal" @close="showModal = false"></rs-scenario-nav-modal>
     <!--<div class="exportButton">-->
       <!--<button id="i-button" @clck="showModal = true" style="text-align: center">Import APIs from Swagger</button>-->
     <!--</div>-->
@@ -16,11 +17,15 @@
 </template>
 
 <script>
+import RsScenarioNavModal from './RsScenarioNavModal'
+
 export default {
   name: 'rs-scenario-nav-content',
+  components: { RsScenarioNavModal },
   data () {
     return {
-      items: ['a', 'b', 'c']
+      items: ['a', 'b', 'c'],
+      showModal: false
     }
   },
   methods: {
@@ -99,6 +104,6 @@ li {
   display:flex;
   align-items:center;
   justify-content:center;
-  bottom: 20%;
+  bottom: 18%;
 }
 </style>

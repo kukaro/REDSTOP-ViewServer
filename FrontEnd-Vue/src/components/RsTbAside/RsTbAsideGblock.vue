@@ -1,8 +1,8 @@
 <template>
   <div class="rs-tb-aside-gblock">
-    <div v-for="(value,key) in childBlocks" :key>
+    <div v-for="(value,key) in objList" :key>
       <img src="../../assets/img/group.png" width="18px" height="16px">
-      <span>{{value.name}}</span>
+      <span>{{objList.name}}</span>
       <rs-tb-aside-gblock-table></rs-tb-aside-gblock-table>
       <br><br>
     </div>
@@ -39,7 +39,7 @@ export default {
         }
       }
       let q = new Queue()
-      let objList = []
+      this.objList = []
       for(let atom of treeData){
         q.enq(atom)
       }
@@ -47,7 +47,7 @@ export default {
         let tmp = q.peek()
         q.deq()
         if(tmp.parentBlockId === this.currentBlock.id){
-          objList.push(tmp)
+          this.objList.push(tmp)
         }
         // console.log(tmp)
         if(tmp.children !== undefined){
@@ -56,7 +56,7 @@ export default {
           }
         }
       }
-      console.log(objList)
+      console.log(this.objList)
       // console.log(treeData)
       // console.log(treeDataSerial)
     }
@@ -64,7 +64,8 @@ export default {
   data: function () {
     return {
       currentBlock: this.initCurrentBlock,
-      childBlocks: []
+      childBlocks: [],
+      objList: []
     }
   },
 }

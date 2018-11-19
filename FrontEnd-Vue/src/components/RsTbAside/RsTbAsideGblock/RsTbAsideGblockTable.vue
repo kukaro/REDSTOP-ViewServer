@@ -62,7 +62,6 @@
     },
     watch: {
       initValue: function () {
-        this.value = this.initValue
         console.log('aside gblock table')
         console.log(this.$store.state.app.treeData)
         let treeDataSerial = this.$store.state.app.treeDataSerial

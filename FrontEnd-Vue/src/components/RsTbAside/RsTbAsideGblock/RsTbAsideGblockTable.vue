@@ -45,11 +45,9 @@
             this.tableValue.push(tmp)
           }
         }
-      }else if(this.value.type === 'group'){
+      } else if (this.value.type === 'group') {
         for (let atom of treeDataSerial) {
-          if (atom.parentBlockId === this.value.id){
-            console.log('group')
-            console.log(atom)
+          if (atom.parentBlockId === this.value.id) {
             let successCount = '0(0%)'
             let failCount = '0(0%)'
             let tmp = {
@@ -69,7 +67,6 @@
         console.log(this.$store.state.app.treeData)
         let treeDataSerial = this.$store.state.app.treeDataSerial
         this.value = this.initValue
-        console.log(this.value)
 
         this.tableValue = []
         if (this.value.type === 'case') {
@@ -94,21 +91,17 @@
               this.tableValue.push(tmp)
             }
           }
-        }else if(this.value.type === 'group'){
-          for (let atom of treeDataSerial) {
-            if (atom.parentBlockId === this.value.id){
-              console.log('group')
-              console.log(atom)
-              let successCount = '0(0%)'
-              let failCount = '0(0%)'
-              let tmp = {
-                'Name': atom.name,
-                'URLCount': atom.urlCount,
-                'SuccessCount': successCount,
-                'FailCount': failCount
-              }
-              this.tableValue.push(tmp)
+        } else if (this.value.type === 'group') {
+          for (let atom of this.value.children) {
+            let successCount = '0(0%)'
+            let failCount = '0(0%)'
+            let tmp = {
+              'Name': atom.name,
+              'URLCount': atom.urlCount,
+              'SuccessCount': successCount,
+              'FailCount': failCount
             }
+            this.tableValue.push(tmp)
           }
         }
       }

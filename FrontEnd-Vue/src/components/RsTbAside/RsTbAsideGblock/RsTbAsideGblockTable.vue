@@ -17,30 +17,12 @@ export default {
   created: function () {
     console.log('aside gblock table')
     console.log(this.$store.state.app.treeData)
-    console.log(this.$store.state.app.treeDataSerial)
+    let treeDataSerial = this.$store.state.app.treeDataSerial
     this.value = this.initValue
     this.tableValue = []
     if(this.value.type === 'case'){
-      for(let atom of this.value.children){
-        let tmp = {
-          'Name': atom.name,
-          'URLCount': 1,
-          'SuccessCount': '1(100%)',
-          'FailCount': '0(0%)'
-        }
-        this.tableValue.push(tmp)
-      }
-    }
-  },
-  watch: {
-    initValue: function () {
-      console.log('aside gblock table')
-      console.log(this.$store.state.app.treeData)
-      console.log(this.$store.state.app.treeDataSerial)
-      this.value = this.initValue
-      this.tableValue = []
-      if(this.value.type === 'case'){
-        for(let atom of this.value.children){
+      for(let atom of treeDataSerial){
+        if(atom.parentBlockId === this.value.id){
           let tmp = {
             'Name': atom.name,
             'URLCount': 1,
@@ -48,6 +30,30 @@ export default {
             'FailCount': '0(0%)'
           }
           this.tableValue.push(tmp)
+        }
+      }
+    }
+  },
+  watch: {
+    initValue: function () {
+      this.value = this.initValue
+      console.log('aside gblock table')
+      console.log(this.$store.state.app.treeData)
+      let treeDataSerial = this.$store.state.app.treeDataSerial
+      this.value = this.initValue
+      this.tableValue = []
+      if(this.value.type === 'case'){
+        for(let atom of treeDataSerial){
+          if(atom.parentBlockId === this.value.id){
+            console.log(atom)
+            let tmp = {
+              'Name': atom.name,
+              'URLCount': 1,
+              'SuccessCount': '1(100%)',
+              'FailCount': '0(0%)'
+            }
+            this.tableValue.push(tmp)
+          }
         }
       }
     }

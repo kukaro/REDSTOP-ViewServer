@@ -23,7 +23,7 @@ export default {
       // console.log('aside gblock table')
       // console.log(this.value)
       this.value = this.initValue
-      this.tableRowData = []
+      this.tableValue = []
       if(this.value.type === 'case'){
         for(let atom of this.value.children){
           let tmp = {
@@ -32,7 +32,7 @@ export default {
             'SuccessCount': '1(100%)',
             'FailCount': '0(0%)'
           }
-          this.tableRowData.push(tmp)
+          this.tableValue.push(tmp)
         }
       }
     }

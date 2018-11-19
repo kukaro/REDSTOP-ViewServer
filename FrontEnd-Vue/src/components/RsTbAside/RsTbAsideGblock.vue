@@ -27,16 +27,17 @@ export default {
   },
   watch: {
     initCurrentBlock: function () {
+      console.log('tree당')
       this.currentBlock = this.initCurrentBlock
-      // console.log(this.currentBlock)
       this.childBlocks = []
       let treeDataSerial = this.$store.state.app.treeDataSerial
+      let treeData = this.$store.state.app.treeData
       for(let atom of treeDataSerial){
         if(atom.parentBlockId === this.currentBlock.id){
           this.childBlocks.push(atom)
         }
       }
-      console.log(this.childBlocks)
+      console.log(treeData)
     }
   },
   data: function () {

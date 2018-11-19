@@ -468,4 +468,38 @@
   z-index: 0;
   /*background-color: antiquewhite;*/
 }
+
+.blockView {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #F3F7FB;
+}
+
+#blocklyDiv {
+  width: 100%;
+  height: 100vh;
+}
+
+#toolbox {
+  height: 100px;
+}
+
+#tutorial {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30vh;
+  z-index: 99999999;
+}
+
+#tutorial img {
+  width: 45px;
+  height: 63px;
+}
+
+#tutorial p {
+  color: #4c7392;
+}
 </style>

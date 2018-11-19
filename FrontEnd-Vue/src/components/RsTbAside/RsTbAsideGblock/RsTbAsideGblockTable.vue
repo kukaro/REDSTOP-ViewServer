@@ -15,13 +15,26 @@ export default {
   props: ['initValue'],
   name: 'rs-tb-aside-gblock-table',
   created: function () {
-    console.log('aside gblock table')
-    console.log(this.value)
+    // console.log('aside gblock table')
+    // console.log(this.value)
   },
   watch: {
     initValue: function () {
-      console.log('aside gblock table')
-      console.log(this.value)
+      // console.log('aside gblock table')
+      // console.log(this.value)
+      this.value = this.initValue
+      this.tableRowData = []
+      if(this.value.type === 'case'){
+        for(let atom of this.value){
+          let tmp = {
+            'Name': atom.name,
+            'URLCount': 1,
+            'SuccessCount': '1(100%)',
+            'FailCount': '0(0%)'
+          }
+          this.tableRowData.push(tmp)
+        }
+      }
     }
   },
   components: { RsTbAsideGblockTableBody, RsTbAsideGblockTableHeader },

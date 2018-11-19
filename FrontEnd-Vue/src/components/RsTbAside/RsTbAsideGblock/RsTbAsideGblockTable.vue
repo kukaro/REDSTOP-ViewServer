@@ -48,6 +48,8 @@
       }else if(this.value.type === 'group'){
         for (let atom of treeDataSerial) {
           if (atom.parentBlockId === this.value.id){
+            console.log('group')
+            console.log(atom)
             let successCount = '0(0%)'
             let failCount = '0(0%)'
             let tmp = {
@@ -95,6 +97,7 @@
         }else if(this.value.type === 'group'){
           for (let atom of treeDataSerial) {
             if (atom.parentBlockId === this.value.id){
+              console.log('group')
               console.log(atom)
               let successCount = '0(0%)'
               let failCount = '0(0%)'

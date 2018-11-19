@@ -36,8 +36,22 @@
             }
 
             let tmp = {
-              'Name': atom.url,
+              'Name': atom.name,
               'URLCount': 1,
+              'SuccessCount': successCount,
+              'FailCount': failCount
+            }
+            this.tableValue.push(tmp)
+          }
+        }
+      }else if(this.value.type === 'group'){
+        for (let atom of treeDataSerial) {
+          if (atom.parentBlockId === this.value.id){
+            let successCount = '0(0%)'
+            let failCount = '0(0%)'
+            let tmp = {
+              'Name': atom.url,
+              'URLCount': atom.urlCount,
               'SuccessCount': successCount,
               'FailCount': failCount
             }

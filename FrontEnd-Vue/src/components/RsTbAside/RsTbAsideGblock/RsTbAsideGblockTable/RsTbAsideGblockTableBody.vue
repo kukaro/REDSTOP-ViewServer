@@ -10,6 +10,11 @@ export default {
   components: {RsTbAsideGblockTableRow},
   props: ['initTableValue'],
   name: 'rs-tb-aside-glock-table-body',
+  watch: {
+    initValue: function () {
+     this.tableValue = this.initTableValue
+    }
+  },
   data: function () {
     return {
       tableValue: this.initTableValue

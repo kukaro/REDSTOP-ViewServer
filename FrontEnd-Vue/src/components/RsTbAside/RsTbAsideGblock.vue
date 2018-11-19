@@ -29,6 +29,7 @@ export default {
     initCurrentBlock: function () {
       this.currentBlock = this.initCurrentBlock
       // console.log(this.currentBlock)
+      childBlocks: []
       let treeDataSerial = this.$store.state.app.treeDataSerial
       for(let atom of treeDataSerial){
         if(atom.parentBlockId === this.currentBlock.id){

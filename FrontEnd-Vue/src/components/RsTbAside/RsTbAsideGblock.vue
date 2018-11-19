@@ -34,7 +34,7 @@ export default {
   },
   data: function () {
     return {
-      currentBlock: this.initCurrentBlock
+      currentBlock: this.initCurrentBlock,
       childBlocks: []
     }
   }

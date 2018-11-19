@@ -26,7 +26,7 @@
 
   var navTree = []
   export default {
-    name: 'rs-tb-article',
+    name: 'rs-scenario-section-content',
     mounted: function () {
       this.demoWorkspace = Blockly.inject('blocklyDiv',
         {toolbox: document.getElementById('toolbox')});

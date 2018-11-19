@@ -20,7 +20,8 @@ export default {
   },
   watch: {
     initValue: function () {
-
+      console.log('aside gblock table')
+      console.log(this.value)
     }
   },
   components: { RsTbAsideGblockTableBody, RsTbAsideGblockTableHeader },

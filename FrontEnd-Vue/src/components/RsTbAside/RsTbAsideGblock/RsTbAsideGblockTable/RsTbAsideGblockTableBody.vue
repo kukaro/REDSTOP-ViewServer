@@ -11,7 +11,7 @@ export default {
   props: ['initTableValue'],
   name: 'rs-tb-aside-glock-table-body',
   watch: {
-    initValue: function () {
+    initTableValue: function () {
       console.log('aside gblock tablerow')
       this.tableValue = this.initTableValue
     }

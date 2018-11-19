@@ -25,7 +25,6 @@
       if (this.value.type === 'case') {
         for (let atom of treeDataSerial) {
           if (atom.parentBlockId === this.value.id) {
-            console.log(atom)
             let successCount = '0(0%)'
             let failCount = '0(0%)'
             if (Math.ceil(atom.status / 100) === 2 && Math.ceil(atom.status / 100) === 3) {
@@ -58,7 +57,6 @@
         if (this.value.type === 'case') {
           for (let atom of treeDataSerial) {
             if (atom.parentBlockId === this.value.id) {
-              console.log(atom)
               let successCount = '0(0%)'
               let failCount = '0(0%)'
               if (Math.ceil(atom.status / 100) === 2 && Math.ceil(atom.status / 100) === 3) {

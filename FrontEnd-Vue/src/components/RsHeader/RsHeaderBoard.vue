@@ -1,5 +1,5 @@
 <template>
-  <div class="rs-header-board" :style="headerStyle">
+  <div class="rs-header-board">
     <header>
       <div class="logo-div">
         <router-link to="/"><img src="../../assets/img/rs-full-logo.png" alt="logo"></router-link>

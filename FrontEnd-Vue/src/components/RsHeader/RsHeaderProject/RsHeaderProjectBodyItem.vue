@@ -5,8 +5,8 @@
         <ul>
           <!--<li><a href="#/monitoring/board">Board</a></li>-->
           <!--<li><a href="#/monitoring/monitoring">Monitoring</a></li>-->
-          <router-link to="/monitoring/board" tag="li">Board</router-link>
-          <router-link to="/monitoring/monitoring" tag="li">Monitoring</router-link>
+          <router-link class="submenuli" to="/monitoring/board" tag="li">Board</router-link>
+          <router-link class="submenuli" to="/monitoring/monitoring" tag="li">Monitoring</router-link>
         </ul>
       </div>
     </a>
@@ -93,8 +93,8 @@ a {
   background-color: #8b8b8b;
 }
 
-li > a {
-  z-index: 9999999999999999;
+.submenuli {
+  z-index: 999;
   display: block;
   line-height: 60px;
   width: 160px;
@@ -103,7 +103,7 @@ li > a {
   text-align: center;
 }
 
-li>a:hover {
+.submenuli:hover {
   color: #C2C2C2;
   background-color: #686868;
 }

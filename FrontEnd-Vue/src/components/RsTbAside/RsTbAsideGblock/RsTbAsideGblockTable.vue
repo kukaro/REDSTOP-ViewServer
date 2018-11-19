@@ -93,6 +93,8 @@
           }
         } else if (this.value.type === 'group') {
           for (let atom of this.value.children) {
+            console.log('watch group')
+            console.log(atom)
             let successCount = '0(0%)'
             let failCount = '0(0%)'
             let tmp = {

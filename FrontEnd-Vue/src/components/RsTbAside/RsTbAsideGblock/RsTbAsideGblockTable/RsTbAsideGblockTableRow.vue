@@ -13,8 +13,10 @@ export default {
   name: 'rs-tb-aside-gblock-table-row',
   watch: {
     initTableRowData: function () {
+      console.log('watch aside gblock table row')
       var values = Object.keys(this.tableRowData).map(key => this.tableRowData[key])
       this.tableRowData = values
+      console.log(this.tableRowData)
     }
   },
   created: function () {

@@ -21,7 +21,7 @@
                 <div style="text-align: right"><button id="submit" @click="submitted"><span class="minitext">OK</span></button></div>
 
                 <div class="jmeter-format" v-if="isSubmittted">
-                  <progress-bar type="line" ref="line" :options="options"></progress-bar>
+                  <!--<progress-bar type="line" ref="line" :options="options"></progress-bar>-->
                   <span id="successMsg">{{msg}}</span><br>
                 </div>
               </slot>

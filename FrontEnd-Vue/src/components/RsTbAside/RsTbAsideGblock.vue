@@ -16,7 +16,7 @@ export default {
   name: 'rs-tb-aside-gblock',
   components: {RsTbAsideGblockTable},
   created: function () {
-    console.log('aside gblock')
+    // console.log('aside gblock')
     let treeDataSerial = this.$store.state.app.treeDataSerial
     for(let atom of treeDataSerial){
       if(atom.parentBlockId === this.currentBlock.id){
@@ -28,7 +28,14 @@ export default {
   watch: {
     initCurrentBlock: function () {
       this.currentBlock = this.initCurrentBlock
-      console.log(this.currentBlock)
+      // console.log(this.currentBlock)
+      let treeDataSerial = this.$store.state.app.treeDataSerial
+      for(let atom of treeDataSerial){
+        if(atom.parentBlockId === this.currentBlock.id){
+          this.childBlocks.push(atom)
+        }
+      }
+      console.log(this.childBlocks)
     }
   },
   data: function () {

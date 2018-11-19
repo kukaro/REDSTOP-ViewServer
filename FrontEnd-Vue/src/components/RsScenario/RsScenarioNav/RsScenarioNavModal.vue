@@ -73,7 +73,7 @@ export default {
   methods: {
     submitted () {
       this.isSubmittted = true
-      this.$refs.line.animate(1.0)
+      // this.$refs.line.animate(1.0)
       this.msg = '.jmx 파일로 내보냈습니다.'
 
       // this.$http.put('http://52.79.221.114:3000/api/v1/import', {swaggerURL: this.swaggerURL})

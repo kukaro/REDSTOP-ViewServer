@@ -17,6 +17,19 @@ export default {
   created: function () {
     // console.log('aside gblock table')
     // console.log(this.value)
+    this.value = this.initValue
+    this.tableValue = []
+    if(this.value.type === 'case'){
+      for(let atom of this.value.children){
+        let tmp = {
+          'Name': atom.name,
+          'URLCount': 1,
+          'SuccessCount': '1(100%)',
+          'FailCount': '0(0%)'
+        }
+        this.tableValue.push(tmp)
+      }
+    }
   },
   watch: {
     initValue: function () {

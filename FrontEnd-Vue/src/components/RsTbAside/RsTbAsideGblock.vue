@@ -38,6 +38,7 @@ export default {
         }
       }
       console.log(treeData)
+      console.log(treeDataSerial)
     }
   },
   data: function () {

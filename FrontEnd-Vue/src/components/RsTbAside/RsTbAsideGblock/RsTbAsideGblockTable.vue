@@ -12,10 +12,21 @@ import RsTbAsideGblockTableHeader from './RsTbAsideGblockTable/RsTbAsideGblockTa
 import RsTbAsideGblockTableBody from './RsTbAsideGblockTable/RsTbAsideGblockTableBody'
 
 export default {
+  props: ['initValue'],
   name: 'rs-tb-aside-gblock-table',
+  created: function () {
+    console.log('aside gblock table')
+    console.log(this.value)
+  },
+  watch: {
+    initValue: function () {
+
+    }
+  },
   components: { RsTbAsideGblockTableBody, RsTbAsideGblockTableHeader },
   data: function () {
     return {
+      value: this.initValue,
       tableValue: [
         {
           'Name': 'Sign Up',

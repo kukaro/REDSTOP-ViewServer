@@ -45,6 +45,6 @@ export default {
     color: #00c292;
   }
   .last-row-fail{
-    color: #00c292;
+    color: #FF777A;
   }
 </style>

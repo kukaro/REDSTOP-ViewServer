@@ -2,7 +2,7 @@
   <div class="rs-tb-aside-gblock">
     <div v-for="(value,key) in childBlocks" :key>
       <img src="../../assets/img/group.png" width="18px" height="16px">
-      <span>{{value}}</span>
+      <span>{{value.name}}</span>
       <rs-tb-aside-gblock-table></rs-tb-aside-gblock-table>
       <br><br>
     </div>

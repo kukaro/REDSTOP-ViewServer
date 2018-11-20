@@ -148,7 +148,7 @@ export default {
     width: 60%;
     z-index: 1;
     background-color: #ffffff;
-    left: 50%;
+    /*left: 50%;*/
     transform: translateX(-50%);
   }
 

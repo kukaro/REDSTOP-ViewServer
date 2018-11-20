@@ -16,13 +16,13 @@ export default {
   created: function () {
     var url = document.location.href.split('/')
     if (url[url.length - 1] === 'monitoring' && url[url.length - 2] === '#') {
-      document.location.href = 'http://localhost:8080/#/monitoring/monitoring'
+      document.location.href = 'http://54.180.80.191:3000/#/monitoring/monitoring'
     }
   },
   beforeUpdate: function () {
     var url = document.location.href.split('/')
     if (url[url.length - 1] === 'monitoring' && url[url.length - 2] === '#') {
-      document.location.href = 'http://localhost:8080/#/monitoring/monitoring'
+      document.location.href = 'http://54.180.80.191:3000/#/monitoring/monitoring'
     }
   },
   components: {RsMrMonitoring, RsMrBoard, RsHeaderProject}

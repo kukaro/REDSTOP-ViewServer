@@ -37,13 +37,13 @@ export default {
   },
   created: function () {
     this.addData();
-    this.timer = setInterval(this.addData, 5000) // 5초
+    this.timer = setInterval(this.addData, 2000) // 5초
   },
   data () {
     return {
       count: 0,
       timer: '',
-      labels: ['00:00', '00:05', '00:10', '00:15', '00:20', '00:25', '00:30', '00:35', '00:40', '00:45', '00:50', '00:55', '00:60'],
+      labels: ['00:00', '00:02', '00:04', '00:06', '00:08', '00:10', '00:12', '00:14', '00:16', '00:18', '00:20'],
       dataset: [],
       dataset2: [],
       dataset3: [],

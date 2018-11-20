@@ -7,7 +7,7 @@
       <option value="4">4 Days</option>
       <option value="3">3 Days</option>
       <option value="2">2 Days</option>
-      <option value="1" selected="selected">1 Days</option>
+      <option value="1" selected="selected">1 Day</option>
     </select>
 
     <span>From</span>
@@ -18,12 +18,12 @@
       <option value="4">november 18</option>
       <option value="3">november 19</option>
       <option value="2">november 20</option>
-      <option value="1">november 21</option>
+      <option value="1" selected="selected">november 21</option>
     </select>
 
     <span>To</span>
     <select id="to" name="to">
-      <option value="7">november 21</option>
+      <option value="7" selected="selected">november 21</option>
       <option value="6">november 20</option>
       <option value="5">november 19</option>
       <option value="4">november 18</option>

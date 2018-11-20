@@ -2,9 +2,7 @@
   <div class="rs-report">
     <rs-header-project></rs-header-project>
     <rs-date-picker></rs-date-picker>
-    <!--<rs-report-nav></rs-report-nav>-->
     <rs-report-aside></rs-report-aside>
-    <router-view></router-view>
   </div>
 </template>
 

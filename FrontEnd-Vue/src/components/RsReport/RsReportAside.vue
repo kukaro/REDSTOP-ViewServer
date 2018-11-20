@@ -58,7 +58,7 @@
         <table>
           <tr>
             <td><h6>•  Base VUs</h6></td>
-            <td><h6>1000</h6></td>
+            <td><h6>10</h6></td>
           </tr>
           <tr>
             <td><h6>•  Wait time</h6></td>
@@ -142,6 +142,7 @@ export default {
     padding: 32px;
     top: 70px;
     left: 20%;
+    right: 20%;
     width: 60%;
     z-index: 1;
     background-color: #ffffff;

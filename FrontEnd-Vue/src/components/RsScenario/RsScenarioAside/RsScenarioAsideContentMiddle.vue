@@ -6,7 +6,7 @@
           <label for="testInput" style="font-size: 13px;">
             <img src="../../../assets/img/lnb-bullet.png">
             <span id="minititle">{{item.text}}</span>
-            <input id="testInput" type="text" style=" width: 45px; height: 25px; border-radius: 5px; border: solid 1px #bababa; background-color: #ffffff;">
+            <input id="testInput" type="text" :value="item.v" style=" width: 45px; height: 25px; border-radius: 5px; border: solid 1px #bababa; background-color: #ffffff;">
             <span id="unit">{{item.unit}}</span>
           </label>
         </li>
@@ -22,15 +22,18 @@ export default {
       testItems: [
         {
           text: 'Warm-up time',
-          unit: 's'
+          unit: 's',
+          v: 0
         },
         {
           text: 'Duration',
-          unit: 'm'
+          unit: 'm',
+          v: 10
         },
         {
           text: 'Virtual Users',
-          unit: 'VUs'
+          unit: 'VUs',
+          v: 10
         }
       ]
     }

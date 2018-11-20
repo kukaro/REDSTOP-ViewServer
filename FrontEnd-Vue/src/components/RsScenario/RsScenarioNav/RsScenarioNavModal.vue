@@ -72,16 +72,16 @@ export default {
         '        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>\n' +
         '        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">\n' +
         '          <boolProp name="LoopController.continue_forever">false</boolProp>\n' +
-        '          <stringProp name="LoopController.loops">1</stringProp>\n' +
+        '          <intProp name="LoopController.loops">-1</intProp>\n' +
         '        </elementProp>\n' +
         '        <stringProp name="ThreadGroup.num_threads">1</stringProp>\n' +
         '        <stringProp name="ThreadGroup.ramp_time">1</stringProp>\n' +
-        '        <boolProp name="ThreadGroup.scheduler">false</boolProp>\n' +
-        '        <stringProp name="ThreadGroup.duration"></stringProp>\n' +
+        '        <boolProp name="ThreadGroup.scheduler">true</boolProp>\n' +
+        '        <stringProp name="ThreadGroup.duration">10</stringProp>\n' +
         '        <stringProp name="ThreadGroup.delay"></stringProp>\n' +
         '      </ThreadGroup>\n' +
         '      <hashTree>\n' +
-        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/story/get-story.php" enabled="true">\n' +
         '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
         '            <collectionProp name="Arguments.arguments"/>\n' +
         '          </elementProp>\n' +
@@ -89,7 +89,292 @@ export default {
         '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
         '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
         '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
-        '          <stringProp name="HTTPSampler.path">http://localhost:3000</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/story/get-story.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/story/get-story-info.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/story/get-story-info.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/login/login.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/login/login.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">POST</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/friend/get-friend.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/friend/get-friend.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/friend/get-friend-info.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/friend/get-friend-info.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/friend/get-friend-id.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/friend/get-friend-id.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/foot/insert-foot.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/foot/insert-foot.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/comment/insert-comment.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/comment/insert-comment.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/comment/get-comment.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/comment/get-comment.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://aeneb.com/footprint/comment/get-comment-refresh.php" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://aeneb.com/footprint/comment/get-comment-refresh.php</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://13.209.126.84:4000/web/sign-up" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://13.209.126.84:4000/web/sign-up</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://13.209.126.84:4000/web/log-out" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://13.209.126.84:4000/web/log-out</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://13.209.126.84:4000/web/log-in" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://13.209.126.84:4000/web/log-in</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://13.209.126.84:4000/api/json-test/single-json" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://13.209.126.84:4000/api/json-test/single-json</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://13.209.126.84:4000/api/json-test/multi-json" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://13.209.126.84:4000/api/json-test/multi-json</stringProp>\n' +
+        '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
+        '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>\n' +
+        '          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>\n' +
+        '          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.connect_timeout"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.response_timeout"></stringProp>\n' +
+        '        </HTTPSamplerProxy>\n' +
+        '        <hashTree/>\n' +
+        '        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://13.209.126.84:4000/" enabled="true">\n' +
+        '          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">\n' +
+        '            <collectionProp name="Arguments.arguments"/>\n' +
+        '          </elementProp>\n' +
+        '          <stringProp name="HTTPSampler.domain"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.port"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.protocol"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.contentEncoding"></stringProp>\n' +
+        '          <stringProp name="HTTPSampler.path">http://13.209.126.84:4000/</stringProp>\n' +
         '          <stringProp name="HTTPSampler.method">GET</stringProp>\n' +
         '          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>\n' +
         '          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>\n' +
@@ -103,7 +388,7 @@ export default {
         '      </hashTree>\n' +
         '    </hashTree>\n' +
         '  </hashTree>\n' +
-        '</jmeterTestPlan>'
+        '</jmeterTestPlan>\n  '
     }
   },
   created: function () {

@@ -1,121 +1,204 @@
 <template>
   <div class="rs-report-aside">
     <aside>
-      <h3>Load Test Results</h3>
-      <p style="font-size: 12px; text-align: right; padding-right: 10px">2018.09.30 13:02:32</p>
-      <p class="title">Test Properties</p>
-      <table>
-        <tr>
-          <td class="colored">Project name</td>
-          <td>SK Broadband Internal App</td>
-        </tr>
-        <tr>
-          <td class="colored">Project description</td>
-          <td >SK Broadband 사내 직원 앱</td>
-        </tr>
-        <tr>
-          <td class="colored">Test name</td>
-          <td>Load Test1</td>
-        </tr>
-        <tr>
-          <td class="colored">Test duration</td>
-          <td>10:00</td>
-        </tr>
-        <tr>
-          <td class="colored">Warm-up time</td>
-          <td>15sec</td>
-        </tr>
-      </table>
-      <br>
-      <p class="title">Load test overview</p>
-      <table>
-        <tr>
-          <td class="colored">Scenario in the test</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td class="colored">Load agent used</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td class="colored">Cloud agent used</td>
-          <td>0</td>
-        </tr>
-      </table>
-      <br>
-      <p class="title">Scenario Details</p>
-      <p style="padding-left: 10px; font-style: italic">Login scenario 1</p>
-      <table>
-        <tr>
-          <td class="colored">Load type</td>
-          <td> <img class="load-type-img" src="../../assets/img/chart-baseline.png"></td>
-        </tr>
-        <tr>
-          <td class="colored">Base VUs</td>
-          <td>1000</td>
-        </tr>
-        <tr>
-          <td class="colored">Wait time</td>
-          <td>1 seconds(s)</td>
-        </tr>
-        <tr>
-          <td class="colored">Target test case(s)</td>
-          <td>4</td>
-        </tr>
-      </table>
-      <img class="blocks-img" src="../../assets/img/blocks4.png" style="padding-left: 20px">
+      <div class="rs-report-body">
 
-      <br>
+        <div class="hr"></div>
+
+        <h1><b>SK Broadband Internal App</b></h1>
+        <h6 class="time">2018.11.21</h6>
+
+        <h5 class="test-pro">Test Properties</h5>
+        <div class="hr-dec"></div>
+
+        <table>
+          <tr>
+            <td><h6>•  Project name</h6></td>
+            <td><h6>SK Broadband Internal App</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Project description</h6></td>
+            <td><h6>SK Broadband 사내 직원 앱</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Test name</h6></td>
+            <td><h6>Load Test1</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Test duration</h6></td>
+            <td><h6>10:00</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Warm-up time</h6></td>
+            <td><h6>15sec</h6></td>
+          </tr>
+        </table>
+
+        <h5 class="test-pro">Load test overview</h5>
+        <div class="hr-dec"></div>
+
+        <table>
+          <tr>
+            <td><h6>•  Scenario in the test</h6></td>
+            <td><h6>1</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Load agent used</h6></td>
+            <td><h6>0</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Cloud agent used</h6></td>
+            <td><h6>0</h6></td>
+          </tr>
+        </table>
+
+        <h5 class="test-pro">Scenario Details</h5>
+        <div class="hr-dec"></div>
+
+        <table>
+          <tr>
+            <td><h6>•  Base VUs</h6></td>
+            <td><h6>1000</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Wait time</h6></td>
+            <td><h6>1 seconds(s)</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Target test case(s)</h6></td>
+            <td><h6>4</h6></td>
+          </tr>
+          <tr>
+            <td><h6>•  Load type</h6></td>
+            <td><img class="load-type-img" src="../../assets/img/chart-spike.png"></td>
+          </tr>
+        </table>
+
+        <h5 class="test-pro">Load test result</h5>
+        <div class="hr-dec"></div>
+
+        <img class="result" src="../../assets/img/load_test_result.png">
+        <img class="face" src="../../assets/img/api_status_good.png">
+        <br>
+        <h5 class="status">API Status : 매우 좋음</h5>
+      </div>
     </aside>
   </div>
 </template>
 
 <script>
 
+// 부하 템플릿
+// Stress | Soak | Default | Baseline | Peak | Spike
+
 export default {
   name: 'rs-report-aside',
-  components: { }
+  components: {
+
+  },
+  data: function () {
+    return {
+      message: '이 페이지는 ' + new Date() + ' 에 로드 되었습니다'
+    }
+  }
 }
 </script>
 
 <style scoped>
-aside {
-  position: absolute;
-  padding-top: 100px;
-  padding-left: 20px;
-  top: 70px;
-  left: 25%;
-  width: 50%;
-  height: 100%;
-  /*background-color: #ffffff;*/
-  background-color: #ffffff;
-  /*z-index: 0;*/
-  font-family: TitilliumWeb;
-  font-size: 12px;
-  /*font-weight: 600;*/
-}
-table{
-  margin-left: 20px;
-}
+  .wrapper {
+    margin-top: 48px;
+  }
+  .api-status > img {
+    width: 10%;
+  }
+  .rs-report-aside {
+    background-color: #F2F7FB;
+  }
 
-td{
-  width: 300px;
+  .load-type-img {
+    width: 60%;
+  }
+  aside {
+    position: absolute;
+    padding-top: 100px;
+    padding-left: 20px;
+    top: 70px;
+    width: 100%;
+    font-family: TitilliumWeb;
+    font-size: 12px;
+    height: 1200px;
+    background-color: #F2F7FB;
+  }
 
-}
-.title{
-  font-weight: bolder;
-  font-size: 15px;
-}
-.load-type-img{
-  width: 200px;
-  height: 65px;
-}
-.blocks-img{
-  width: 280px;
-  height: 100px;
-}
-.colored{
-  font-weight: bolder;
-  color: rgba(0, 7, 25, 0.88);
-}
+  .hr {
+    height: 10px;
+    background-color: #DB585A;
+    margin-bottom: 20px;
+  }
+
+  .rs-report-body {
+    position: absolute;
+    border: 1px solid #E8EBEF;
+    padding: 32px;
+    top: 70px;
+    left: 20%;
+    width: 60%;
+    z-index: 1;
+    background-color: #ffffff;
+  }
+
+  table {
+    width: 95%;
+    margin-top: 36px;
+    margin-left: 2.5%;
+  }
+
+  td {
+    width: 33.3%;
+  }
+
+  img {
+    width: 25%;
+  }
+
+  h1 > b {
+    color: #EC4C55;
+  }
+
+  .dec {
+    color: #5D5D5D;
+  }
+
+  .test-pro {
+    margin-top: 40px;
+  }
+
+  .hr-dec {
+    height: 2px;
+    background-color: #bbb;
+    margin-bottom: -20px;
+  }
+
+  .time {
+    color: #777;
+    position: absolute;
+    top: 72px;
+    right: 32px;
+  }
+
+  .result {
+    margin-top: 36px;
+    width: 60%;
+  }
+
+  .face {
+    width: 20%;
+    margin-left: 10%;
+  }
+
+  .status {
+    position: absolute;
+    right: 12%;
+    margin-top: -30px;
+  }
 </style>

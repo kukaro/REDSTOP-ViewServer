@@ -88,20 +88,20 @@
 
 <script>
 
-  // 부하 템플릿
-  // Stress | Soak | Default | Baseline | Peak | Spike
+// 부하 템플릿
+// Stress | Soak | Default | Baseline | Peak | Spike
 
-  export default {
-    name: 'rs-report-aside',
-    components: {
+export default {
+  name: 'rs-report-aside',
+  components: {
 
-    },
-    data: function () {
-      return {
-        message: '이 페이지는 ' + new Date() + ' 에 로드 되었습니다'
-      }
+  },
+  data: function () {
+    return {
+      message: '이 페이지는 ' + new Date() + ' 에 로드 되었습니다'
     }
   }
+}
 </script>
 
 <style scoped>
@@ -114,7 +114,6 @@
   }
 
   .rs-report-aside {
-    margin: 0 auto;
     background-color: #F2F7FB;
     width: 100%;
   }
@@ -149,7 +148,8 @@
     width: 60%;
     z-index: 1;
     background-color: #ffffff;
-    left: 50%; transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   table {

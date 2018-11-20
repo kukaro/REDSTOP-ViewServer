@@ -30,7 +30,7 @@
           </tr>
           <tr>
             <td><h6>•  Warm-up time</h6></td>
-            <td><h6>15sec</h6></td>
+            <td><h6>0sec</h6></td>
           </tr>
         </table>
 
@@ -58,7 +58,7 @@
         <table>
           <tr>
             <td><h6>•  Base VUs</h6></td>
-            <td><h6>1000</h6></td>
+            <td><h6>10</h6></td>
           </tr>
           <tr>
             <td><h6>•  Wait time</h6></td>
@@ -66,7 +66,7 @@
           </tr>
           <tr>
             <td><h6>•  Target test case(s)</h6></td>
-            <td><h6>4</h6></td>
+            <td><h6>16</h6></td>
           </tr>
           <tr>
             <td><h6>•  Load type</h6></td>

@@ -1,5 +1,5 @@
 <template>
-  <div class="rs-tb-article" :style="articleStyle">
+  <div class="rs-tb-article">
     <div class="blockView">
       <div class="blockWrapper">
         <div id="tutorial" :style="{'visibility':tutorialAvail}">

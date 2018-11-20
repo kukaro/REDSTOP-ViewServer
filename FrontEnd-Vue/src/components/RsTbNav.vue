@@ -1,6 +1,6 @@
 <template>
   <div class="rs-tb-nav">
-    <nav :style="navStyle">
+    <nav>
       <rs-tb-nav-header :init-nav-header-list="navHeaderList" @headerSelectedEvent="headerSelected"></rs-tb-nav-header>
       <rs-tb-nav-body v-if="headerKey===0" :init-tree-data="this.$store.state.app.treeData" :init-header-key="key"></rs-tb-nav-body>
       <rs-tb-nav-body2 v-else-if="headerKey===1" :init-tree-data="this.$store.state.app.treeData" :init-header-key="key"></rs-tb-nav-body2>

@@ -70,7 +70,7 @@
           </tr>
           <tr>
             <td><h6>•  Load type</h6></td>
-            <td><img class="load-type-img" src="../../assets/img/chart-spike.png"></td>
+            <td><img class="load-type-img" src="../../assets/img/chart-baseline.png"></td>
           </tr>
         </table>
 

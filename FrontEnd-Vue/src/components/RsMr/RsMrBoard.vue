@@ -32,7 +32,6 @@ export default {
     RsMrCardMiniResponseTime, RsMrCardMiniCheckPoint, RsMrCardMiniAvgP95, RsMrCardMiniTotalAvailability, RsMrCardMiniTotalApis, RsUtilText},
   methods: {
     temp12: function () {
-      // alert("Click")
       this.$router.push({name: 'rs-mr-api'})
     }
   },

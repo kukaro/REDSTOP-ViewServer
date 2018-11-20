@@ -11,7 +11,6 @@
 import RsHeaderProject from './RsHeader/RsHeaderProject'
 import RsDatePicker from './RsReport/RsDatePicker'
 import RsReportAside from './RsReport/RsReportAside'
-import RsReportNav from './RsReport/RsReportNav'
 
 export default {
   name: 'rs-report',

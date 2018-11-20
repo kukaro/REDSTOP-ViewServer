@@ -14,7 +14,7 @@ import RsReportAside from './RsReport/RsReportAside'
 
 export default {
   name: 'rs-report',
-  components: { RsHeaderProject, RsDatePicker, RsReportAside, RsReportNav },
+  components: { RsHeaderProject, RsDatePicker, RsReportAside },
   methods: {
     click: function () {
       //

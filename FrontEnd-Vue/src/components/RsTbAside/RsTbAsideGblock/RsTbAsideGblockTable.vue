@@ -50,7 +50,7 @@
           // console.log('watch group')
           // console.log(this.value.children)
           // console.log(atom)
-          let successCount = '0(0%)'
+          let successCount = atom.urlCount+'(100%)'
           let failCount = '0(0%)'
           let tmp = {
             'Name': atom.name,
@@ -98,7 +98,7 @@
             console.log('watch group')
             console.log(this.value.children)
             console.log(atom)
-            let successCount = '0(0%)'
+            let successCount = atom.urlCount+'(100%)'
             let failCount = '0(0%)'
             let tmp = {
               'Name': atom.name,

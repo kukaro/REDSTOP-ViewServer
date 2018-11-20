@@ -58,7 +58,7 @@
         <table>
           <tr>
             <td><h6>•  Base VUs</h6></td>
-            <td><h6>10</h6></td>
+            <td><h6>1000</h6></td>
           </tr>
           <tr>
             <td><h6>•  Wait time</h6></td>
@@ -108,16 +108,20 @@ export default {
   .wrapper {
     margin-top: 48px;
   }
+
   .api-status > img {
     width: 10%;
   }
+
   .rs-report-aside {
     background-color: #F2F7FB;
+    width: 100%;
   }
 
   .load-type-img {
     width: 60%;
   }
+
   aside {
     position: absolute;
     padding-top: 100px;
@@ -141,11 +145,11 @@ export default {
     border: 1px solid #E8EBEF;
     padding: 32px;
     top: 70px;
-    left: 20%;
-    right: 20%;
     width: 60%;
     z-index: 1;
     background-color: #ffffff;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   table {

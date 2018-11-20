@@ -19,7 +19,7 @@ export default {
   components: {RsBoardBodyCreateButton, RsBoardBodyItem},
   data: function () {
     return {
-      projectList: [{'title': 'SK Tech X', 'cntTest': 25, 'success': 72, 'fail': 28, 'type': 'baseline'},
+      projectList: [{'title': 'SK Broadband Internal App', 'cntTest': 25, 'success': 72, 'fail': 28, 'type': 'baseline'},
         {'title': 'NAVER Corp', 'cntTest': 83, 'success': 85, 'fail': 15, 'type': 'peak'},
         {'title': 'Coupang Payment', 'cntTest': 74, 'success': 70, 'fail': 30, 'type': 'stress'},
         {'title': 'Onycom', 'cntTest': 56, 'success': 50, 'fail': 50, 'type': 'spike'},
